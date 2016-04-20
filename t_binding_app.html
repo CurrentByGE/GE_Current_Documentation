@@ -1,0 +1,51 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Before you begin You must create an Intelligent Environment service instance before you perform this step. Cloud Foundry runtime uses the VCAP_SERVICES environment variable to communicate with a ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Binding Your Application to the Intelligent Environment Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_2d375224-43fb-4d20-a177-f80b381c4c9b"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Binding Your Application to the Intelligent Environment Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_2d375224-43fb-4d20-a177-f80b381c4c9b">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Binding Your Application to the Intelligent Environment Service Instance</h1>
+<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must create an Intelligent Environment service instance before you perform this step.<p class="p">Cloud Foundry runtime uses the VCAP_SERVICES environment variable to communicate with a deployed application about its environment. To provision connection details for your service instance in the VCAP_SERVICES environment variable, you must bind your instance to your application.</p>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps" id="task_2d375224-43fb-4d20-a177-f80b381c4c9b__steps_063feee7-7ea9-4001-989d-30c3a512bf71"><li class="li step stepexpand"><span class="ph cmd">Bind your application to the service instance by entering the following command:</span><div class="itemgroup info"><span class="keyword cmdname">cf bind-service &lt;your_app_name&gt; &lt;service_instance_name&gt;</span><p class="p">Your application is bound to the &lt;service_instance_name&gt; instance, and Cloud Foundry returns the following message:</p>
+<pre class="pre codeblock">Binding service &lt;service_instance_name&gt; to app &lt;your_app_name&gt; in org predix-platform / space predix as userx@ge.com...
+OK
+</pre>
+<div class="note tip"><span class="tiptitle">Tip:</span>  Use the <span class="keyword cmdname">cf restage</span> command to make sure your environmental variable changes take effect.</div>
+</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Enter the following command to verify the binding:</span><div class="itemgroup info"><span class="keyword cmdname">cf env &lt;your app name&gt;</span></div></li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>A message similar to the following is returned: <pre class="pre codeblock">Getting env variables for app your_app_name in org cf_org_name / space cf_space_name as cf_user_name...
+OK
+{
+ "VCAP_SERVICES": {
+  "predix-ie-&lt;service instance name&gt;-dev": [
+   {
+    "credentials": {
+     "instanceId": "69c2bd61-4526-4379-9533-a2721fe83ba8",
+     "uri": "http://predix-&lt;service instance name&gt;-&lt;production URL&gt;",
+     "zone": {
+      "http-header-name": "Predix-Zone-Id",
+      "http-header-value": "69c2bd61-4526-4379-9533-a2721fe83ba8",
+      "oauth-scope": "predix-&lt;service instance name&gt;.zones.69c2bd61-4526-4379-9533-a2721fe83ba8.user"
+     }
+    },
+    "label": "predix-&lt;service instance name&gt;",
+    "name": "test&lt;service instance name&gt;",
+    "plan": "&lt;your_plan_name&gt;",
+    "tags": []
+   }
+  ]
+ }
+}
+</pre>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>
