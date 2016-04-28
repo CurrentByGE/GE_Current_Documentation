@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="The Occupancy API uses the Event Type and Start and End timestamps for the query. It provides a Boolean value of 0 or 1 to indicate occupied (1) or unoccupied (0). There are no units for this value. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get Occupancy API"></meta><meta name="DC.Creator" content="Ann Shogren"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get Occupancy API</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="The Occupancy API uses the Event Types and Start and End timestamps for the query. It provides a Boolean value of 0 or 1 to indicate occupied (1) or unoccupied (0). There are no units for this value. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get Occupancy API"></meta><meta name="DC.Creator" content="Ann Shogren"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get Occupancy API</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -11,7 +11,7 @@
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Get Occupancy API</h1>
 <div class="body refbody"><div class="section">
-            <p class="p">The Occupancy API uses the Event Type and Start and End timestamps for the query. It provides a Boolean value of 0 or 1 to indicate occupied (1) or unoccupied (0). There are no units for this value.</p>
+            <p class="p">The Occupancy API uses the Event Types and Start and End timestamps for the query. It provides a Boolean value of 0 or 1 to indicate occupied (1) or unoccupied (0). There are no units for this value.</p>
 
             <p class="p">Use the following method structure to retrieve the URL. The URL provides real-time data for the presence of objects (people) at the specified monitored location.</p>
 
@@ -22,10 +22,10 @@
 <td class="entry" valign="top" width="50%">GET</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">URI:</strong></td>
-<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets</td>
+<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets/{id}/events?event-types=OCCUPANCY(start-ts,end-ts,size,page)</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">SAMPLE URI:</strong></td>
-<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets/1000000067</td>
+<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets/1000000018/events?event-types=OCCUPANCY&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</td>
 </tr>
 </tbody>
 </table>
@@ -35,31 +35,41 @@
 <div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d16775e59">Parameter</th>
-<th class="entry" valign="top" width="31.343283582089555%" id="d16775e61">Description</th>
-<th class="entry" valign="top" width="16.58374792703151%" id="d16775e63">Required?</th>
-<th class="entry" valign="top" width="33.16749585406302%" id="d16775e65">Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d17470e59">Parameter</th>
+<th class="entry" valign="top" width="31.343283582089555%" id="d17470e61">Description</th>
+<th class="entry" valign="top" width="16.58374792703151%" id="d17470e63">Required?</th>
+<th class="entry" valign="top" width="33.16749585406302%" id="d17470e65">Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d16775e59 ">id</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d16775e61 ">GE identifier for a location.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d16775e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d16775e65 ">For example, 1000000067</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d17470e59 ">id</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d17470e61 ">GE identifier for a location.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d17470e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d17470e65 ">For example, 1000000067.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d16775e59 ">event-type</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d16775e61 ">Filter by type of event.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d16775e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d16775e65 ">Event expressed as a string, such as OCCUPANCY</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d17470e59 ">event-types</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d17470e61 ">Filter by type of event.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d17470e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d17470e65 ">Event expressed as a string, such as OCCUPANCY.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d16775e59 ">start-ts</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d16775e61 ">Start timestamp.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d16775e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d16775e65 ">Number, such as 1460823091064</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d17470e59 ">start-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d17470e61 ">Start timestamp in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d17470e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d17470e65 ">Numerical value, such as 1460823091064.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d16775e59 ">end-ts</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d16775e61 ">End timestamp.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d16775e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d16775e65 ">Number, such as 1460998885254</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d17470e59 ">end-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d17470e61 ">End timestamp in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d17470e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d17470e65 ">Numerical value, such as 1460998885254.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d17470e59 ">Page</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d17470e61 ">Page number.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d17470e63 ">No</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d17470e65 ">Numerical value, such as 1.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d17470e59 ">Size</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d17470e61 ">Maximum number of records per page. If no size is specified, the default limit applies.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d17470e63 ">No</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d17470e65 ">Numerical value, such as 1453772603879.</td>
 </tr>
 </tbody>
 </table>
@@ -69,88 +79,88 @@
 <div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.38325281803543%" id="d16775e118">Parameter</th>
-<th class="entry" valign="top" width="18.84057971014493%" id="d16775e120">Data Type</th>
-<th class="entry" valign="top" width="16.10305958132045%" id="d16775e122">Required?</th>
-<th class="entry" valign="top" width="42.6731078904992%" id="d16775e124">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.38325281803543%" id="d17470e136">Parameter</th>
+<th class="entry" valign="top" width="18.84057971014493%" id="d17470e138">Data Type</th>
+<th class="entry" valign="top" width="16.10305958132045%" id="d17470e140">Required?</th>
+<th class="entry" valign="top" width="42.6731078904992%" id="d17470e142">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">_embedded</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Object</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Length of time (seconds) spent in a particular zone.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">_embedded</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Object</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Length of time (seconds) spent in a particular zone.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">events</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Array</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">List of events</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">events</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Array</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">List of events</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….measures</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Array</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Provides the following values:<ul class="ul" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__ul_60b891ce-d4cc-400c-932f-6487fd9b49bb"><li class="li"><strong class="ph b">tag</strong>: OCCUPANCY</li>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….measures</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Array</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Provides the following values:<ul class="ul" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__ul_60b891ce-d4cc-400c-932f-6487fd9b49bb"><li class="li"><strong class="ph b">tag</strong>: OCCUPANCY</li>
 <li class="li"><strong class="ph b">value</strong>: 1</li>
 <li class="li"><strong class="ph b">unit</strong>: null</li>
 </ul>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….event-uid</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Unique identifier established by a customer or external resource for the event. For this example, it is null.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….event-uid</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Unique identifier established by a customer or external resource for the event. For this example, it is null.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….timestamp</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Actual timestamp when event occurred, such as 1460823106425</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….timestamp</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Actual timestamp when event occurred, such as 1460823106425.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….event-type</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Event type recorded, such as OCCUPANCY.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….event-types</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Type of event recorded, such as OCCUPANCY.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….device-uid</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Unique identifier established by a customer or external resource, such as Sensor_150_50.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….device-uid</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Unique identifier established by a customer or external resource, such as Sensor_250_50.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….location-uid</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Unique identifier established by a customer or external resource for a specific location within the monitored area, such as Sensor_150_50.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….location-uid</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Unique identifier established by a customer or external resource for a specific location within the monitored area, such as Sensor_250_50.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">_links</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Object</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">HREFs related to this specific node.<ul class="ul" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__ul_4558a519-8126-43e8-8a3f-fca00cff2fe7"><li class="li"><strong class="ph b">self</strong>: Link to the asset details using the GE identifier. See the Get Asset Details section for information on obtaining additional data.</li>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">_links</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Object</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">HREFs related to this specific node.<ul class="ul" id="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd__ul_4558a519-8126-43e8-8a3f-fca00cff2fe7"><li class="li"><strong class="ph b">self</strong>: Link to the asset details using the GE identifier. See the Get Asset Details section for information on obtaining additional data.</li>
 <li class="li"><strong class="ph b">next page</strong>: HREFs to navigate the result set using paging. </li>
 </ul>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">page</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Object</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Pagable information satisfying the search filter.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">page</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Object</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Pageable information satisfying the search filter.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….size</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Maximum number of records to return per page, such as 2.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….size</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Maximum number of records to return per page, such as 2.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….totalElements</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Total number of elements.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….totalElements</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Total number of elements, such as 6.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….totalPages</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Total number of pages.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….totalPages</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Total number of pages, such as 3.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d16775e118 ">….number</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d16775e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d16775e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d16775e124 ">Indicates the page number displayed when returned. Default value is 1. </td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d17470e136 ">….number</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d17470e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d17470e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d17470e142 ">Indicates the page number displayed when returned. Default value is 0. </td>
 </tr>
 </tbody>
 </table>
@@ -163,47 +173,49 @@
   "_embedded": {
     "events": [
       {
+        "properties": {},
         "measures": [
           {
             "tag": "OCCUPANCY",
             "value": 1,
-            "unit": null
+            "unit": ""
           }
         ],
-        "event-uid": "804e2904-f331-4634-9877-a65bb9abb95b",
-        "timestamp": 1459208684471,
+        "event-uid": null,
+        "timestamp": 1461174096503,
         "event-type": "OCCUPANCY",
-        "device-uid": "HYP1039-28",
-        "location-uid": "1000000106"
+        "device-uid": "Sensor_250_50",
+        "location-uid": "Sensor_250_50"
       },
-        {
+      {
+        "properties": {},
         "measures": [
           {
             "tag": "OCCUPANCY",
-            "value": 0,
-            "unit": null
+            "value": 1,
+            "unit": ""
           }
         ],
-        "event-uid": "804e2904-f341-4756-9877-a65bb9abb95b",
-        "timestamp": 1459208684491,
+        "event-uid": null,
+        "timestamp": 1461174156504,
         "event-type": "OCCUPANCY",
-        "device-uid": "HYP1039-28",
-        "location-uid": "1000000106"
+        "device-uid": "Sensor_250_50",
+        "location-uid": "Sensor_250_50"
       }
     ]
   },
   "_links": {
     "self": {
-      "href": "http://ies-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000040/events?event-types=OCCUPANCY&amp;start-ts=1&amp;end-ts=1459212163672&amp;size=1"
+      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000069/events?start-ts=1461113400000&amp;end-ts=1461199342009&amp;event-types=OCCUPANCY"
     },
     "next-page": {
-      "href": "http://ies-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000040/events?event-types=OCCUPANCY&amp;start-ts=1459208684471&amp;end-ts=1459212163672&amp;size=1"
+      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000069/events?event-types=OCCUPANCY&amp;start-ts=1461174156504&amp;end-ts=1461199342009&amp;size=2"
     }
   },
   "page": {
-    "size": 1,
-    "totalElements": 10,
-    "totalPages": 10,
+    "size": 2,
+    "totalElements": 6,
+    "totalPages": 3,
     "number": 0
   }
 }</pre>

@@ -35,26 +35,26 @@
 <div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d18539e59">Parameter</th>
-<th class="entry" valign="top" width="32.77634961439588%" id="d18539e61">Description</th>
-<th class="entry" valign="top" width="12.853470437017995%" id="d18539e63">Required?</th>
-<th class="entry" valign="top" width="37.01799485861182%" id="d18539e65">Filter Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d19394e59">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d19394e61">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d19394e63">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d19394e65">Filter Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d18539e59 ">id</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d18539e61 ">GE identifier for the device.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d18539e63 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d18539e65 ">Value such as 1000000027.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d19394e59 ">id</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d19394e61 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d19394e63 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d19394e65 ">Value such as 1000000027.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d18539e59 ">live-events</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d18539e61 ">Specific to real-time data from websocket.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d18539e63 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d18539e65 ">event-type</td>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d19394e59 ">live-events</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d19394e61 ">Specific to real-time data from websocket.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d19394e63 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d19394e65 ">event-type</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d18539e59 ">event-type</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d18539e61 ">Filter for parking events.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d18539e63 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d18539e65 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">SFIN</dt>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d19394e59 ">event-type</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d19394e61 ">Filter for parking events.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d19394e63 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d19394e65 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">SFIN</dt>
 <dd class="dd">If you filter by SFIN, you receive a list of pedestrians (identified by object-id) entering monitored areas within the boundaries.</dd>
 <dt class="dt dlterm">SFOUT</dt>
 <dd class="dd">If you filter by SFOUT, you receive a list of pedestrians (identified by object-id) exiting monitored areas within the boundaries.</dd>
@@ -113,61 +113,61 @@ Headers:
 <div class="section"><h2 class="title sectiontitle">WebSocket Response Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.575757575757574%" id="d18539e151">Parameter</th>
-<th class="entry" valign="top" width="12.727272727272728%" id="d18539e153">Data Type</th>
-<th class="entry" valign="top" width="12.121212121212121%" id="d18539e155">Required?</th>
-<th class="entry" valign="top" width="57.57575757575758%" id="d18539e157">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_3dd4f077-428d-473f-91be-64677b081494__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.575757575757574%" id="d19394e151">Parameter</th>
+<th class="entry" valign="top" width="12.727272727272728%" id="d19394e153">Data Type</th>
+<th class="entry" valign="top" width="12.121212121212121%" id="d19394e155">Required?</th>
+<th class="entry" valign="top" width="57.57575757575758%" id="d19394e157">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">event-uid</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">A unique identifier established by a customer or external resource for the pedestrian event.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">event-uid</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">String</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">A unique identifier established by a customer or external resource for the pedestrian event.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">timestamp</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">Actual timestamp when event occurred. Timestamps are in EPOCH format.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">timestamp</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">Number</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">Actual timestamp when event occurred. Timestamps are in EPOCH format.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">event-type</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">Identifies this type of event:<dl class="dl"><dt class="dt dlterm">SFIN</dt>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">event-type</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">String</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">Identifies this type of event:<dl class="dl"><dt class="dt dlterm">SFIN</dt>
 <dd class="dd">Pedestrian (identified by object-id) entering monitored area within the boundaries.</dd>
 <dt class="dt dlterm">SFOUT</dt>
 <dd class="dd">Pedestrian (identified by object-id) exiting monitored area within the boundaries.</dd>
 </dl>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">device-uid</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">A unique identifier established by a customer or external resource for the device recording this event.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">device-uid</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">String</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">A unique identifier established by a customer or external resource for the device recording this event.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">location-uid</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">A unique identifier established by a customer or external resource for the monitored location for pedestrian entry and exit.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">location-uid</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">String</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">A unique identifier established by a customer or external resource for the monitored location for pedestrian entry and exit.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">properties</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">Map</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">Custom properties capture for this event-type instance.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">properties</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">Map</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">Custom properties capture for this event-type instance.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 "> object-uid</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">A unique identifier established by a customer or external resource for the pedestrian that entered or departed the related location (such as crosswalk).</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 "> object-uid</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">String</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">A unique identifier established by a customer or external resource for the pedestrian that entered or departed the related location (such as crosswalk).</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 "> coordinates</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">Array</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">GPS coordinates identifying the location. Four coordinates should be provided for each location-uid.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 "> coordinates</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">Array</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">GPS coordinates identifying the location. Four coordinates should be provided for each location-uid.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d18539e151 ">measures</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d18539e153 ">Array</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d18539e155 "> </td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d18539e157 ">
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d19394e151 ">measures</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d19394e153 ">Array</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d19394e155 "> </td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d19394e157 ">
                 <dl class="dl"><dt class="dt dlterm">tag</dt>
 <dd class="dd">identifier for the pedestrian</dd>
 </dl>

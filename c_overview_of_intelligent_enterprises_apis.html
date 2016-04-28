@@ -13,7 +13,11 @@
 <div class="body conbody"><div class="section">
             <p class="p">The Intelligent Enterprises APIs provide asset and location information for indoor positioning and enterprise environments, collecting additional URI resources and data from sensors installed on intelligent lighting fixtures. </p>
 
-            <p class="p">The Indoor Positioning APIs provide position, dwell time, and zone path. The X, Y, and Z positioning-event data is collected from intelligent lighting sensors installed in the ceilings of retail stores, malls, or office buildings. Mobile device apps use VLC technology and the GE Indoor Positioning SDK within a building to calculate highly accurate positions (within 10 cm) and device-orientation data and apply a timestamp before sending it to the Predix cloud. The data is analyzed to provide position, dwell times and zone path information.</p>
+            <div class="p">The Indoor Positioning APIs provide position, dwell time, and zone path. The X, Y, and Z positioning-event data is collected from intelligent lighting sensors installed in the ceilings of retail stores, malls, or office buildings. Mobile device apps use VLC technology and the GE Indoor Positioning SDK within a building to calculate highly accurate positions (within 10 cm) and device-orientation data and apply a timestamp before sending it to the Predix cloud. The data is analyzed to provide position, dwell times and zone path information.<ul class="ul" id="concept_fe004da8-ced5-4762-8df6-14062d57ce34__ul_d5e3b449-fc16-4911-ab14-cb2b5a4788b3"><li class="li">Historical Dwell Time</li>
+<li class="li">Historical Position</li>
+<li class="li">Historical Path</li>
+</ul>
+</div>
 
             <p class="p">The Enterprise Environment APIs provide the following environment metadata collected from intelligent lighting sensors placed at indoor locations of buildings in an enterprise:</p>
 
@@ -38,12 +42,17 @@
 
             <p class="p">This data is obtained from one or more sensors, and provides insights about the dwell time in a specific zone or department. </p>
 
+            <p class="p"><em class="ph i">See the</em> .<a class="xref" href="r_get_hist_dwell_time_api.html#reference_afb26548-4f98-4049-be05-dbac236cce51">Get Historical Dwell Time API</a></p>
+
         </div>
-<div class="section"><h2 class="title sectiontitle">Historical Blue Dot</h2>
+<div class="section"><h2 class="title sectiontitle">Historical Position</h2>
             
-            <p class="p">The Historical Blue Dot service provides pedestrian metadata collected from intelligent lighting sensors installed in retail stores and commerical office buildings. </p>
+            <p class="p">The Historical Position service provides pedestrian metadata collected from intelligent lighting sensors installed in retail stores and commerical office buildings. </p>
 
             <p class="p">As pedestrians enter or leave a region of interest, the service creates a timestamped event and stores it with a count of events. This data can be obtained from a single sensor or a group of sensors, and can also be used to enhance safety and convenience.</p>
+
+            <p class="p"><em class="ph i">See the</em>
+                <a class="xref" href="r_get_hist_position_api.html#reference_a6780b42-032c-4b77-8db2-43c01d1692c6">Get Historical Position API</a>.</p>
 
         </div>
 <div class="section"><h2 class="title sectiontitle">Historical Path</h2>
@@ -52,12 +61,18 @@
 
             <p class="p">Zone path analysis follows the device and helps to understand space usage and behaviors. This data enables you to provide insights regarding customer or staff behavior, augmented user engagements, staff efficiencies, navigation, waypoint finding, and indoor analytics. </p>
 
+            <p class="p"><em class="ph i">See the</em>
+                <a class="xref" href="r_get_hist_path_api.html#reference_10e4ff99-3a8c-4c95-8945-98635f633146">Get Historical Path API</a>.</p>
+
         </div>
 <div class="section"><h2 class="title sectiontitle">Illuminance</h2>
             
             <p class="p">The Illuminance or Light Level service provides ambient light data used by lighting control systems to maintain proper light levels for occupant comfort, reduce energy consumption when integrated with a daylight harvesting system, and address building construction and energy codes and standards.  Illuminance is measured in lux (lx). </p>
 
             <p class="p">This data can be obtained from a single sensor, and can be used in concert with other Intelligent Environments services to enhance a use case of interest.</p>
+
+            <p class="p"><em class="ph i">See the</em>
+                <a class="xref" href="r_get_light_level_api.html#reference_768a43a0-a037-4e63-bfdb-2ef7e4f86ff0">Get Illuminance API</a>.</p>
 
         </div>
 <div class="section"><h2 class="title sectiontitle">Occupancy</h2>
@@ -66,12 +81,18 @@
 
             <p class="p">This data can be obtained from a single sensor, and can be used in concert with other Intelligent Environments services to enhance a use case of interest.</p>
 
+            <p class="p"><em class="ph i">See the</em>
+                <a class="xref" href="r_get_occupancy_api.html#reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd">Get Occupancy API</a>.</p>
+
         </div>
 <div class="section"><h2 class="title sectiontitle">Temperature</h2>
             
             <p class="p">The Temperature service provides indoor ambient temperature data, which is used to monitor facilities for occupant comfort, building HVAC system faults, and report trends for analysis. Temperature is measured in degrees Celsius (°C).</p>
 
             <p class="p">This data can be obtained from a single sensor, and can be used in concert with other Intelligent Environments services to enhance a use case of interest.</p>
+
+            <p class="p"><em class="ph i">See the</em>
+                <a class="xref" href="r_get_temperature_api.html#reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4">Get Temperature API</a>.</p>
 
         </div>
 </div>

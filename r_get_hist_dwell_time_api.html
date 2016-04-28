@@ -25,7 +25,7 @@
 <td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/locations</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">SAMPLE URI:</strong></td>
-<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/locations/1000000092</td>
+<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=DWLZONE&amp;analytic-categories=DWELL_TIME&amp;start-ts=1461171600000&amp;end-ts=1461256935323</td>
 </tr>
 </tbody>
 </table>
@@ -35,46 +35,46 @@
 <div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_afb26548-4f98-4049-be05-dbac236cce51__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d6183e59">Parameter</th>
-<th class="entry" valign="top" width="31.343283582089555%" id="d6183e61">Description</th>
-<th class="entry" valign="top" width="16.58374792703151%" id="d6183e63">Required?</th>
-<th class="entry" valign="top" width="33.16749585406302%" id="d6183e65">Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_afb26548-4f98-4049-be05-dbac236cce51__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d5221e59">Parameter</th>
+<th class="entry" valign="top" width="31.343283582089555%" id="d5221e61">Description</th>
+<th class="entry" valign="top" width="16.58374792703151%" id="d5221e63">Required?</th>
+<th class="entry" valign="top" width="33.16749585406302%" id="d5221e65">Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6183e59 ">id</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d6183e61 ">GE identifier for a location</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d6183e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d6183e65 ">1000000092</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d5221e59 ">id</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d5221e61 ">GE identifier for a location</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d5221e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d5221e65 ">1000000106</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6183e59 ">analytic-name</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d6183e61 ">
-                <ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_04d80b9a-6c5e-4bf1-910d-325c45498cd6"><li class="li">For Dwell Time by Department, the dwell zone.</li>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d5221e59 ">analytic-names</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d5221e61 ">
+                <ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_04d80b9a-6c5e-4bf1-910d-325c45498cd6"><li class="li">For Dwell Time by Zone, the dwell zone.</li>
 <li class="li">For Dwell Time by Device, the dwell device.</li>
 </ul>
 
               </td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d6183e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d6183e65 ">
-                <ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_9ece7907-2988-4520-9e9f-f0c7c5cf71ac"><li class="li">For Dwell Time by Department, a String, such as DWLZONE.</li>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d5221e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d5221e65 ">
+                <ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_9ece7907-2988-4520-9e9f-f0c7c5cf71ac"><li class="li">For Dwell Time by Zone, a String, such as DWLZONE.</li>
 <li class="li">For Dwell Time by Device, a String, such as DWLDVCE.</li>
 </ul>
 
               </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6183e59 ">analytic-category</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d6183e61 ">For both Dwell Time by Department and Dwell Time by Device, the dwell time.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d6183e63 ">Yes.</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d6183e65 ">A String, such as DWELL_TIME.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d5221e59 ">analytic-categories</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d5221e61 ">For both Dwell Time by Zone and Dwell Time by Device, the dwell time.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d5221e63 ">Yes.</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d5221e65 ">A String, such as DWELL_TIME.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6183e59 ">start-ts</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d6183e61 ">Start time</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d6183e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d6183e65 ">Number, with a value such as 1459148400000.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d5221e59 ">start-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d5221e61 ">Start time in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d5221e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d5221e65 ">Number, with a value such as 1459148400000.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6183e59 ">end-ts</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d6183e61 ">End time</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d6183e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d6183e65 ">Number, with a value such as 1459212163672.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d5221e59 ">end-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d5221e61 ">End time in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d5221e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d5221e65 ">Number, with a value such as 1459212163672.</td>
 </tr>
 </tbody>
 </table>
@@ -84,26 +84,26 @@
 <div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_afb26548-4f98-4049-be05-dbac236cce51__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="19.765739385065885%" id="d6183e139">Parameter</th>
-<th class="entry" valign="top" width="19.765739385065885%" id="d6183e141">Data Type</th>
-<th class="entry" valign="top" width="14.641288433382138%" id="d6183e143">Required?</th>
-<th class="entry" valign="top" width="45.827232796486086%" id="d6183e145">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_afb26548-4f98-4049-be05-dbac236cce51__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="19.765739385065885%" id="d5221e139">Parameter</th>
+<th class="entry" valign="top" width="19.765739385065885%" id="d5221e141">Data Type</th>
+<th class="entry" valign="top" width="14.641288433382138%" id="d5221e143">Required?</th>
+<th class="entry" valign="top" width="45.827232796486086%" id="d5221e145">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="19.765739385065885%" headers="d6183e139 ">analyticName</td>
-<td class="entry" valign="top" width="19.765739385065885%" headers="d6183e141 ">String</td>
-<td class="entry" valign="top" width="14.641288433382138%" headers="d6183e143 ">Yes</td>
-<td class="entry" valign="top" width="45.827232796486086%" headers="d6183e145 ">Either BY-DEPARTMENT or BY-DEVICE</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="19.765739385065885%" headers="d5221e139 ">analyticName</td>
+<td class="entry" valign="top" width="19.765739385065885%" headers="d5221e141 ">String</td>
+<td class="entry" valign="top" width="14.641288433382138%" headers="d5221e143 ">Yes</td>
+<td class="entry" valign="top" width="45.827232796486086%" headers="d5221e145 ">Either DWLZONE or DWLDVCE</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="19.765739385065885%" headers="d6183e139 ">properties</td>
-<td class="entry" valign="top" width="19.765739385065885%" headers="d6183e141 ">String</td>
-<td class="entry" valign="top" width="14.641288433382138%" headers="d6183e143 ">Yes</td>
-<td class="entry" valign="top" width="45.827232796486086%" headers="d6183e145 ">Identifies the dwell time either by department or by device:<ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_ad9c1529-dafa-42fe-b275-9da89d4035fd"><li class="li">For DEPARTMENT, the department or zone and time spent in that zone are given, expressed as a string. For example, <strong class="ph b">"A": 29</strong> specifies that 29 seconds were spent in department A.</li>
-<li class="li">For DEVICE, the following information is provided:<ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_e943d0c8-a1be-4939-b50a-abc5f7978a6a"><li class="li">DEVICE-ID: Unique identifier established by a customer or external resource for the asset monitoring the location. For example, "device_1".</li>
-<li class="li">SESSION-ID: ID of the specific session, expressed as an alphanumeric string such as 6403d8b8-43cf-40a1-bdb9-1cd876d96de7.</li>
-<li class="li">SESSION-START: Time the session started, expressed in seconds as a LONG number, such as 1457935539745.</li>
-<li class="li">SESSION-END: Time the session ended, expressed in seconds as a LONG number, such as 1457935730102.</li>
-<li class="li">DWELLTIME-BY-DEPARTMENT: Time spent in a particular department or zone. For example, <strong class="ph b">"A": 31</strong>, specifies that 31 seconds were spent in department A.</li>
+<tr class="row"><td class="entry" valign="top" width="19.765739385065885%" headers="d5221e139 ">properties</td>
+<td class="entry" valign="top" width="19.765739385065885%" headers="d5221e141 ">String</td>
+<td class="entry" valign="top" width="14.641288433382138%" headers="d5221e143 ">Yes</td>
+<td class="entry" valign="top" width="45.827232796486086%" headers="d5221e145 ">Identifies the dwell time either by zone or by device:<ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_ad9c1529-dafa-42fe-b275-9da89d4035fd"><li class="li">For ZONE, the zone and time spent in that zone are given, expressed as a string. For example, <strong class="ph b">"Zone-4": 214</strong> specifies that 214 seconds were spent in zone 4</li>
+<li class="li">For DEVICE, the following information is provided:<ul class="ul" id="reference_afb26548-4f98-4049-be05-dbac236cce51__ul_e943d0c8-a1be-4939-b50a-abc5f7978a6a"><li class="li">DEVICE-ID: Unique identifier established by a customer or external resource for the asset monitoring the location. For example, "P_2".</li>
+<li class="li">SESSION-ID: ID of the specific session, expressed as an alphanumeric string such as 30b9bad8-3da9-4bbb-9202-1f41fcdc5ee4.</li>
+<li class="li">SESSION-START: Time the session started, expressed in seconds as a LONG number, such as 1461175225469.</li>
+<li class="li">SESSION-END: Time the session ended, expressed in seconds as a LONG number, such as 1461175510880.</li>
+<li class="li">DWELLTIME-BY-DEPARTMENT: Time spent in a particular zone. For example, <strong class="ph b">"Zone-3": 107</strong>, specifies that 107 seconds were spent in zone 3.</li>
 </ul>
 </li>
 </ul>
@@ -114,21 +114,19 @@
 </div>
 
         </div>
-<div class="section"><h2 class="title sectiontitle">Sample Response for Dwell Time by Department</h2>
+<div class="section"><h2 class="title sectiontitle">Sample Response for Dwell Time by Zone</h2>
             
             <pre class="pre codeblock">{
-  "analyticCategory": "DWELLTIME",
-  "analyticName": "BY-DEPARTMENT",
+  "analyticCategory": "DWELL_TIME",
+  "analyticName": "DWLZONE",
   "properties": {
-    "A": 29,
-    "B": 13,
-    "C": 4,
-    "D": 61,
-    "E": 58,
-    "F": 18,
-    "G": 8,
-    "H": 4,
-    "I": 30
+    "": 721,
+    "Zone-4": 214,
+    "Zone-3": 407,
+    "Zone-2": 305,
+    "Zone-1": 400,
+    "Zone-5": 14,
+    "Entry-Exit": 68
   }
 }</pre>
 
@@ -136,39 +134,42 @@
 <div class="section"><h2 class="title sectiontitle">Sample Response for Dwell Time by Device</h2>
             
             <pre class="pre codeblock">{
-  "analyticCategory": "DWELLTIME",
-  "analyticName": "BY-DEVICE",
-  "properties": [
-    {
-      "device-id": "device_1",
-      "session-id": "6403d8b8-43cf-40a1-bdb9-1cd876d96de7",
-      "sesion-start": 1457935539745,
-      "session-end": 1457935730102,
-      "dwelltime-by-department": {
-        "A": 31,
-        "B": 1,
-        "D": 57,
-        "E": 53,
-        "I": 26
-      }
-    },
-    {
-      "device-id": "device_2",
-      "session-id": "f616d297-4260-40d7-adf7-b3e22a2487aa",
-      "sesion-start": 1457935555635,
-      "session-end": 1457935666611,
-      "dwelltime-by-department": {
-        "B": 10,
-        "C": 3,
-        "D": 3,
-        "E": 9,
-        "F": 2,
-        "G": 6,
-        "H": 4,
-        "I": 18
-      }
-    }
-  ]
+"analyticCategory": "DWELL_TIME",
+"analyticName": "DWLDVCE",
+"properties": [
+{
+"device-id": "P_2",
+"session-id": "30b9bad8-3da9-4bbb-9202-1f41fcdc5ee4",
+"sesion-start": 1461175225469,
+"session-end": 1461175235469,
+"dwelltime-by-department": {
+"Entry-Exit": 3
+}
+},
+{
+"device-id": "P_2",
+"session-id": "b4c3d1b9-dde1-40a4-9018-6503d453d53c",
+"sesion-start": 1461175395880,
+"session-end": 1461175510880,
+"dwelltime-by-department": {
+"": 19,
+"Entry-Exit": 2
+}
+},
+{
+"device-id": "P_2",
+"session-id": "73862707-1556-47a7-96f8-494ece2b8831",
+"sesion-start": 1461173320786,
+"session-end": 1461174840786,
+"dwelltime-by-department": {
+"": 84,
+"Zone-3": 107,
+"Zone-2": 28,
+"Zone-1": 65,
+"Entry-Exit": 4
+}
+}
+]
 }</pre>
 
         </div>

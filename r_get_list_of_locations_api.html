@@ -23,10 +23,10 @@
 <td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type(bbox,size,page)</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI - Intelligent Cities</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type:PARKING&amp;bbox=32.711637,-117.157330,32.709443,-117153821&amp;size=20&amp;page=1</td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type:PARKING_SPOT&amp;bbox=32.711637,-117.157330,32.709443,-117153821&amp;size=20&amp;page=1</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI  - Intelligent Enterprises</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type:RETAIL_STORE&amp;bbox=30:-100,33.714739:-130</td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type:RETAIL-STORE&amp;bbox=30:-100,33.714739:-130</td>
 </tr>
 </tbody>
 </table>
@@ -36,29 +36,32 @@
 <div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d12119e62">Parameter</th>
-<th class="entry" valign="top" width="32.77634961439588%" id="d12119e64">Description</th>
-<th class="entry" valign="top" width="12.853470437017995%" id="d12119e66">Required?</th>
-<th class="entry" valign="top" width="37.01799485861182%" id="d12119e68">Filter Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d12480e62">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d12480e64">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d12480e66">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d12480e68">Filter Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12119e62 ">bbox</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d12119e64 ">The bounded area for your search, identified by GPS coordinates. <em class="ph i">For more information, see the Glossary section.</em></td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d12119e66 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d12119e68 "><strong class="ph b">bbox=x1,y1, x2,y2</strong>. Replace x1,y1, x2,y2 with GPS coordinates, similar to 32.711637,-117.157330, 32.709443,-117.153821. You can use Google Maps to obtain the latitude and longitude.To locate GPS coordinates for the area and identify the boundaries, place the cursor in the upper left location of the area, then right-click and select <strong class="ph b">What’s here?</strong> to obtain the first set of coordinates. Right-click on the lower-right location and repeat this procedure to obtain the second set of coordinates.<p class="p"><img class="image" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__image_f49ab071-eb85-451c-b7a3-2469856537cc" src="i_bbox_graphic_small.png"></img></p>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12480e62 ">bbox</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d12480e64 ">The bounded area for your search, identified by GPS coordinates. <em class="ph i">For more information, see the Glossary section.</em></td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d12480e66 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d12480e68 "><strong class="ph b">bbox=x1,y1, x2,y2</strong>. Replace x1,y1, x2,y2 with GPS coordinates, similar to 32.711637,-117.157330, 32.709443,-117.153821. You can use Google Maps to obtain the latitude and longitude.To locate GPS coordinates for the area and identify the boundaries, place the cursor in the upper left location of the area, then right-click and select <strong class="ph b">What’s here?</strong> to obtain the first set of coordinates. Right-click on the lower-right location and repeat this procedure to obtain the second set of coordinates.<p class="p"><img class="image" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__image_f49ab071-eb85-451c-b7a3-2469856537cc" src="i_bbox_graphic_small.png"></img></p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12119e62 ">?q</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d12119e64 ">Identifies a "type" query.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d12119e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d12119e68 ">Query to search by location type.</td>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12480e62 ">?q</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d12480e64 ">Identifies a "type" query.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d12480e66 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d12480e68 ">Query to search by location type.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12119e62 ">location-type</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d12119e64 ">Filter by type of location.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d12119e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d12119e68 ">Insert one of the following enumeration codes for a specific event type:<dl class="dl"><dt class="dt dlterm">PARKING</dt>
-<dd class="dd">If you filter by PARKING, you receive a list of parking locations within the boundaries.</dd>
-<dt class="dt dlterm">PARKING_SPOT</dt>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12480e62 ">location-type</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d12480e64 ">Filter by type of location. Note the following: <ul class="ul" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__ul_3b3ba5cf-392c-4714-a1c2-8ab90e1253ad"><li class="li">If you are using "ie-parking" in your URI,  you can use the location-types PARKING_SPOT and PARKING_ZONE only.</li>
+<li class="li">If you are using "ie-traffic" in your URI, you can use the location-type TRAFFIC_LANE only.</li>
+<li class="li">If you are using "ie-pedestrian" in your URI, you can use the location-type CROSSWALK only.</li>
+</ul>
+
+              </td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d12480e66 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d12480e68 ">Insert one of the following enumeration codes for a specific event type:<dl class="dl"><dt class="dt dlterm">PARKING_SPOT</dt>
 <dd class="dd">If you filter by PARKING_SPOT, you receive a list of demarcated parking spaces within the boundaries.</dd>
 <dt class="dt dlterm">PARKING_ZONE</dt>
 <dd class="dd">If you filter by PARKING_ZONE, you receive a list of non-demarcated parking spaces within the boundaries.</dd>
@@ -67,27 +70,27 @@
 </dl>
 <dl class="dl"><dt class="dt dlterm">TRAFFIC_LANE</dt>
 <dd class="dd">If you filter by TRAFFIC_LANE, you receive a list of traffic lanes within the boundaries.</dd>
-<dt class="dt dlterm">RETAIL_STORE</dt>
-<dd class="dd">If you filter by RETAIL_STORE, you receive a list of retail stores within the boundaries.</dd>
+<dt class="dt dlterm">RETAIL-STORE</dt>
+<dd class="dd">If you filter by RETAIL-STORE, you receive a list of retail stores within the boundaries.</dd>
 <dt class="dt dlterm">OTHERS</dt>
 <dd class="dd">If you filter by OTHERS, you receive a list of non-standard location types within the boundaries.</dd>
 </dl>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12119e62 ">location-uid</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d12119e64 ">A unique identifier established by a customer or external resource for a specific location within the monitored area.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d12119e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d12119e68 ">For example, 93d49017-19d0-416c-9a95-be0bee2a5ed9.</td>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12480e62 ">location-uid</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d12480e64 ">A unique identifier established by a customer or external resource for a specific location within the monitored area.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d12480e66 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d12480e68 ">For example, 93d49017-19d0-416c-9a95-be0bee2a5ed9.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12119e62 ">size</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d12119e64 ">Maximum number of records to return per page; if none specified, the default is used automatically.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d12119e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d12119e68 ">Numerical value.</td>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12480e62 ">size</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d12480e64 ">Maximum number of records to return per page; if none specified, the default is used automatically.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d12480e66 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d12480e68 ">Numerical value.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12119e62 ">page</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d12119e64 ">Indicates the page number; default is 1 </td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d12119e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d12119e68 ">Numerical value.</td>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d12480e62 ">page</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d12480e64 ">Indicates the page number; default value is 0. </td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d12480e66 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d12480e68 ">Numerical value.</td>
 </tr>
 </tbody>
 </table>
@@ -97,16 +100,16 @@
 <div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.575757575757574%" id="d12119e185">Parameter</th>
-<th class="entry" valign="top" width="12.727272727272728%" id="d12119e187">Data Type</th>
-<th class="entry" valign="top" width="12.121212121212121%" id="d12119e189">Required?</th>
-<th class="entry" valign="top" width="57.57575757575758%" id="d12119e191">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.575757575757574%" id="d12480e188">Parameter</th>
+<th class="entry" valign="top" width="12.727272727272728%" id="d12480e190">Data Type</th>
+<th class="entry" valign="top" width="12.121212121212121%" id="d12480e192">Required?</th>
+<th class="entry" valign="top" width="57.57575757575758%" id="d12480e194">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12119e185 ">locations</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d12119e187 ">Object</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d12119e189 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d12119e191 ">Identifies, within the brackets ([ ]) each location within the bound area. The response includes the unique (non-GE) location identifier, the GPS coordinates, the location type, and a link to the location using the GE identifier.<dl class="dl"><dt class="dt dlterm">location-uid</dt>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">locations</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Object</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">Yes</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">Identifies, within the brackets ([ ]) each location within the bound area. The response includes the unique (non-GE) location identifier, the GPS coordinates, the location type, and a link to the location using the GE identifier.<dl class="dl"><dt class="dt dlterm">location-uid</dt>
 <dd class="dd">A unique identifier established by a customer or external resource for a specific location within the monitored area. For example, a12835g2-0b4a-4019-b9dc-886439413e76.</dd>
 <dt class="dt dlterm">coordinates</dt>
 <dd class="dd">GPS coordinates identifying the location. Four coordinates should be provided for each location-uid.</dd>
@@ -117,7 +120,7 @@
 <li class="li">PARKING_ZONE = non-demarcated parking location.</li>
 <li class="li">CROSSWALK = pedestrian crosswalk.</li>
 <li class="li">TRAFFIC_LANE  = lane for moving vehicles.</li>
-<li class="li">RETAIL_STORE = retail store</li>
+<li class="li">RETAIL-STORE = retail store</li>
 <li class="li">OTHERS = non-standard location types.</li>
 </ul>
 </dd>
@@ -128,15 +131,35 @@
 </dl>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12119e185 ">_links</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d12119e187 ">Array</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d12119e189 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d12119e191 ">A collection of hyperlinks to navigate the result set using paging.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">_links</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Array</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">Yes</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">A collection of hyperlinks to navigate the result set using paging.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12119e185 ">page</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d12119e187 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d12119e189 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d12119e191 ">Pageable information satisfying the search filter.</td>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">page</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Number</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">Yes</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">Pageable information satisfying the search filter.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">….size</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Number</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">No</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">Maximum number of records to return per page, such as 2.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">….totalElements</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Number</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">No</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">Total number of elements, such as 8.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">….totalPages</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Number</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">No</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">Total number of pages, such as 1.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d12480e188 ">….number</td>
+<td class="entry" valign="top" width="12.727272727272728%" headers="d12480e190 ">Number</td>
+<td class="entry" valign="top" width="12.121212121212121%" headers="d12480e192 ">No</td>
+<td class="entry" valign="top" width="57.57575757575758%" headers="d12480e194 ">Indicates the page number displayed when returned. Default value is 0. </td>
 </tr>
 </tbody>
 </table>
@@ -218,7 +241,7 @@
           }
         },
         "location-uid": "store-003",
-        "location-type": "RETAIL_STORE"
+        "location-type": "RETAIL-STORE"
       },
       {
         "coordinates": {
@@ -230,7 +253,7 @@
           }
         },
         "location-uid": "store-002",
-        "location-type": "RETAIL_STORE"
+        "location-type": "RETAIL-STORE"
       },
       {
         "coordinates": {
@@ -242,7 +265,7 @@
           }
         },
         "location-uid": "store-001",
-        "location-type": "RETAIL_STORE"
+        "location-type": "RETAIL-STORE"
       }
     ]
   },

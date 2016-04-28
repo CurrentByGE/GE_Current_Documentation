@@ -11,7 +11,7 @@
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Get Historical Path API</h1>
 <div class="body refbody"><div class="section">
-            <p class="p">The Historical Path API identifies a historical path of the device through known or defined zones. It computes the path taken by each device or user during the given period of time and constructs a list containing the department or zone name and the weight, or time, in seconds.</p>
+            <p class="p">The Historical Path API identifies a historical path of the device through known or defined zones. It computes the path taken by each device or user during the given period of time and constructs a list containing the zone name and the weight, or time, in seconds.</p>
 
             <p class="p">Path zone analysis for the device helps to understand space usage and behaviors. This data can provide insights regarding customer or staff behavior, augmented user engagements, staff efficiencies, navigation, waypoint finding, and indoor analytics.</p>
 
@@ -25,7 +25,7 @@
 <td class="entry" valign="top" width="55.15695067264574%">&lt;production url&gt;/v1/locations</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="44.843049327354265%"><strong class="ph b">SAMPLE URI:</strong></td>
-<td class="entry" valign="top" width="55.15695067264574%">&lt;production url&gt;/v1/locations/1000000092</td>
+<td class="entry" valign="top" width="55.15695067264574%">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=PTHDVCE&amp;analytic-categories=PATH&amp;start-ts=1461171600000&amp;end-ts=1461256935323</td>
 </tr>
 </tbody>
 </table>
@@ -35,36 +35,36 @@
 <div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_10e4ff99-3a8c-4c95-8945-98635f633146__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d7098e59">Parameter</th>
-<th class="entry" valign="top" width="31.343283582089555%" id="d7098e61">Description</th>
-<th class="entry" valign="top" width="16.58374792703151%" id="d7098e63">Required?</th>
-<th class="entry" valign="top" width="33.16749585406302%" id="d7098e65">Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_10e4ff99-3a8c-4c95-8945-98635f633146__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d6136e59">Parameter</th>
+<th class="entry" valign="top" width="31.343283582089555%" id="d6136e61">Description</th>
+<th class="entry" valign="top" width="16.58374792703151%" id="d6136e63">Required?</th>
+<th class="entry" valign="top" width="33.16749585406302%" id="d6136e65">Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d7098e59 ">id</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d7098e61 ">GE identifier for a location.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d7098e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d7098e65 ">For example, 1000000092</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6136e59 ">id</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d6136e61 ">GE identifier for a location.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d6136e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d6136e65 ">For example, 1000000106</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d7098e59 ">analytic-name</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d7098e61 ">Path device </td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d7098e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d7098e65 ">String such as PTHDVCE.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6136e59 ">analytic-name</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d6136e61 ">Path device </td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d6136e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d6136e65 ">String such as PTHDVCE.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d7098e59 ">analytic-category</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d7098e61 ">Path</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d7098e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d7098e65 ">String such as PATH.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6136e59 ">analytic-category</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d6136e61 ">Path</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d6136e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d6136e65 ">String such as PATH.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d7098e59 ">startTs</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d7098e61 ">Start time</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d7098e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d7098e65 ">Number with a value, such as 1457935501860.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6136e59 ">start-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d6136e61 ">Start time in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d6136e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d6136e65 ">Number with a value, such as 1457935501860.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d7098e59 ">endTs</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d7098e61 ">End time</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d7098e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d7098e65 ">Number with a value such as 1457935810571.</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d6136e59 ">end-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d6136e61 ">End time in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d6136e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d6136e65 ">Number with a value such as 1457935810571.</td>
 </tr>
 </tbody>
 </table>
@@ -74,41 +74,41 @@
 <div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_10e4ff99-3a8c-4c95-8945-98635f633146__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.4622030237581%" id="d7098e133">Parameter</th>
-<th class="entry" valign="top" width="22.4622030237581%" id="d7098e135">Data Type</th>
-<th class="entry" valign="top" width="21.598272138228943%" id="d7098e137">Required?</th>
-<th class="entry" valign="top" width="33.477321814254864%" id="d7098e139">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_10e4ff99-3a8c-4c95-8945-98635f633146__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.4622030237581%" id="d6136e133">Parameter</th>
+<th class="entry" valign="top" width="22.4622030237581%" id="d6136e135">Data Type</th>
+<th class="entry" valign="top" width="21.598272138228943%" id="d6136e137">Required?</th>
+<th class="entry" valign="top" width="33.477321814254864%" id="d6136e139">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d7098e133 ">properties</td>
-<td class="entry" valign="top" width="22.4622030237581%" headers="d7098e135 ">Map</td>
-<td class="entry" valign="top" width="21.598272138228943%" headers="d7098e137 ">No</td>
-<td class="entry" valign="top" width="33.477321814254864%" headers="d7098e139 ">Custom properties captured for this event type instance.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d6136e133 ">properties</td>
+<td class="entry" valign="top" width="22.4622030237581%" headers="d6136e135 ">Map</td>
+<td class="entry" valign="top" width="21.598272138228943%" headers="d6136e137 ">No</td>
+<td class="entry" valign="top" width="33.477321814254864%" headers="d6136e139 ">Custom properties captured for this event type instance.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d7098e133 ">….device-id</td>
-<td class="entry" valign="top" width="22.4622030237581%" headers="d7098e135 ">String</td>
-<td class="entry" valign="top" width="21.598272138228943%" headers="d7098e137 ">Yes</td>
-<td class="entry" valign="top" width="33.477321814254864%" headers="d7098e139 ">Unique ID for the device used for this event, such as device_1.</td>
+<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d6136e133 ">….device-id</td>
+<td class="entry" valign="top" width="22.4622030237581%" headers="d6136e135 ">String</td>
+<td class="entry" valign="top" width="21.598272138228943%" headers="d6136e137 ">Yes</td>
+<td class="entry" valign="top" width="33.477321814254864%" headers="d6136e139 ">Unique ID for the device used for this event, such as P_8.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d7098e133 ">….session-id</td>
-<td class="entry" valign="top" width="22.4622030237581%" headers="d7098e135 ">String</td>
-<td class="entry" valign="top" width="21.598272138228943%" headers="d7098e137 ">Yes</td>
-<td class="entry" valign="top" width="33.477321814254864%" headers="d7098e139 ">Unique ID to identify this event defined at the system source, such as 6403d8b8-43cf-40a1-bdb9-1cd876d96de7</td>
+<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d6136e133 ">….session-id</td>
+<td class="entry" valign="top" width="22.4622030237581%" headers="d6136e135 ">String</td>
+<td class="entry" valign="top" width="21.598272138228943%" headers="d6136e137 ">Yes</td>
+<td class="entry" valign="top" width="33.477321814254864%" headers="d6136e139 ">Unique ID to identify this event defined at the system source, such as 92111662-d561-4e02-b926-bb7e6cd1feb0.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d7098e133 ">….session-start</td>
-<td class="entry" valign="top" width="22.4622030237581%" headers="d7098e135 ">Number</td>
-<td class="entry" valign="top" width="21.598272138228943%" headers="d7098e137 ">Yes</td>
-<td class="entry" valign="top" width="33.477321814254864%" headers="d7098e139 ">Event start time recorded in milliseconds and UTC format, such as 1457935539745</td>
+<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d6136e133 ">….session-start</td>
+<td class="entry" valign="top" width="22.4622030237581%" headers="d6136e135 ">Number</td>
+<td class="entry" valign="top" width="21.598272138228943%" headers="d6136e137 ">Yes</td>
+<td class="entry" valign="top" width="33.477321814254864%" headers="d6136e139 ">Event start time recorded in milliseconds and UTC format, such as 1461175225473.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d7098e133 ">….session-stop</td>
-<td class="entry" valign="top" width="22.4622030237581%" headers="d7098e135 ">Number</td>
-<td class="entry" valign="top" width="21.598272138228943%" headers="d7098e137 ">Yes</td>
-<td class="entry" valign="top" width="33.477321814254864%" headers="d7098e139 ">Event stop time recorded in milliseconds and UTC format, such as 1457935730102</td>
+<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d6136e133 ">….session-stop</td>
+<td class="entry" valign="top" width="22.4622030237581%" headers="d6136e135 ">Number</td>
+<td class="entry" valign="top" width="21.598272138228943%" headers="d6136e137 ">Yes</td>
+<td class="entry" valign="top" width="33.477321814254864%" headers="d6136e139 ">Event stop time recorded in milliseconds and UTC format, such as 1461175235474.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d7098e133 ">….path-weight</td>
-<td class="entry" valign="top" width="22.4622030237581%" headers="d7098e135 ">String, followed by Number</td>
-<td class="entry" valign="top" width="21.598272138228943%" headers="d7098e137 ">Yes</td>
-<td class="entry" valign="top" width="33.477321814254864%" headers="d7098e139 ">Zones occupied within the store, followed by the time  (seconds) spent in that zone. For example, A : 31, where "A" is the name of a zone and "31" is the number of seconds spent in that zone.</td>
+<tr class="row"><td class="entry" valign="top" width="22.4622030237581%" headers="d6136e133 ">….path-weight</td>
+<td class="entry" valign="top" width="22.4622030237581%" headers="d6136e135 ">String, followed by Number</td>
+<td class="entry" valign="top" width="21.598272138228943%" headers="d6136e137 ">Yes</td>
+<td class="entry" valign="top" width="33.477321814254864%" headers="d6136e139 ">Zones occupied within the store, followed by the time (seconds) spent in that zone. For example, Zone-2: 114, where "Zone-2" is the name of a zone and "114" is the number of seconds spent in that zone.</td>
 </tr>
 </tbody>
 </table>
@@ -118,42 +118,33 @@
 <div class="section"><h2 class="title sectiontitle">Sample Response</h2>
             
             <pre class="pre codeblock">{
+  {
   "analyticCategory": "PATH",
-  "analyticName": "BY-DEVICE",
+  "analyticName": "PTHDVCE",
   "properties": [
     {
-      "device-id": "device_1",
-      "session-id": "6403d8b8-43cf-40a1-bdb9-1cd876d96de7",
-      "session-start": 1457935539745,
-      "session-end": 1457935730102,
+      "device-id": "P_8",
+      "session-id": "92111662-d561-4e02-b926-bb7e6cd1feb0",
+      "sesion-start": 1461175225473,
+      "session-end": 1461175235474,
       "path-weight": {
-        "A": 31,
-        "D": 60,
-        "E": 60,
-        "B": 1,
-        "I": 29
+        "Entry-Exit": 3
       }
     },
     {
-      "device-id": "device_2",
-      "session-id": "f616d297-4260-40d7-adf7-b3e22a2487aa",
-      "session-start": 1457935539745,
-      "session-end": 1457935666611,
+      "device-id": "P_8",
+      "session-id": "a3787d86-12d7-43a2-a3c6-f9ff4262c4ce",
+      "sesion-start": 1461173320795,
+      "session-end": 1461174825795,
       "path-weight": {
-        "A": 11,
-        "D": 12,
-        "G": 8,
-        "H": 4,
-        "E": 11,
-        "B": 16,
-        "C": 22,
-        "F": 17,
-        "I": 19
+        "Entry-Exit": 1,
+        "": 118,
+        "Zone-2": 114,
+        "Zone-1": 66
       }
     }
   ]
-}
-</pre>
+}</pre>
 
         </div>
 </div>

@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Before you begin You must bind your application to the IE service instance before you perform this task. Procedure To enable applications to access the Asset service, make sure your JSON Web Token ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Updating the OAuth2 Client to Use Your Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Updating the OAuth2 Client to Use Your Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="Before you begin You must bind your application to the IE service instance before you perform this task. Procedure To enable applications to access the Intelligent Environment service, make sure your ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Updating the OAuth2 Client to Use Your Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Updating the OAuth2 Client to Use Your Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -11,9 +11,32 @@
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Updating the OAuth2 Client to Use Your Service Instance</h1>
 <div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must bind your application to the IE service instance before you perform this task.</div>
-<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p"><span class="ph cmd">To enable applications to access the Asset service, make sure your JSON Web Token (JWT) contains the following scope:</span><div class="itemgroup info"><span class="keyword cmdname">ie-&lt;service instance name&gt;.zones.&lt;service_instance_guid&gt;.user</span><p class="p">The OAuth2 client uses an authorization grant (one of four defined grant types) to request an access token. Based on the type of authorization grant used, you must update your OAuth2 client to generate the required JWT. </p>
-<p class="p">For more information on how the OAuth2 client is created, see Creating an OAuth2 Client. </p>
-<p class="p">For detailed steps to update the OAuth2 token to access your service instance, see Updating the OAuth2 Client to Use a Platform Service.</p>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p"><span class="ph cmd">To enable applications to access the Intelligent Environment service, make sure your JSON Web Token (JWT) contains the following scope:</span><div class="itemgroup info"> oauth-scope: <pre class="pre codeblock">ie-&lt;service instance name&gt;.zones.&lt;service_instance_guid&gt;.user</pre>
+<p class="p">The OAuth2 scope is created when you set up the service in Predix. To obtain your OAuth2 scope, type <samp class="ph codeph">cf env &lt;app name&gt;</samp>.</p>
+<div class="p"><strong class="ph b">Example showing VCAP Services and oauth-scope:</strong>:<pre class="pre codeblock">"VCAP_SERVICES": { 
+   "ie-traffic": [
+   {
+    "credentials": {
+     "url": "https://ie-traffic.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "Predix-Zone-Id",
+      "http-header-value": "334d60f8-2bdf-4b9b-a561-1b16a6f2df0e",
+      "oauth-scope": "ie-traffic.zones.334d60f8-2bdf-4b9b-a561-1b16a6f2df0e.user"
+     }
+    },
+    "label": "ie-traffic",
+    "name": “example_traffic",
+    "plan": "Beta",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],
+</pre>
+</div>
+<p class="p">The OAuth2 client uses an authorization grant (one of four defined grant types) to request an access token. Based on the type of authorization grant used, you must update your OAuth2 client to generate the required JWT. </p>
+<p class="p">For more information on how the OAuth2 client is created, see <a class="xref" href="https://www.predix.io/docs#uAyBrT9y" target="_blank">Creating an OAuth2 Client</a> (for Basic users) or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#uAyBrT9y" target="_blank">Creating an OAuth2 Client</a> (for Select users). </p>
+<p class="p">For detailed steps to update the OAuth2 token to access your service instance, see <a class="xref" href="https://www.predix.io/docs#pOVsUZ0a" target="_blank">Updating the OAuth2 Client to Use a Platform Service</a> (for Basic users) or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#pOVsUZ0a" target="_blank">Updating the OAuth2 Client to Use a Platform Service</a> (for Select users).</p>
 </div></div>
 </div>
 <div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>

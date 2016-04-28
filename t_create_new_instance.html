@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Before you begin You must complete the procedures in Platform Services Setup before you perform this task. See the Predix.io website for information. Complete the following steps using Cloud Foundry ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating an Intelligent Environments Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating an Intelligent Environments Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="Before you begin If you are a VPC (Basic) user, use this link to complete the procedures in Platform Services Setup before you perform this task. If you are an ASV (Select) user, use this link for ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating an Intelligent Environments Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating an Intelligent Environments Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -10,10 +10,10 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Creating an Intelligent Environments Service Instance</h1>
-<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must complete the procedures in <a class="xref" href="predix.io/docs#X9M7hYj6" target="_blank">Platform Services Setup</a> before you perform this task. See the Predix.io website for information.</div>
+<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>If you are a VPC (Basic) user, use this link to complete the procedures in <a class="xref" href="https://www.predix.io/docs#X9M7hYj6" target="_blank">Platform Services Setup</a> before you perform this task. If you are an ASV (Select) user, use this link for <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#X9M7hYj6" target="_blank">Platform Services Setup</a>. See the Predix.io website for information.</div>
 <div class="section">Complete the following steps using Cloud Foundry CLI:</div>
 <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps" id="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a__steps_9b965e34-5662-4b79-9327-8fc870b74fc6"><li class="li step"><span class="ph cmd">Enter the following command to list the services in the Cloud Foundry marketplace:</span>
-                                                            <p class="p"><span class="keyword cmdname">cf marketplace</span></p>
+                                                            <p class="p"><samp class="ph codeph">cf marketplace</samp></p>
 
                                                             <p class="p">The Intelligent Environment services, shown below, are listed as available services.</p>
 
@@ -33,7 +33,7 @@
 
                                                 </li>
 <li class="li step"><span class="ph cmd">Enter the following command to create a service instance for one of the available services:</span>
-                                                            <p class="p"><span class="keyword cmdname">cf create-service &lt;service instance name&gt; &lt;plan&gt; &lt;my_uaa_instance&gt; -c '{"trustedIssuerIds":["&lt;uaa_instance1_issuerId&gt;", "&lt;uaa_instance2_issuerID&gt;"]}'</span></p>
+                                                            <p class="p"><samp class="ph codeph">cf create-service &lt;service instance name&gt; &lt;plan&gt; &lt;my_uaa_instance&gt; -c '{"trustedIssuerIds":["&lt;uaa_instance1_issuerId&gt;", "&lt;uaa_instance2_issuerID&gt;"]}'</samp></p>
 
                                                  
                                                             <p class="p">WHERE:</p>

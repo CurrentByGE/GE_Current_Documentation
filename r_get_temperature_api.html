@@ -22,10 +22,10 @@
 <td class="entry" valign="top" width="50%">GET</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">URI:</strong></td>
-<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets</td>
+<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets/{id}/events?event-types=TEMP(start-ts,end-ts,size,page)</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="50%"><strong class="ph b">SAMPLE URI: </strong></td>
-<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets/1000000067</td>
+<td class="entry" valign="top" width="50%">&lt;production url&gt;/v1/assets/1000000018/events?event-types=TEMP&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</td>
 </tr>
 </tbody>
 </table>
@@ -35,31 +35,41 @@
 <div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d19917e59">Parameter</th>
-<th class="entry" valign="top" width="31.343283582089555%" id="d19917e61">Description</th>
-<th class="entry" valign="top" width="16.58374792703151%" id="d19917e63">Required?</th>
-<th class="entry" valign="top" width="33.16749585406302%" id="d19917e65">Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__table_fcfe3d7c-a135-4058-b418-d4124f0186d0" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="18.90547263681592%" id="d20772e59">Parameter</th>
+<th class="entry" valign="top" width="31.343283582089555%" id="d20772e61">Description</th>
+<th class="entry" valign="top" width="16.58374792703151%" id="d20772e63">Required?</th>
+<th class="entry" valign="top" width="33.16749585406302%" id="d20772e65">Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d19917e59 ">id</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d19917e61 ">GE identifier for a location.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d19917e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d19917e65 ">For example, 1000000067</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d20772e59 ">id</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d20772e61 ">GE identifier for a location.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d20772e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d20772e65 ">For example, 1000000018.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d19917e59 ">event-type</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d19917e61 ">Filter by type of event.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d19917e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d19917e65 ">Temperature expressed as a string, such as TEMP</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d20772e59 ">event-types</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d20772e61 ">Filter by type of event.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d20772e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d20772e65 ">Temperature expressed as a string, such as TEMP.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d19917e59 ">start-ts</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d19917e61 ">Start timestamp.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d19917e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d19917e65 ">Number,  such as 1460823091064</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d20772e59 ">start-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d20772e61 ">Start timestamp in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d20772e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d20772e65 ">Numerical value, such as 1460823091064.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d19917e59 ">end-ts</td>
-<td class="entry" valign="top" width="31.343283582089555%" headers="d19917e61 ">End timestamp.</td>
-<td class="entry" valign="top" width="16.58374792703151%" headers="d19917e63 ">Yes</td>
-<td class="entry" valign="top" width="33.16749585406302%" headers="d19917e65 ">Number, such as 1460998885254</td>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d20772e59 ">end-ts</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d20772e61 ">End timestamp in milliseconds.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d20772e63 ">Yes</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d20772e65 ">Numerical value, such as 1460998885254.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d20772e59 ">page</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d20772e61 ">Page number.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d20772e63 ">No</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d20772e65 ">Numerical value, such as 1.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="18.90547263681592%" headers="d20772e59 ">size</td>
+<td class="entry" valign="top" width="31.343283582089555%" headers="d20772e61 ">Maximum number of records per page. If no size is specified, the default limit applies.</td>
+<td class="entry" valign="top" width="16.58374792703151%" headers="d20772e63 ">No</td>
+<td class="entry" valign="top" width="33.16749585406302%" headers="d20772e65 ">Numerical value, such as 10.</td>
 </tr>
 </tbody>
 </table>
@@ -69,88 +79,88 @@
 <div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.38325281803543%" id="d19917e118">Parameter</th>
-<th class="entry" valign="top" width="18.84057971014493%" id="d19917e120">Data Type</th>
-<th class="entry" valign="top" width="16.10305958132045%" id="d19917e122">Required?</th>
-<th class="entry" valign="top" width="42.6731078904992%" id="d19917e124">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__table_2c00c532-1dca-480c-a585-837c8a577815" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="22.38325281803543%" id="d20772e136">Parameter</th>
+<th class="entry" valign="top" width="18.84057971014493%" id="d20772e138">Data Type</th>
+<th class="entry" valign="top" width="16.10305958132045%" id="d20772e140">Required?</th>
+<th class="entry" valign="top" width="42.6731078904992%" id="d20772e142">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">_embedded</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Object</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Time (seconds) spent in a particular zone.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">_embedded</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Object</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Time (seconds) spent in a particular zone.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">events</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Array</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">List of events.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">events</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Array</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">List of events.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….measures</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Array</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Provides the following values:<ul class="ul" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__ul_60b891ce-d4cc-400c-932f-6487fd9b49bb"><li class="li"><strong class="ph b">tag</strong>: TEMP</li>
-<li class="li"><strong class="ph b">value</strong>: 19.8067</li>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….measures</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Array</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Provides the following values:<ul class="ul" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__ul_60b891ce-d4cc-400c-932f-6487fd9b49bb"><li class="li"><strong class="ph b">tag</strong>: TEMP</li>
+<li class="li"><strong class="ph b">value</strong>: 16.174</li>
 <li class="li"><strong class="ph b">unit</strong>: Celsius</li>
 </ul>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….event-uid</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Unique identifier established by a customer or external resource for the event. In this example, value is null.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….event-uid</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Unique identifier established by a customer or external resource for the event. In this example, value is null.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….timestamp</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Actual timestamp when event occurred, such as 1460844046683.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….timestamp</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Actual timestamp when event occurred, such as 1460844046683.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….event-type</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Event type recorded, such as TEMP.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….event-types</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Type of event recorded, such as TEMP.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….device-uid</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Unique identifier established by a customer or external resource, such as  Sensor_150_50.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….device-uid</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Unique identifier established by a customer or external resource, such as Sensor_250_50.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….location-uid</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">String</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Unique identifier established by a customer or external resource for a specific location within the monitored area, such as  1000000106.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….location-uid</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">String</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Unique identifier established by a customer or external resource for a specific location within the monitored area, such as  1000000106.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">_links</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Object</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">HREFs related to this specific node.<ul class="ul" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__ul_4558a519-8126-43e8-8a3f-fca00cff2fe7"><li class="li"><strong class="ph b">self</strong>: Link to the asset details using the GE identifier. See the Get Asset Details section for information on obtaining additional data.</li>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">_links</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Object</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">HREFs related to this specific node.<ul class="ul" id="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4__ul_4558a519-8126-43e8-8a3f-fca00cff2fe7"><li class="li"><strong class="ph b">self</strong>: Link to the asset details using the GE identifier. See the Get Asset Details section for information on obtaining additional data.</li>
 <li class="li"><strong class="ph b">next page</strong>: HREFs to navigate the result set using paging. </li>
 </ul>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">page</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Object</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">Yes</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Pagable information satisfying the search filter.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">page</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Object</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">Yes</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Pagable information satisfying the search filter.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….size</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Maximum number of records to return per page, such as 2.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….size</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Maximum number of records to return per page, such as 2.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….totalElements</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Total number of elements, such as 66.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….totalElements</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Total number of elements, such as 2.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….totalPages</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Total number of pages, such as 33.</td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….totalPages</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Total number of pages, such as 1.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d19917e118 ">….number</td>
-<td class="entry" valign="top" width="18.84057971014493%" headers="d19917e120 ">Number</td>
-<td class="entry" valign="top" width="16.10305958132045%" headers="d19917e122 ">No</td>
-<td class="entry" valign="top" width="42.6731078904992%" headers="d19917e124 ">Indicates the page number displayed when returned. Default value is 1. </td>
+<tr class="row"><td class="entry" valign="top" width="22.38325281803543%" headers="d20772e136 ">….number</td>
+<td class="entry" valign="top" width="18.84057971014493%" headers="d20772e138 ">Number</td>
+<td class="entry" valign="top" width="16.10305958132045%" headers="d20772e140 ">No</td>
+<td class="entry" valign="top" width="42.6731078904992%" headers="d20772e142 ">Indicates the page number displayed when returned. Default value is 0. </td>
 </tr>
 </tbody>
 </table>
@@ -163,53 +173,49 @@
   "_embedded": {
     "events": [
       {
-        "properties": {
-          "TEMP": "Celsius"
-        },
+        "properties": {},
         "measures": [
           {
             "tag": "TEMP",
-            "value": 19.8067,
+            "value": 16.174,
             "unit": "Celsius"
           }
         ],
         "event-uid": null,
-        "timestamp": 1460844046683,
+        "timestamp": 1461173436513,
         "event-type": "TEMP",
-        "device-uid": "Sensor_150_50",
+        "device-uid": "Sensor_250_50",
         "location-uid": "1000000106"
       },
       {
-        "properties": {
-          "TEMP": "Celsius"
-        },
+        "properties": {},
         "measures": [
           {
             "tag": "TEMP",
-            "value": 20.3413,
+            "value": 16.036,
             "unit": "Celsius"
           }
         ],
         "event-uid": null,
-        "timestamp": 1460844946677,
+        "timestamp": 1461174336932,
         "event-type": "TEMP",
-        "device-uid": "Sensor_150_50",
+        "device-uid": "Sensor_250_50",
         "location-uid": "1000000106"
       }
     ]
   },
   "_links": {
     "self": {
-      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000067/events?event-types=TEMP&amp;start-ts=1460823091064&amp;end-ts=1460998885254&amp;device-uid=Sensor_350_100&amp;size=2"
+      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000069/events?start-ts=1461113400000&amp;end-ts=1461199342009&amp;event-types=TEMP"
     },
     "next-page": {
-      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000067/events?event-types=TEMP&amp;start-ts=1460844946677&amp;end-ts=1460998885254&amp;size=2"
+      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000069/events?event-types=TEMP&amp;start-ts=1461174336932&amp;end-ts=1461199342009&amp;size=2"
     }
   },
   "page": {
     "size": 2,
-    "totalElements": 66,
-    "totalPages": 33,
+    "totalElements": 2,
+    "totalPages": 1,
     "number": 0
   }
 }</pre>

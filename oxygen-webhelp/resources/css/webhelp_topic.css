@@ -119,6 +119,11 @@ table.nav td + td {
   text-align:left;
   padding:0 0.4em 0 0;
 }
+/* mspell added for choicetable 040416 */
+table.choicetable {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 
 /*
  * Patch EXM-23770
@@ -444,8 +449,37 @@ pre {
   max-height: 600px;
   margin: 0.5em;
 } 
+/* 
+* mspell 03_16_16 added this section to style headings for context, prereq, and result
+*/
+div.prereq:before {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-style: italic ;
+  font-weight: bold ;
+  font-size: 14px ;
+  display: block;
+  content: "Before You Begin";
+}
 
-
+div.context:before {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-style: italic ;
+  font-weight: bold ;
+  font-size: 14px ;
+  display: block;
+  content: "About This Task";
+}
+div.result:before {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-style: italic ;
+  font-weight: bold ;
+  font-size: 14px ;
+  display: block;
+  content: "Result";
+}
 /*  OXYGEN PATCH  EXM-31508  - window titles and UI controls should be bold. */
 .uicontrol, .wintitle { font-weight: bold; }
 
