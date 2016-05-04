@@ -1,0 +1,303 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This API returns details on how traffic is flowing, by lane, on monitored roadways. METHOD GET URI &lt;production url&gt;/v1/assets/{id}/events?event-types=TFEVT(start-ts,end-ts,size,page) Sample Request ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get Traffic Flow API"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_6d13c3fa-663b-422e-853f-31e459c4efd2"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get Traffic Flow API</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Get Traffic Flow API</h1>
+<div class="body refbody"><div class="section">
+            <p class="p">This API returns details on how traffic is flowing, by lane, on monitored roadways.</p>
+
+        </div>
+<div class="section">
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/assets/{id}/events?event-types=TFEVT(start-ts,end-ts,size,page)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/assets/1000000018/events?event-types=TFEVT&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d21769e56">Parameter</th>
+<th class="entry" valign="top" width="32.77634961439588%" id="d21769e58">Description</th>
+<th class="entry" valign="top" width="12.853470437017995%" id="d21769e60">Required?</th>
+<th class="entry" valign="top" width="37.01799485861182%" id="d21769e62">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">id</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">GE identifier for the device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">For example, 1000000018.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">event-type</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">Type of event.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">If you filter by TFEVT, you receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">start-ts</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">Numerical value, such as 1453766605577.<div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for start-ts and end-ts, a single result will be returned.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">end-ts</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">Numerical value, such as 1453772603879.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">lane</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">Identifies the traffic lane on which to filter. Lane 1 is closest to the monitoring device.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">Lane 1, Lane 2, and so forth. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">size</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">Maximum number of records to return per page. If no size is specified, the default limit applies.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">No</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">Numerical value.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d21769e56 ">page</td>
+<td class="entry" valign="top" width="32.77634961439588%" headers="d21769e58 ">Indicates the page number. Default is 1.</td>
+<td class="entry" valign="top" width="12.853470437017995%" headers="d21769e60 ">Yes</td>
+<td class="entry" valign="top" width="37.01799485861182%" headers="d21769e62 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="15.675675675675677%" id="d21769e145">Parameter</th>
+<th class="entry" valign="top" width="11.351351351351353%" id="d21769e147">Data Type</th>
+<th class="entry" valign="top" width="10.81081081081081%" id="d21769e149">Required?</th>
+<th class="entry" valign="top" width="10.81081081081081%" id="d21769e151">Description</th>
+<th class="entry" valign="top" width="51.35135135135135%" id="d21769e153">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 ">events</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">Array</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 "> </td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 ">Traffic flow direction</td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 "> </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> properties</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">String</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 ">Traffic speed</td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">Vehicle properties being tracked by the device.<dl class="dl"><dt class="dt dlterm">speed</dt>
+<dd class="dd">Roadway speed limit. </dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">direction</dt>
+<dd class="dd">By degree. </dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">event-uid</dt>
+<dd class="dd">A unique identifier established by a customer or external resource for the traffic event. For example, a specific vehicle traversing a specific road segment.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">location-uid</dt>
+<dd class="dd">Traffic lane location; Lane 1, Lane 2, and so forth. Lane 1 is closest to the monitoring device.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">vehicle-type</dt>
+<dd class="dd">Type of vehicle:<ul class="ul" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__ul_d06e7322-11ec-4f19-803f-c550b51caebf"><li class="li">MOTORCYCLE</li>
+<li class="li">CAR</li>
+<li class="li">TRUCK</li>
+<li class="li">BICYCLE</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> measures</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">String</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 ">Vehicle count (monotonically increasing)</td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">Vehicle properties being tracked by the device.<dl class="dl"><dt class="dt dlterm">Tag = direction</dt>
+<dd class="dd">value = from 0 to 360</dd>
+</dl>
+<img class="image" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__image_e59f01e0-21b4-46ea-81f2-3bdf12536959" src="i_traffic_degrees.png"></img><dl class="dl"><dt class="dt dlterm">Tag = speed</dt>
+<dd class="dd">value = 55, unit = mph</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">Tag = vehicleCount</dt>
+<dd class="dd">value = count, unit = number</dd>
+</dl>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> event-uid</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">String</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 "> </td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">A unique identifier established by a customer or external resource for the traffic event. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> timestamp</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">Number</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 "> </td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">Timestamp recorded in EPOCH format.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> event-type</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">String</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 "> </td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">Identifies the TFEVT event type.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> device-uid</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">String</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 "> </td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">A unique identifier established by a customer or external resource for the device recording the traffic flow.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 "> location-uid</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">String</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 "> </td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">A unique identifier established by a customer or external resource to identify the lane number.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="15.675675675675677%" headers="d21769e145 ">_links</td>
+<td class="entry" valign="top" width="11.351351351351353%" headers="d21769e147 ">Array</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e149 ">Yes</td>
+<td class="entry" valign="top" width="10.81081081081081%" headers="d21769e151 "> </td>
+<td class="entry" valign="top" width="51.35135135135135%" headers="d21769e153 ">A collection of hyperlinks to navigate the result set via paging .</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Sample Response</h2>
+            
+            <pre class="pre codeblock">{
+  "_embedded": {
+    "events": [
+      {
+        "properties": {
+          "direction": "DEGREE",
+          "event-uid": "cccc55be-481c-4b6b-9a39-e1eb07b55fee",
+          "location-uid": "Lane1",
+          "speed": "MPH",
+          "vehicle-type": "car"
+        },
+        "measures": [
+          {
+            "tag": "direction",
+            "value": 194,
+            "unit": "DEGREE"
+          },
+          {
+            "tag": "speed",
+            "value": 39,
+            "unit": "MPH"
+          },
+          {
+            "tag": "vehicleCount",
+            "value": 13,
+            "unit": null
+          }
+        ],
+        "event-uid": "cccc55be-481c-4b6b-9a39-e1eb07b55fee",
+        "timestamp": 1456822800000,
+        "event-type": "TFEVT",
+        "device-uid": "HYP1040-75",
+        "location-uid": "Lane1"
+      },
+      {
+ 
+        "properties": {
+          "direction": "DEGREE",
+          "event-uid": "d10108f1-8c38-43fc-a4dd-5c7fcb8004dc",
+          "location-uid": "Lane2",
+          "speed": "MPH",
+          "vehicle-type": "motorcycle"
+        },
+        "measures": [
+          {
+            "tag": "direction",
+            "value": 3,
+            "unit": "DEGREE"
+          },
+          {
+            "tag": "speed",
+            "value": 40,
+            "unit": "MPH"
+          },
+          {
+            "tag": "vehicleCount",
+            "value": 0,
+            "unit": null
+          }
+        ],
+        "event-uid": "d10108f1-8c38-43fc-a4dd-5c7fcb8004dc",
+        "timestamp": 1456822845000,
+        "event-type": "TFEVT",
+        "device-uid": "HYP1040-75",
+        "location-uid": "Lane2"
+      },
+      {
+        "properties": {
+          "direction": "DEGREE",
+          "event-uid": "edec88fe-f769-4dca-b538-4cab387580b2",
+          "location-uid": "Lane1",
+          "speed": "MPH",
+          "vehicle-type": "car"
+        },
+        "measures": [
+          {
+            "tag": "direction",
+            "value": 328,
+            "unit": "DEGREE"
+          },
+          {
+            "tag": "speed",
+            "value": 18,
+            "unit": "MPH"
+          },
+          {
+            "tag": "vehicleCount",
+            "value": 0,
+            "unit": null
+          }
+        ],
+        "event-uid": "edec88fe-f769-4dca-b538-4cab387580b2",
+        "timestamp": 1456822890000,
+        "event-type": "TFEVT",
+        "device-uid": "HYP1040-75",
+        "location-uid": "Lane1"
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "http://&lt;production url&gt;/v1/assets/1000000018/events?event-types=TFEVT&amp;start-ts=0&amp;end-ts=1758118140000&amp;size=3"
+    },
+    "next-page": {
+      "href": "http://&lt;production url&gt;/v1/assets/1000000018/events?event-types=TFEVT&amp;start-ts=1456822890000&amp;end-ts=1758118140000&amp;size=3"
+    }
+  },
+  "page": {
+    "size": 3,
+    "totalElements": 55696,
+    "totalPages": 18566,
+    "number": 0
+  }
+}
+</pre>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

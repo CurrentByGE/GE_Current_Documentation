@@ -1,0 +1,79 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Before you begin You must update your OAuth2 client to use your service instance before you perform this task. About this task This task is two parts: Getting a bearer token from UAA, which is used in ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Adding Intelligent Environment Services to your Application"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_0645455c-bf73-4518-8462-e097cce318bb"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Adding Intelligent Environment Services to your Application</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_0645455c-bf73-4518-8462-e097cce318bb">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Adding Intelligent Environment Services to your Application</h1>
+<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must <a class="xref" href="t_updating_oauth.html#task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0">update your OAuth2 client</a> to use your service instance before you perform this task. </div>
+<div class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>This task is two parts: <ul class="ul" id="task_0645455c-bf73-4518-8462-e097cce318bb__ul_6482f0b2-20d9-4e08-a545-6aa07b2387b3"><li class="li">Getting a bearer token from UAA, which is used in the second part.</li>
+<li class="li">Making sure client applications can access Intelligent Environment model data using Intelligent Environment service REST API endpoints.</li>
+</ul>
+
+        </div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection"><strong class="ph b">Getting a Bearer Token from UAA</strong></p><ol><li class="li step"><span class="ph cmd">In a REST client, Authorization tab:</span><ol type="a" class="ol substeps" id="task_0645455c-bf73-4518-8462-e097cce318bb__substeps_873f01d5-d2dc-4356-bb45-e8a77d03a642"><li class="li substep substepexpand"><span class="ph cmd">Choose the GET method.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Enter the URI of your UAA instance, such as: <samp class="ph codeph"> https://&lt;your_uaa_instance_uri&gt;/oauth/token?grant_type=client_credentials</samp></span><div class="itemgroup info">
+                            <div class="note note"><span class="notetitle">Note:</span> Make sure you include <samp class="ph codeph">grant_type=client_credentials</samp> in your URI.</div>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">Add the following information as shown in the graphic below the table.</span><div class="itemgroup info">
+                            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_0645455c-bf73-4518-8462-e097cce318bb__table_1dd49765-ea75-4c79-bd58-c1796557cf81" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%"><span class="ph uicontrol">Type</span></td>
+<td class="entry" valign="top" width="50%">Select <strong class="ph b">Basic Auth</strong> from the drop-down list.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><span class="ph uicontrol">Username</span></td>
+<td class="entry" valign="top" width="50%">Enter the client ID that you created in <a class="xref" href="t_updating_oauth.html#task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0">Updating the OAuth2 Client</a>, such as <span class="ph uicontrol">traffic_test2</span>. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%"><span class="ph uicontrol">Password</span></td>
+<td class="entry" valign="top" width="50%">Enter the client secret that you created in <a class="xref" href="t_updating_oauth.html#task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0">Updating the OAuth2 Client</a>, such as <span class="ph uicontrol">traffic2</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div class="fig fignone" id="task_0645455c-bf73-4518-8462-e097cce318bb__fig_610693d6-7a65-4713-93a2-c723332ed40f"><p class="figcap"><span class="figtitleprefix">Figure: </span>REST Client Authorization Tab</p><img class="image" id="task_0645455c-bf73-4518-8462-e097cce318bb__image_f494494e-ff25-4f27-a39d-0a8e774e0254" src="i_rest_client_authorization_tab.png"></img></div>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Send</span>.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Select the access_token that is returned and copy it to your clipboard. This is the token that you need in Step 2c below, for Authorization.</span><div class="itemgroup info">
+                            <div class="fig fignone" id="task_0645455c-bf73-4518-8462-e097cce318bb__fig_4f02ef6d-48e6-4950-88c5-bca031c07f55"><p class="figcap"><span class="figtitleprefix">Figure: </span>REST Client Bearer Access Token</p><img class="image" id="task_0645455c-bf73-4518-8462-e097cce318bb__image_f33a98dd-a8c9-47c8-8973-03fd50b01cf5" src="i_rest_client_access_token.png"></img></div>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">What is the user doing w/ the scope???</span></li>
+</ol>
+</li>
+</ol><p class="li stepsection"><strong class="ph b">Ensuring client apps can access IE data</strong></p><ol start="2"><li class="li step"><span class="ph cmd">In a REST client:</span><ol type="a" class="ol substeps" id="task_0645455c-bf73-4518-8462-e097cce318bb__substeps_wwq_2ww_rv"><li class="li substep substepexpand"><span class="ph cmd">Choose the POST method.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Enter the URI of your service instance, from the VCAP_SERVICES environment variable.</span></li>
+<li class="li substep substepexpand"><span class="ph cmd">Add the following HTTP headers per the graphic below the table:</span><div class="itemgroup info">
+                            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_0645455c-bf73-4518-8462-e097cce318bb__table_155d41a7-7216-4f2b-9a18-5e417ff9d8e6" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%">Content-Type</td>
+<td class="entry" valign="top" width="50%">Enter the value <strong class="ph b">application/json</strong>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">Authorization</td>
+<td class="entry" valign="top" width="50%">Enter the token you receive from UAA in the form of <strong class="ph b">Bearer &lt;token from trusted issuer&gt;</strong> in Step 1e above. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%">Predix-Zone-Id</td>
+<td class="entry" valign="top" width="50%">Enter the ID required to make REST calls, using the <strong class="ph b">instanceId</strong> value specified in the VCAP-SERVICES environment variable.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div class="fig fignone" id="task_0645455c-bf73-4518-8462-e097cce318bb__fig_gm5_bxw_rv"><p class="figcap"><span class="figtitleprefix">Figure: </span>Example of HTTP Headers</p><img class="image" id="task_0645455c-bf73-4518-8462-e097cce318bb__image_e0f64f17-ec6f-47f9-b5a5-0eecad906c7e" src="i_add_service_graphic_1.png"></img></div>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">Enter well-formed JSON in the body of your request.</span><div class="itemgroup info">
+                            <div class="fig fignone" id="task_0645455c-bf73-4518-8462-e097cce318bb__fig_lx3_cxw_rv"><p class="figcap"><span class="figtitleprefix">Figure: </span>Example of Well-formed JSON</p><img class="image" id="task_0645455c-bf73-4518-8462-e097cce318bb__image_724464d8-030d-478f-a72c-479080c6e94b" src="i_add_service_graphic_2.png"></img></div>
+
+                        </div></li>
+</ol>
+</li>
+</ol></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

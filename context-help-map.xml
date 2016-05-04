@@ -17,7 +17,7 @@
    <appContext helpID="task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0"
                path="t_updating_oauth.html"/>
    <appContext helpID="task_0645455c-bf73-4518-8462-e097cce318bb"
-               path="t_add_service_to_app.html"/>
+               path="t_adding_intelligent_environment_services_to_your_application.html"/>
    <appContext helpID="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44"
                path="c_overview_of_general_apis.html"/>
    <appContext helpID="reference_760c9c20-af1c-40c1-8ad1-e98b82856be1"
@@ -39,11 +39,11 @@
    <appContext helpID="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee"
                path="c_overview_of_intelligent_cities_apis.html"/>
    <appContext helpID="reference_09c46b94-4b17-4795-aac8-573072506e9e"
-               path="r_get_car_in_car_out_api.html"/>
+               path="r_get_vehicle-in_vehicle_out_api.html"/>
    <appContext helpID="reference_3dd4f077-428d-473f-91be-64677b081494"
                path="r_get_pedestrian_data_api.html"/>
    <appContext helpID="reference_6d13c3fa-663b-422e-853f-31e459c4efd2"
-               path="r_get_traffic_flow.html"/>
+               path="r_get_traffic_flow_api.html"/>
    <appContext helpID="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee"
                path="r_get_media_api.html"/>
    <appContext helpID="concept_fe004da8-ced5-4762-8df6-14062d57ce34"
@@ -54,10 +54,10 @@
                path="r_get_hist_position_api.html"/>
    <appContext helpID="reference_10e4ff99-3a8c-4c95-8945-98635f633146"
                path="r_get_hist_path_api.html"/>
-   <appContext helpID="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4"
-               path="r_get_temperature_api.html"/>
    <appContext helpID="reference_768a43a0-a037-4e63-bfdb-2ef7e4f86ff0"
                path="r_get_light_level_api.html"/>
    <appContext helpID="reference_16ab3db8-bdd2-4829-b273-02ffdcb4c3bd"
                path="r_get_occupancy_api.html"/>
+   <appContext helpID="reference_9910403b-58c8-403c-9f52-cf0ec2c70bf4"
+               path="r_get_temperature_api.html"/>
 </map>

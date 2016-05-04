@@ -10,17 +10,24 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="task_2d375224-43fb-4d20-a177-f80b381c4c9b">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Binding Your Application to the Intelligent Environment Service Instance</h1>
-<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must create an Intelligent Environment service instance before you perform this step.<p class="p">Cloud Foundry runtime uses the VCAP_SERVICES environment variable to communicate with a deployed application about its environment. To provision connection details for your service instance in the VCAP_SERVICES environment variable, you must bind your instance to your application.</p>
+<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must <a class="xref" href="t_create_new_instance.html#task_de8beb00-29dc-4d3e-a705-d10ea2903c0a">create an Intelligent Environment service instance</a> before you perform this step.<p class="p">Cloud Foundry runtime uses the VCAP_SERVICES environment variable to communicate with a deployed application about its environment. To provision connection details for your service instance in the VCAP_SERVICES environment variable, you must bind your instance to your application.</p>
 </div>
-<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps" id="task_2d375224-43fb-4d20-a177-f80b381c4c9b__steps_063feee7-7ea9-4001-989d-30c3a512bf71"><li class="li step stepexpand"><span class="ph cmd">Bind your application to the service instance by entering the following command:</span><div class="itemgroup info"><span class="keyword cmdname">cf bind-service &lt;your_app_name&gt; &lt;service_instance_name&gt;</span><p class="p">Your application is bound to the &lt;service_instance_name&gt; instance, and Cloud Foundry returns the following message:</p>
-<pre class="pre codeblock">Binding service &lt;service_instance_name&gt; to app &lt;your_app_name&gt; in org predix-platform / space predix as userx@ge.com...
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps" id="task_2d375224-43fb-4d20-a177-f80b381c4c9b__steps_063feee7-7ea9-4001-989d-30c3a512bf71"><li class="li step stepexpand"><span class="ph cmd">Bind your application to the service instance by entering the following command:</span><div class="itemgroup info">
+     
+     <pre class="pre codeblock">cf bind-service &lt;your_app_name&gt; &lt;service_instance_name&gt;</pre>
+
+     <p class="p">Your application is bound to the <samp class="ph codeph">&lt;service_instance_name&gt;</samp> instance, and Cloud Foundry returns the following message:</p>
+
+     <pre class="pre codeblock">Binding service &lt;service_instance_name&gt; to app &lt;your_app_name&gt; in org predix-platform / space predix as userx@ge.com...
 OK
 </pre>
-<div class="note tip"><span class="tiptitle">Tip:</span>  Use the <span class="keyword cmdname">cf restage</span> command to make sure your environmental variable changes take effect.</div>
-</div></li>
-<li class="li step stepexpand"><span class="ph cmd">Enter the following command to verify the binding:</span><div class="itemgroup info"><span class="keyword cmdname">cf env &lt;your app name&gt;</span></div></li>
+
+     <div class="note tip"><span class="tiptitle">Tip:</span>  Use the <samp class="ph codeph">cf restage</samp> command to make sure your environmental variable changes take effect.</div>
+
+    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Enter the following command to verify the binding:</span><div class="itemgroup info"><samp class="ph codeph">cf env &lt;your app name&gt;</samp></div></li>
 </ol>
-<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>A message similar to the following is returned: <pre class="pre codeblock">Getting env variables for app your_app_name in org cf_org_name / space cf_space_name as cf_user_name...
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>A message similar to the following is returned. The <strong class="ph b">VCAP_SERVICES</strong> provides the oauth-scope, while the <strong class="ph b">predix-uaa</strong> section provides the <samp class="ph codeph">"uri": "https://a14f01fc-f50e-4db7-8bb0-bed1c887ea98.predix-uaa.run.aws-usw02-pr.ice.predix.io"</samp>, which is used when logging in to the Predix Starter Kit. <pre class="pre codeblock">Getting env variables for app your_app_name in org cf_org_name / space cf_space_name as cf_user_name...
 OK
 {
  "VCAP_SERVICES": {
@@ -43,8 +50,28 @@ OK
   ]
  }
 }
-</pre>
+ "predix-uaa": [
+   {
+    "credentials": {
+     "issuerId": "https://a14f01fc-f50e-4db7-8bb0-bed1c887ea98.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+     "uri": "https://a14f01fc-f50e-4db7-8bb0-bed1c887ea98.predix-uaa.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "a14f01fc-f50e-4db7-8bb0-bed1c887ea98"
+     }
+    },
+    "label": "predix-uaa",
+    "name": "my_uaa_instance",
+    "plan": "Tiered",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ]
+ }
+}</pre>
 </div>
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>See <a class="xref" href="t_updating_oauth.html#task_586a826b-f92f-44c6-9bc7-fdc6bb595fa0">Updating the OAuth2 Client to Use Your Service Instance</a>.</div>
 </div>
 <div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
 </body>
