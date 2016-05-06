@@ -17,54 +17,71 @@
                                                 <ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_3918b930-6cfc-4890-9b70-7e7c02f08c9c"><li class="li">Timestamp values use UTC, not local time.</li>
 <li class="li">For simulated data, the device-type is SIMDATA; for real data, the device-type is NODE.</li>
 <li class="li">As the amount of simulated data is increased, developers (or users) will be notified by GE by updates to the online help.</li>
+<li class="li">To get the GE identifier for the device, use the <a class="xref" href="r_get_list_of_assets_api.html#reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c">Get List of Assets API</a>.</li>
 </ul>
 
                                     </div>
 
         </div>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__table_b5f74ad8-c0c4-42ea-8e57-9d08d407aaa2" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Simulated Data Stream Information for Each API</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d657e38">Simulated Data Stream</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d657e40">Bounding Box</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d657e42">Range and Frequency</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__table_b5f74ad8-c0c4-42ea-8e57-9d08d407aaa2" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Simulated Data Stream Information for Each API</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25%" id="d657e45">Simulated Data Stream</th>
+<th class="entry" valign="top" width="25%" id="d657e47">Bounding Box</th>
+<th class="entry" valign="top" width="25%" id="d657e49">Sample Request URI</th>
+<th class="entry" valign="top" width="25%" id="d657e51">Range and Frequency</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d657e38 ">PEDESTRIAN</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e40 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e42 ">Streaming message intervals are between 15 to 25 seconds.<p class="p">Start date is 4-25-2016 and continues to current date.</p>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">PEDESTRIAN</td>
+<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
+<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url&gt;/v1/assets/1000000027/live-events?event-types=SFIN, SFOUT</td>
+<td class="entry" valign="top" width="25%" headers="d657e51 ">Streaming message intervals are between 15 to 25 seconds.<p class="p">Data includes the last 24 hours.</p>
 <p class="p">Estimate 500 messages per node per day. (3 nodes)</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d657e38 ">TRAFFIC</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e40 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e42 ">Streaming message intervals are between 5 to 40 seconds.<p class="p">Start date is 4-25-2016 and continues to current date.</p>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">TRAFFIC</td>
+<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
+<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url&gt;/v1/assets/1000000018/events?event-types=TFEVT&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</td>
+<td class="entry" valign="top" width="25%" headers="d657e51 ">Streaming message intervals are between 5 to 40 seconds.<p class="p">Data includes the last 24 hours.</p>
 <p class="p">Estimate 3400 messages per node per day. (9 nodes)</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d657e38 ">PARKING</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e40 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e42 ">Car In and Car Out range between 15 to 45 minutes.<p class="p">Start date is 4-25-2016 and continues to current date.</p>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">PARKING</td>
+<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
+<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url&gt;/v1/assets/1000000018/live-events?event-types=PKIN, PKOUT</td>
+<td class="entry" valign="top" width="25%" headers="d657e51 ">Car In and Car Out range between 15 to 45 minutes.<p class="p">Data includes the last 24 hours.</p>
 <p class="p">Estimate about 70 messages per node per day. (9 nodes)</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d657e38 ">PUBLIC-SAFETY</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e40 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e42 ">This is an event base request for IMAGE, VIDEO, or AUDIO. Total count per day may vary.</td>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">PUBLIC-SAFETY</td>
+<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
+<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url/v1/assets/1000000018/media?media-types=IMAGE&amp;start-ts=1453832741281&amp;end-ts=1453832741281&amp;size=1&amp;page=1</td>
+<td class="entry" valign="top" width="25%" headers="d657e51 ">This is an event base request for IMAGE, VIDEO, or AUDIO. Total count per day may vary.<p class="p">Data includes the last 24 hours. Data interval is hourly.</p>
+</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d657e38 ">POSITIONING<ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_9cb3b0a5-5826-45f4-9fe8-5194923695d7"><li class="li">Dwell Time</li>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">POSITIONING<ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_9cb3b0a5-5826-45f4-9fe8-5194923695d7"><li class="li">Dwell Time</li>
 <li class="li">Path</li>
 <li class="li">Position</li>
 </ul>
 </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e40 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e42 ">VLC coordinates are generated between 8 AM – 6 PM UTC every day. So all the analytics work during this time range.</td>
+<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
+<td class="entry" valign="top" width="25%" headers="d657e49 ">Three URIs:<p class="p">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=DWLZONE&amp;analytic-categories=DWELL_TIME&amp;start-ts=1461171600000&amp;end-ts=1461256935323</p>
+<p class="p">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=PTHDVCE&amp;analytic-categories=PATH&amp;start-ts=1461171600000&amp;end-ts=1461256935323</p>
+<p class="p">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=HTMPXY&amp;analytic-categories=POSITION&amp;start-ts=1461171600000&amp;end-ts=1461256935323</p>
+</td>
+<td class="entry" valign="top" width="25%" headers="d657e51 ">VLC coordinates are generated between 8 AM – 6 PM UTC every day. Therefore, all the analytics work during this time range.<p class="p">Data includes the last 24 hours.</p>
+</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d657e38 ">ENVIRONMENTAL<ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_e53f13ab-b897-4bc2-8b12-b36fb1ca9087"><li class="li">Light Level</li>
+<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">ENVIRONMENTAL<ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_e53f13ab-b897-4bc2-8b12-b36fb1ca9087"><li class="li">Light Level</li>
 <li class="li">Occupancy</li>
 <li class="li">Temperature</li>
 </ul>
 </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e40 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d657e42 ">Sensors generate an Occupancy event every 1 minute, if there is occupancy.<p class="p">Sensors generate Temperature and Light Level events every 15 minutes.</p>
+<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
+<td class="entry" valign="top" width="25%" headers="d657e49 ">Three URIs:<p class="p">&lt;production url&gt;/v1/assets/1000000503/events?event-types=LIGHT_LEVEL&amp;start-ts=1461517200000&amp;end-ts=1461689922665&amp;size=2</p>
+<p class="p">&lt;production url&gt;/v1/assets/1000000018/events?event-types=OCCUPANCY&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</p>
+<p class="p">&lt;production url&gt;/v1/assets/1000000503/events?event-types=TEMP&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</p>
+</td>
+<td class="entry" valign="top" width="25%" headers="d657e51 ">Sensors generate an Occupancy event every 1 minute, if there is occupancy.<p class="p">Sensors generate Temperature and Light Level events every 15 minutes.</p>
+<p class="p">Data includes the last 24 hours.</p>
 </td>
 </tr>
 </tbody>

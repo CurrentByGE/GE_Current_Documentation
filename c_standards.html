@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Intelligent Environments is a REST architecture, and is therefore constrained by Hypermedia as the Engine of Application State HATEOAS. As defined by the query parameters, the Intelligent Cities APIs ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Standards"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_5fd67201-81e4-47fa-b642-02f2ad6da4c3"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Standards</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="Intelligent Environments is a REST architecture, and is therefore constrained by Hypermedia as the Engine of Application State HATEOAS. As defined by the query parameters, the Intelligent Environments ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Standards"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_5fd67201-81e4-47fa-b642-02f2ad6da4c3"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Standards</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -11,9 +11,21 @@
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Standards</h1>
 <div class="body conbody"><p class="p">Intelligent Environments is a REST architecture, and is therefore constrained by Hypermedia as the Engine of Application State HATEOAS. </p>
-<p class="p">As defined by the query parameters, the Intelligent Cities APIs use "search" functions to access raw data using HTTPS, and"live" functions to request a WebSocket for receiving near real-time data from any active sensor.</p>
+<p class="p">As defined by the query parameters, the Intelligent Environments APIs use "search" functions to access raw data using HTTPS, and"live" functions to request a WebSocket for receiving near real-time data from any active sensor.</p>
 <p class="p">Links can be found beneath <strong class="ph b">_links</strong> in the response. Responses are in JSON format.</p>
 <p class="p"><strong class="ph b">IMPORTANT:</strong> Do not create your own URIs. Instead, use the links in this document and in the responses to navigate between resources.</p>
+<div class="example">How to drill down in HATEOAS - #5 FROM THE WIKI &amp; Rajani</div>
+<div class="example">How to use HATEOAS -  the <a class="xref" href="https://github.com/CurrentByGE/TrafficSeedApp/blob/master/app/elements/traffic-app/traffic-app.html" target="_blank">seed app</a> provides sample code.<pre class="pre codeblock">&lt;iron-ajax auto id="idInitCall" url="[[baseUrl]]" handle-as="json" on-response="_handleInitResponse"&gt;
+    &lt;/iron-ajax&gt;
+    &lt;iron-ajax auto url="[[dataSourceUrl]]" handle-as="json" on-response="_handleDataSourceResponse"&gt;
+    &lt;/iron-ajax&gt;
+    &lt;iron-ajax auto id="idSearchApiCall" url="[[searchUrl]]" timeout="[[timeoutMilliseconds]]" \
+        on-error="_handleApiCallError" handle-as="json" params=[[_searchApiParams]] on-response="_handleSearchEventResponse"&gt;
+    &lt;/iron-ajax&gt;
+    &lt;iron-ajax auto id="idTrafficDataApiCall" url="[[trafficDataApiUrl]]" handle-as="json" params=[[_params]] timeout="[[timeoutMilliseconds]]" 
+        on-error="_handleApiCallError" on-request="_handleTrafficDataRequest" on-response="_handleTrafficDataResponse"&gt;
+    &lt;/iron-ajax&gt;</pre>
+</div>
 </div>
 <div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
 </body>
