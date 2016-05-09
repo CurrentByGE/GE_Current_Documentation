@@ -14,8 +14,36 @@
 <p class="p">As defined by the query parameters, the Intelligent Environments APIs use "search" functions to access raw data using HTTPS, and"live" functions to request a WebSocket for receiving near real-time data from any active sensor.</p>
 <p class="p">Links can be found beneath <strong class="ph b">_links</strong> in the response. Responses are in JSON format.</p>
 <p class="p"><strong class="ph b">IMPORTANT:</strong> Do not create your own URIs. Instead, use the links in this document and in the responses to navigate between resources.</p>
-<div class="example">How to drill down in HATEOAS - #5 FROM THE WIKI &amp; Rajani</div>
-<div class="example">How to use HATEOAS -  the <a class="xref" href="https://github.com/CurrentByGE/TrafficSeedApp/blob/master/app/elements/traffic-app/traffic-app.html" target="_blank">seed app</a> provides sample code.<pre class="pre codeblock">&lt;iron-ajax auto id="idInitCall" url="[[baseUrl]]" handle-as="json" on-response="_handleInitResponse"&gt;
+<div class="example"><strong class="ph b">Example 1:</strong> How to drill down in HATEOAS using the GET ASSETS or GET LOCATIONS APIs. <div class="note note"><span class="notetitle">Note:</span> 
+                <p class="p">To subscribe to different event-types or location-types, you will have to subscribe to different tiles. See <a class="xref" href="https://predix.io/catalog" target="_blank">https://Predix.IO/catalog</a>.</p>
+
+            </div>
+<ol class="ol" id="concept_5fd67201-81e4-47fa-b642-02f2ad6da4c3__ol_52bb9007-6fe0-429b-8386-b777bed96a4d"><li class="li">Option to start with <span class="ph uicontrol">Get All Assets</span> or <span class="ph uicontrol">Get All Locations</span><ul class="ul" id="concept_5fd67201-81e4-47fa-b642-02f2ad6da4c3__ul_d09b0912-e7b6-4310-8307-0b832e9cddf5"><li class="li"><span class="ph uicontrol">Get All Assets</span>:<pre class="pre codeblock">https://&lt;ie-traffic._url&gt;/v1/assets/search?<strong class="ph b">bbox=32.715675:-117.161230,32.708498:-117.151681</strong></pre>
+</li>
+<li class="li"><span class="ph uicontrol">Get All Assets</span> that provide specific events: <pre class="pre codeblock">https://&lt;ie-traffic.url&gt;/v1/assets/search?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;<strong class="ph b">q=device-type:DATASIM</strong></pre>
+<div class="note note"><span class="notetitle">Note:</span> 
+                                <ul class="ul" id="concept_5fd67201-81e4-47fa-b642-02f2ad6da4c3__ul_e6fea1ce-996b-4a20-bd7a-4956be3dc881"><li class="li">To combine two different event types, use the following query: <samp class="ph codeph">q=event-type:TFEVT%20AND%20device-type:DATASIM</samp></li>
+<li class="li">For a full list of other event types, see <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/#r_get_list_of_assets_api.html" target="_blank">http://currentbyge.github.io/GE_Current_Documentation/#r_get_list_of_assets_api.html</a></li>
+</ul>
+
+                            </div>
+</li>
+<li class="li"><span class="ph uicontrol">Get All Locations</span>:<pre class="pre codeblock"> https://&lt;ie-traffic._url&gt;/v1/locations/search?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;q=location-type:PARKING_ZONE</pre>
+<div class="note note"><span class="notetitle">Note:</span> For a full list other location types, see <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/#r_get_list_of_locations_api.html" target="_blank">http://currentbyge.github.io/GE_Current_Documentation/#r_get_list_of_locations_api.html</a></div>
+</li>
+</ul>
+</li>
+<li class="li">Option to <span class="ph uicontrol">Get Events</span> (PULL) or <span class="ph uicontrol">Push Events</span> (PUSH/STREAM)<ul class="ul" id="concept_5fd67201-81e4-47fa-b642-02f2ad6da4c3__ul_ca03c998-0ea4-4366-95b0-38afe23f7b81"><li class="li">Pull Events<pre class="pre codeblock">https://&lt;ie-traffic-url&gt;/v1/assets/<strong class="ph b">&lt;asset-ID&gt;</strong>/events?event-types=<strong class="ph b">&lt;event-type&gt;</strong>&amp;start-ts=1460658039415&amp;end-ts=1460744439414&amp;size=10</pre>
+</li>
+<li class="li">Push Event (PUSH/STREAM)<pre class="pre codeblock">https://&lt;ies-dev-url&gt;/v1/assets/&lt;asset-Id&gt;/live-events?event-types=&lt;eventtype1&gt;,&lt;eventtype2&gt;</pre>
+</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> To get the event streaming, you need to retrieve the URI in the Pull event.</div>
+</li>
+</ol>
+
+        </div>
+<div class="example"><strong class="ph b">Example 2:</strong> How to use HATEOAS - the <a class="xref" href="https://github.com/CurrentByGE/TrafficSeedApp/blob/master/app/elements/traffic-app/traffic-app.html" target="_blank">seed app</a> provides sample code.<pre class="pre codeblock">&lt;iron-ajax auto id="idInitCall" url="[[baseUrl]]" handle-as="json" on-response="_handleInitResponse"&gt;
     &lt;/iron-ajax&gt;
     &lt;iron-ajax auto url="[[dataSourceUrl]]" handle-as="json" on-response="_handleDataSourceResponse"&gt;
     &lt;/iron-ajax&gt;

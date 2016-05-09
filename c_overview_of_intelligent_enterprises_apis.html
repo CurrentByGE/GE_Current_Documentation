@@ -38,18 +38,18 @@
 </div>
 <div class="section"><h2 class="title sectiontitle">Historical Dwell Time </h2>
             
-            <p class="p">Historical Dwell Time service calculates dwell times based on the entrance and exit of zones or departments, enabling the triggering of actions. </p>
+            <p class="p">Historical Dwell Time service calculates dwell times based on the entrance and exit of zones or departments. Zones are polygons defined by a series of (x,y) coordinates. These coordinates and position data measures are defined in meters from the point of origin (0,0).</p>
 
-            <p class="p">This data is obtained from one or more sensors, and provides insights about the dwell time in a specific zone or department. </p>
+            <p class="p">This historical data is obtained from a sensor and determined to be inside or outside of specific zones. This provides insights about the dwell time in a specific zone or department. </p>
 
             <p class="p"><em class="ph i">See the</em> .<a class="xref" href="r_get_hist_dwell_time_api.html#reference_afb26548-4f98-4049-be05-dbac236cce51">Get Historical Dwell Time API</a></p>
 
         </div>
 <div class="section"><h2 class="title sectiontitle">Historical Position</h2>
             
-            <p class="p">The Historical Position service provides pedestrian metadata collected from intelligent lighting sensors installed in retail stores and commerical office buildings. </p>
+            <p class="p">The Historical Position service provides pedestrian metadata collected from the Current mobile SDK installed within a customer's app. This enables the sensors on the mobile device to detect and decode the light fixture's unique codes and position itself in space. This data is shared back with the Predix Cloud and enables historical positions to be represented on a map. The typical use case might be to generate a position and illustrate movement of the device on top of a map as seen in heat maps. There are many different uses for this historical data that can be applied within retail stores and commercial office buildings.</p>
 
-            <p class="p">As pedestrians enter or leave a region of interest, the service creates a timestamped event and stores it with a count of events. This data can be obtained from a single sensor or a group of sensors, and can also be used to enhance safety and convenience.</p>
+            <p class="p">As pedestrians enter or leave a region of interest, the service creates a timestamped event and stores it with a count of events. This data can be obtained from a single sensor or a group of sensors, and can also be used to analyze flow, trigger support for users, detect anomalies and provide dashboard views of space utilization.</p>
 
             <p class="p"><em class="ph i">See the</em>
                 <a class="xref" href="r_get_hist_position_api.html#reference_a6780b42-032c-4b77-8db2-43c01d1692c6">Get Historical Position API</a>.</p>
@@ -57,7 +57,7 @@
         </div>
 <div class="section"><h2 class="title sectiontitle">Historical Path</h2>
             
-            <p class="p">The Historical Path service provides metadata collected from intelligent lighting sensors installed inside commercial buildings and retail stores.</p>
+            <p class="p">The Historical Path service provides metadata collected from the Current SDK installed within customer's mobile applications. This enables the app to encode and decode VLC light codes inside commercial buildings and retail stores and determine the order of zones traversed.</p>
 
             <p class="p">Zone path analysis follows the device and helps to understand space usage and behaviors. This data enables you to provide insights regarding customer or staff behavior, augmented user engagements, staff efficiencies, navigation, waypoint finding, and indoor analytics. </p>
 
