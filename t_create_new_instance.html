@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Before you begin You will need to do the following: Use the Cloud Foundry CLI to create the UAA Service Instance. Use the Cloud Foundry CLI to create an instance of the Intelligent Environments. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating an Intelligent Environments Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating an Intelligent Environments Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="Before you begin You must do the following: Use the Cloud Foundry CLI to create the UAA Service Instance. Use the Cloud Foundry CLI to create an instance of the Intelligent Environments. Procedure ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating an Intelligent Environments Service Instance"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating an Intelligent Environments Service Instance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -10,20 +10,13 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Creating an Intelligent Environments Service Instance</h1>
-<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You will need to do the following:<ul class="ul" id="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a__ul_2d4fc037-e94e-4296-aa3d-784f5306c2ae"><li class="li">Use the Cloud Foundry CLI to create the UAA Service Instance.</li>
+<div class="body taskbody"><div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>You must do the following:<ul class="ul" id="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a__ul_2d4fc037-e94e-4296-aa3d-784f5306c2ae"><li class="li">Use the Cloud Foundry CLI to create the UAA Service Instance.</li>
 <li class="li">Use the Cloud Foundry CLI to create an instance of the Intelligent Environments. </li>
 </ul>
 </div>
-<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection"><strong class="ph b">Create the UAA Service Instance.</strong></p><ol><li class="li step stepexpand"><span class="ph cmd">Create a UAA instance <a class="xref" href="https://www.predix.io/docs#XpKGAdQ7-Q0CoIStl" target="_blank">following these steps</a> for Basic users, or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#XpKGAdQ7-Q0CoIStl" target="_blank">following these steps</a> for Select users.</span><div class="itemgroup info">
-                                                            <div class="note note"><span class="notetitle">Note:</span> Make a note of the client ID and the client secret, as you will need it later.</div>
-
-                                                </div><ol type="a" class="ol substeps" id="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a__substeps_deaf105f-464d-4fc4-adb3-b9b7779d677c"><li class="li substep"><span class="ph cmd">Get the URI of the UAA instance.</span></li>
-<li class="li substep"><span class="ph cmd">Locate any application you have running on Cloud Foundry. If you don't have one, you will need to push any app up to Cloud Foundary. See <a class="xref" href="https://www.predix.io/docs#X9M7hYj6" target="_blank">Platform Services Setup</a> for VPC (Basic) users, or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#X9M7hYj6" target="_blank">Platform Services Setup</a> for ASV (Select) users.</span></li>
-<li class="li substep"><span class="ph cmd"><a class="xref" href="https://www.predix.io/docs#sXp7cw5P-Q0CoIStl" target="_blank">Follow these steps</a> for Basic users, or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#sXp7cw5P-Q0CoIStl" target="_blank">follow these steps</a> for Select users to bind your application to UAA.</span></li>
-<li class="li substep"><span class="ph cmd">Save the URI and issuerId of your UAA instance.</span></li>
-</ol>
-</li>
-</ol><p class="li stepsection"><strong class="ph b">Create an instance of the Intelligent Environments.</strong></p><ol start="2"><li class="li step stepexpand"><span class="ph cmd">Enter the following command to list the services in the Cloud Foundry marketplace:</span>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><p class="li stepsection"><strong class="ph b">Create the UAA service instance.</strong></p><ol><li class="li step"><span class="ph cmd">Locate any application you have running on Cloud Foundry. If you don't have one, you will need to push any app up to Cloud Foundry. See <a class="xref" href="https://www.predix.io/docs#X9M7hYj6" target="_blank">Platform Services Setup</a> for VPC (Basic) users, or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#X9M7hYj6" target="_blank">Platform Services Setup</a> for ASV (Select) users.</span></li>
+<li class="li step"><span class="ph cmd"><a class="xref" href="https://www.predix.io/docs#sXp7cw5P-Q0CoIStl" target="_blank">Follow these steps</a> for Basic users, or <a class="xref" href="https://predix-io.run.asv-pr.ice.predix.io/docs/?b=#sXp7cw5P-Q0CoIStl" target="_blank">follow these steps</a> for Select users to bind your application to UAA.</span></li>
+</ol><p class="li stepsection"><strong class="ph b">Create an instance of Intelligent Environments.</strong></p><ol start="3"><li class="li step"><span class="ph cmd">Enter the following command to list the services in the Cloud Foundry marketplace:</span>
                                                             <p class="p"><samp class="ph codeph">cf marketplace</samp></p>
 
                                                             <p class="p">The Intelligent Environment services, shown below, are listed as available services.</p>
@@ -43,7 +36,7 @@
                                                             </div>
 
                                                 </li>
-<li class="li step stepexpand"><span class="ph cmd">Enter the following command to create a service instance for one of the available services:</span>
+<li class="li step"><span class="ph cmd">Enter the following command to create a service instance for one of the available services:</span>
                                                             <p class="p"><samp class="ph codeph">cf create-service &lt;service instance name&gt; &lt;plan&gt; &lt;my ie instance name&gt; -c '{"trustedIssuerIds":["&lt;my_uaa_instance_issuerId&gt;", "&lt;my_uaa_instance2_issuerId&gt;"]}'</samp></p>
 
                                                  
@@ -55,7 +48,7 @@
 <td class="entry" valign="top" width="65.03496503496503%">The name of the available service in the Cloud Foundry marketplace. Use ie-pedestrian, ie-parking, ie-traffic, ie-public-safety, ie-positioning, or ie-environmental.</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="34.96503496503497%">&lt;my ie instance name&gt;</td>
-<td class="entry" valign="top" width="65.03496503496503%">The name of the Intelligent Environment instance that you create  in your subscribed services.</td>
+<td class="entry" valign="top" width="65.03496503496503%">The name of the Intelligent Environment instance that you create in your subscribed services.</td>
 </tr>
 <tr class="row"><td class="entry" valign="top" width="34.96503496503497%">&lt;plan&gt;</td>
 <td class="entry" valign="top" width="65.03496503496503%">The plan associated with a service. In this case, use <strong class="ph b">Beta</strong>.</td>

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="About this task Use this process to set up a service for Cities and Enterprise APIs. Get List of Asset or Location using HEOTAS . For specific event-type or location-type, see Get List of Assets and ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Quick Start with Intelligent Environment Services"></meta><meta name="DC.Creator" content="Teresa Oliver-Merrill"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_g2z_hd4_xv"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Quick Start with Intelligent Environment Services</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_g2z_hd4_xv">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Quick Start with Intelligent Environment Services</h1>
+<div class="body taskbody"><div class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>Use this process to set up a service for Cities and Enterprise APIs.<p class="p"></p>
+<ol class="ol" id="task_g2z_hd4_xv__ol_it3_ff4_xv"><li class="li">
+                    <ul class="ul" id="task_g2z_hd4_xv__ul_edz_hf4_xv"><li class="li">Get List of Asset or Location using <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/#c_standards.html" target="_blank">HEOTAS</a>. For specific event-type or location-type, see <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/#r_get_list_of_assets_api.html" target="_blank">Get List of Assets</a> and <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/#r_get_list_of_locations_api.html" target="_blank">Get List of Locations,</a> respectively. </li>
+</ul>
+
+                </li>
+<li class="li" id="task_g2z_hd4_xv__li_flz_jg4_xv">Modify the <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/#c_overview_of_general_apis.html" target="_blank">query string</a> for each service. <div class="note note"><span class="notetitle">Note:</span> Make note of the URI.  You will need to enter it in the next step.</div>
+</li>
+<li class="li">Create a PUSH Event. (PUSH/STREAM)<p class="p">Use the URI from Step 2  in he following websocket clients:</p>
+<ul class="ul" id="task_g2z_hd4_xv__ul_uhv_dh4_xv"><li class="li"><a class="xref" href="https://github.com/PredixDev/rmd-ref-app-ui/blob/7c1de7005c7e30be38b2d9bd6496a5686b340da6/public/views/live-data.html" target="_blank">Sample WebComponent Code</a></li>
+</ul>
+<ul class="ul" id="task_g2z_hd4_xv__ul_lpr_gk4_xv"><li class="li"><a class="xref" href="https://predix-starter.run.aws-usw02-pr.ice.predix.io/" target="_blank">Predix Starter Kit</a> click on “API Explorer”</li>
+</ul>
+<ul class="ul" id="task_g2z_hd4_xv__ul_xj1_gk4_xv"><li class="li">Reference on the <a class="xref" href="https://github.com/CurrentByGE/TrafficSeedApp/blob/master/app/elements/current-date-range-buttons/current-date-range-buttons.html" target="_blank">Traffic Seed App</a> in ngnix.conf</li>
+</ul>
+</li>
+</ol>
+<div class="note note"><span class="notetitle">Note:</span> 
+                <ol class="ol" id="task_g2z_hd4_xv__ol_gtv_nk4_xv"><li class="li">For media (images, audio, and video), subscribe to the <a class="xref" href="https://www.predix.io/services/service.html?id=1767" target="_blank">ie-public-safety</a> tile in the <a class="xref" href="https://www.predix.io/catalog/" target="_blank">Predix Catalog</a></li>
+<li class="li"> To convert to EPOCH format, use the <a class="xref" href="http://currentbyge.github.io/GE_Current_Documentation/currentmillis.com" target="_blank">EPOCH converter</a>. In addition, we have provided a moment.js, which is available via the <a class="xref" href="https://github.com/CurrentByGE/TrafficSeedApp/blob/master/app/elements/current-date-range-buttons/current-date-range-buttons.html" target="_blank">Traffic Seed App</a></li>
+<li class="li">API Responses are in HTTP and not HTTPS. When making requests, please ensure you are using HTTPS.<pre class="pre codeblock">{
+ "_links": {
+"assets": {
+"href": "http://ie-traffic.run.aws-usw02-pr.ice.predix.io/v1/assets"
+},
+"locations": {
+"href": "http://ie-traffic.run.aws-usw02-pr.ice.predix.io/v1/locations"
+}
+}
+}</pre>
+</li>
+</ol>
+
+            </div>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

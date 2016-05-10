@@ -29,5 +29,7 @@ fl["25"]= "r_get_vehicle-in_vehicle_out_api.html";
 fl["26"]= "t_adding_intelligent_environment_services_to_your_application.html";
 fl["27"]= "t_binding_app.html";
 fl["28"]= "t_create_new_instance.html";
-fl["29"]= "t_updating_oauth.html";
+fl["29"]= "t_quick_start_predix_and_security.html";
+fl["30"]= "t_quick_start_predix_security.html";
+fl["31"]= "t_updating_oauth.html";
 var doStem = false;searchLoaded = true;
