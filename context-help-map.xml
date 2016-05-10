@@ -10,6 +10,8 @@
                path="c_api_methods.html"/>
    <appContext helpID="concept_17f09c43-f2cd-4b1d-9d39-ff4ad4c8db48"
                path="c_api_status_messages.html"/>
+   <appContext helpID="task_ivb_js4_xv" path="t_quick_start_predix_security.html"/>
+   <appContext helpID="task_g2z_hd4_xv" path="t_quick_start_predix_and_security.html"/>
    <appContext helpID="task_de8beb00-29dc-4d3e-a705-d10ea2903c0a"
                path="t_create_new_instance.html"/>
    <appContext helpID="task_2d375224-43fb-4d20-a177-f80b381c4c9b"
