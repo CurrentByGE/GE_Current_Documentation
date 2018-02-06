@@ -1,60 +1,66 @@
 
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from sensors installed on intelligent lighting fixtures in roadways and parking ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Intelligent Cities API Overview"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Intelligent Cities API Overview</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from GE CityIQ™ Intelligent Nodes installed on lighting fixtures in roadways and ..." /><meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Intelligent Cities API Overview" /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>Intelligent Cities API Overview</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
-          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
 <body onload="highlightSearchTerm()" class="frmBody" id="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee">
-<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
-<h1 class="title topictitle1">Intelligent Cities API Overview</h1>
-<div class="body conbody"><p class="p">Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from sensors installed on intelligent lighting fixtures in roadways and parking areas. Each API service is described below.</p>
-<div class="note note"><span class="notetitle">Note:</span>  Before using these APIs, start with the /assets or /locations endpoints described in the General APIs section.</div>
-<div class="section"><h2 class="title sectiontitle">Parking Planning </h2>
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Intelligent Cities API Overview</h1>
+<div class="body conbody"><p class="p">Each Intelligent Cities API provides asset and location information, with additional URI resources and data collected from GE CityIQ™ Intelligent Nodes installed on lighting fixtures in roadways and parking areas. Each API service is described below.</p>
+<section class="section"><h2 class="title sectiontitle">Parking Planning </h2>
             
-            <p class="p">The Parking Planning service provides parking metadata that is collected from intelligent lighting sensors installed along public roadways or in parking lots. Each time a vehicle enters or leaves a parking space, a timestamped event is created and stored in the Predix cloud. </p>
+            <p class="p">The Parking Planning service provides parking metadata that is collected from nodes for all street lights installed along public roadways or in parking lots. Each time a vehicle enters or leaves a parking space, a timestamped event is created and stored in the Predix cloud. </p>
 
-            <p class="p">This data can be obtained from a single sensor or a group of sensors, as needed, and can provide valuable insights about the parking activity in a given region. The data can also be used to improve safety and parking convenience.</p>
+            <p class="p">This data can be obtained from a single sensor or a group of sensors (node), and can provide valuable insights about the parking activity in a given region. The data can also be used to improve traffic and parking convenience.</p>
 
-            <p class="p"><em class="ph i">See the <a class="xref" href="r_get_vehicle-in_vehicle_out_api.html#reference_09c46b94-4b17-4795-aac8-573072506e9e">Vehicle In, Vehicle Out API</a>.</em></p>
-
-        </div>
-<div class="section"><h2 class="title sectiontitle">Pedestrian Planning</h2>
+        </section>
+<section class="section"><h2 class="title sectiontitle">Pedestrian Planning</h2>
             
-            <p class="p">The Pedestrian Planning service provides pedestrian metadata that is collected from intelligent lighting sensors installed along public roadways or in parking lots. </p>
+            <p class="p">The Pedestrian Planning service provides pedestrian metadata that is collected from nodes installed along public roadways or in parking lots. </p>
 
-            <p class="p">As pedestrians enter or leave a region of interest, the service creates and stores a timestamped event, counting each event. This data can be obtained from a single sensor or a group of sensors, as needed, to provide insights to city officials and local businesses about pedestrian usage in a given region. The data can also be used to enhance safety and convenience.</p>
+            <p class="p">As pedestrians pass by these sensors, the service creates and stores a timestamped event, counting each event. This data can be obtained from a single sensor or a node, to provide insights to city officials and local businesses about pedestrian movement in a given region. The data can also be used to enhance public safety and convenience.</p>
 
-            <p class="p"><em class="ph i">See the <a class="xref" href="r_get_pedestrian_data_api.html#reference_3dd4f077-428d-473f-91be-64677b081494">Get Pedestrian Data API</a>.</em></p>
-
-        </div>
-<div class="section"><h2 class="title sectiontitle">Traffic Planning</h2>
+        </section>
+<section class="section"><h2 class="title sectiontitle">Traffic Planning</h2>
             
-            <p class="p">The Traffic Planning service provides vehicle metadata collected from intelligent lighting sensors installed along public roadways.</p>
+            <p class="p">The Traffic Planning service provides vehicle metadata collected from nodes installed along public roadways.</p>
 
-            <p class="p">As vehicles pass by these sensors, information such as speed, direction, lane use, and volume (counts) are collected and stored with a timestamp in the Predix cloud. The data can be viewed from any number of intelligent street lights in a given region and can present both historical and near real-time information. </p>
+            <p class="p">As vehicles pass by these sensors, information such as speed, direction, lane use, and volume (counts) are collected and stored with a time-stamp in the Predix cloud. Near real-time data can be viewed from any number of nodes in a given region, and  historical data can be retrieved from the cloud. </p>
 
             <p class="p">The density, range, and flexibility of this sensor data can provide insights into traffic patterns at different intervals. Along with facilitating the planning for future safety and convenience enhancements, the data can reveal opportunities to optimize traffic flows.</p>
 
-            <p class="p">One response is provided for each car that traverses the area monitored by the device. </p>
+            <p class="p">One response is provided for bi-directional traffic (defined as a direction and a counter-direction) that traverses the area monitored by the device, except in the case when more than one car passes an individual sensor tripwire in one second; in that case, the node provides a maximum of one response per second for both directions of traffic. </p>
 
-            <p class="p"><em class="ph i">See the <a class="xref" href="r_get_traffic_flow_api.html#reference_6d13c3fa-663b-422e-853f-31e459c4efd2">Get Traffic Flow API</a></em>.</p>
-
-        </div>
-<div class="section"><h2 class="title sectiontitle">Public Safety</h2>
+        </section>
+<section class="section"><h2 class="title sectiontitle">Environmental Planning</h2>
             
-            <p class="p">The Public Safety service provides access to images, video, and other media collected from intelligent lighting sensors installed along public roadways or parking lots. </p>
+            <p class="p">The Environmental Planning service provides environmental sensor data collected from nodes installed along public roadways.</p>
 
-            <p class="p">The media can be requested using a date range starting near real-time and ending based on availability. This data can be obtained from a single sensor or a group of sensors, as needed, to provide insights to city officials that enhance awareness. This service can be used in concert with other Intelligent Environments services to enhance a use case of interest.</p>
+            <p class="p">This data can be obtained directly from a single sensor or a node, to provide timely environmental information to city officials that directly affect urban dwellers and their activities.</p>
 
-            <p class="p">Images are captured for a variety of scenarios for vehicles and pedestrians.</p>
+        </section>
+<section class="section"><h2 class="title sectiontitle">Situational Awareness (Media)</h2>
+            
+            <p class="p">The Situational Awareness service provides access to images, video, and other media collected from nodes and sensors installed along public roadways. You can retrieve media (streaming data) directly from the node , or historical media data from the cloud. </p>
 
-            <p class="p"><em class="ph i">See the <a class="xref" href="r_get_media_api.html#reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee">Get Media API</a>.</em></p>
+            <p class="p">Examples of  use cases for these images and videos include enhancing situational awareness, improving traffic flow, and verifying where vehicles are parked.</p>
 
-        </div>
+            <p class="p">The media can be requested using a date range beginning with near real-time and ending based upon data availability. Data can be obtained directly from a single sensor or node, and can provide insights to city officials that enhance awareness. This service can be used in concert with other 'Intelligent Cities' services to address a variety of use cases.</p>
+
+        </section>
+<section class="section"><h2 class="title sectiontitle">Access Methods for Intelligent Cities API Services</h2>
+            
+            <div class="p">You can use two methods to access API services: Websockets and REST. <ul class="ul" id="concept_dbd1db1a-5644-4666-a4c5-037208e6cdee__ul_71231fcc-ec7a-46a3-bd94-64a44a4e75df"><li class="li">WebSockets function with Intelligent Cities API services, providing the ability to retrieve near real-time data and obtain insight into events collected by the services. </li>
+<li class="li">REST APIs function with Intelligent Cities API services, providing the ability to retrieve historical data and obtain insight into events collected by the services.</li>
+</ul>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
-</body>
+
+        </section>
+</div>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
 </html>

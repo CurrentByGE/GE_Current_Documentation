@@ -1,289 +1,170 @@
 
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="This API returns a list of locations within a bounding box (bbox) that you define with GPS coordinates. METHOD GET URI &lt;production url&gt;/v1/locations/search?{q,bbox,size,page} Sample Request URI - ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get List of Locations"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get List of Locations</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This API provides a list of sensor locations within a bounding box (bbox) that you define with GPS coordinates. METHOD GET Request URI ..." /><meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Get List of Locations" /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>Get List of Locations</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
-          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
 <body onload="highlightSearchTerm()" class="frmBody" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd">
-<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
-<h1 class="title topictitle1">Get List of Locations</h1>
-<div class="body refbody"><div class="section">
-      <p class="p">This API returns a list of locations within a bounding box (bbox) that you define with GPS coordinates.</p>
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Get List of Locations</h1>
+<div class="body refbody"><section class="section">
+      <p class="p">This API provides a list of sensor locations within a bounding box (bbox) that you define with GPS coordinates.</p>
 
-    </div>
-<div class="section">
+    </section>
+<section class="section">
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?{q,bbox,size,page}</td>
+<tr><td class="entry cellrowborder"><strong class="ph b">Request URI</strong></td>
+<td class="entry cellrowborder">{{metadataurl}}/v2/locations/search?bbox=&lt;lat1:long1&gt;,&lt;lat2:long2&gt;&amp;&gt;&amp;page=&lt;int&gt;&amp;size=&lt;int&gt;&amp;q=locationType:&lt;locationType1&gt; </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI - Intelligent Cities</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type:PARKING_SPOT&amp;bbox=32.711637,-117.157330,32.709443,-117153821&amp;size=20&amp;page=1</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI  - Intelligent Enterprises</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/locations/search?q=location-type:RETAIL-STORE&amp;bbox=30:-100,33.714739:-130</td>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry cellrowborder">{{metadataurl}}/v2/locations/search?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;page=0&amp;size=50&amp;q=locationType:TRAFFIC_LANE;WALKWAY;PARKING_ZONE</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-    </div>
-<div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d11983e62">Parameter</th>
-<th class="entry" valign="top" width="32.77634961439588%" id="d11983e64">Description</th>
-<th class="entry" valign="top" width="12.853470437017995%" id="d11983e66">Required?</th>
-<th class="entry" valign="top" width="37.01799485861182%" id="d11983e68">Filter Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.197452229299365%" /><col style="width:31.84713375796179%" /><col style="width:12.738853503184714%" /><col style="width:38.21656050955414%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d5568e64">Parameter</th>
+<th class="entry cellrowborder" id="d5568e66">Description</th>
+<th class="entry cellrowborder" id="d5568e68">Required?</th>
+<th class="entry cellrowborder" id="d5568e70">Filter Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d11983e62 ">bbox</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d11983e64 ">The bounded area for your search, identified by GPS coordinates. <em class="ph i">For more information, see the Glossary section.</em></td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d11983e66 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d11983e68 "><strong class="ph b">bbox=x1,y1, x2,y2</strong>. Replace x1,y1, x2,y2 with GPS coordinates, similar to 32.711637,-117.157330, 32.709443,-117.153821. You can use Google Maps to obtain the latitude and longitude.To locate GPS coordinates for the area and identify the boundaries, place the cursor in the upper left location of the area, then right-click and select <strong class="ph b">What’s here?</strong> to obtain the first set of coordinates. Right-click on the lower-right location and repeat this procedure to obtain the second set of coordinates.<p class="p"><img class="image" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__image_f49ab071-eb85-451c-b7a3-2469856537cc" src="i_bbox_graphic_small.png"></img></p>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d5568e64 ">bbox</td>
+<td class="entry cellrowborder" headers="d5568e66 ">The bounded area for your search; establishes the periphery of a searchable area for assets and nodes, identified by GPS coordinates.<p class="p"><em class="ph i">For more information, see the API  <a class="xref" href="r_api_glossary.html" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</em></p>
+</td>
+<td class="entry cellrowborder" headers="d5568e68 ">Yes</td>
+<td class="entry cellrowborder" headers="d5568e70 "><strong class="ph b">bbox=&lt;lat1:long1&gt;, &lt;lat2:long2&gt;</strong>. Replace lat1:long1, lat2:long2 with your GPS coordinates, similar to <strong class="ph b">32.715675:-117.161230, 32.708498:-117.151681</strong>. You can use Google Maps to obtain the latitude and longitude. To locate GPS coordinates for the area and identify the boundaries, place the cursor in the upper left location of the area, then right-click and select <strong class="ph b">What’s here?</strong> to obtain the first set of coordinates. Right-click on the lower-right location and repeat this procedure to obtain the second set of coordinates.<p class="p"><img class="image" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__image_f49ab071-eb85-451c-b7a3-2469856537cc" src="i_bbox_graphic_small.png" /></p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d11983e62 ">q</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d11983e64 ">Identifies a "type" query.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d11983e66 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d11983e68 ">Query to search by location type.</td>
+<tr><td class="entry cellrowborder" headers="d5568e64 ">q</td>
+<td class="entry cellrowborder" headers="d5568e66 ">Identifies a "type" query.</td>
+<td class="entry cellrowborder" headers="d5568e68 ">No</td>
+<td class="entry cellrowborder" headers="d5568e70 ">Query to search by location type.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d11983e62 ">location-type</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d11983e64 ">Filter by type of location. Note the following: <ul class="ul" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__ul_3b3ba5cf-392c-4714-a1c2-8ab90e1253ad"><li class="li">If you are using "ie-parking" in your URI,  you can use the location-types PARKING_SPOT and PARKING_ZONE only.</li>
-<li class="li">If you are using "ie-traffic" in your URI, you can use the location-type TRAFFIC_LANE only.</li>
-<li class="li">If you are using "ie-pedestrian" in your URI, you can use the location-type CROSSWALK only.</li>
-</ul>
+<tr><td class="entry cellrowborder" headers="d5568e64 ">locationType</td>
+<td class="entry cellrowborder" headers="d5568e66 ">Filter by type of location.  </td>
+<td class="entry cellrowborder" headers="d5568e68 ">No</td>
+<td class="entry cellrowborder" headers="d5568e70 ">See the enumeration codes for locationType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d5568e64 ">locationUid</td>
+<td class="entry cellrowborder" headers="d5568e66 ">A unique identifier established by a customer or external resource for a specific location within the monitored area.</td>
+<td class="entry cellrowborder" headers="d5568e68 ">No</td>
+<td class="entry cellrowborder" headers="d5568e70 ">For example, <strong class="ph b">LOCATION-STG-323</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d5568e64 ">size</td>
+<td class="entry cellrowborder" headers="d5568e66 ">Maximum number of records to return per page; if none specified, the default is used automatically.</td>
+<td class="entry cellrowborder" headers="d5568e68 ">No</td>
+<td class="entry cellrowborder" headers="d5568e70 ">Numerical value.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d5568e64 ">page</td>
+<td class="entry cellrowborder" headers="d5568e66 ">Indicates the page number; default value is 0. </td>
+<td class="entry cellrowborder" headers="d5568e68 ">No</td>
+<td class="entry cellrowborder" headers="d5568e70 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Response Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:16.428571428571427%" /><col style="width:14.285714285714285%" /><col style="width:69.28571428571428%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d5568e170">Parameter</th>
+<th class="entry cellrowborder" id="d5568e172">Data Type</th>
+<th class="entry cellrowborder" id="d5568e174">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d5568e170 ">locationUid</td>
+<td class="entry cellrowborder" headers="d5568e172 ">String</td>
+<td class="entry cellrowborder" headers="d5568e174 ">A unique identifier established by a customer or external resource for a specific location within the monitored area. For example, <strong class="ph b">LOCATION-STG-323</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d5568e170 ">locationType</td>
+<td class="entry cellrowborder" headers="d5568e172 ">String</td>
+<td class="entry cellrowborder" headers="d5568e174 ">See the enumeration codes for locationType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d5568e170 ">parentLocationUid</td>
+<td class="entry cellrowborder" headers="d5568e172 ">String</td>
+<td class="entry cellrowborder" headers="d5568e174 ">The unique identifier assigned to the parent location comprising the locationUids within the monitored area.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d5568e170 ">coordinatesType</td>
+<td class="entry cellrowborder" headers="d5568e172 ">String</td>
+<td class="entry cellrowborder" headers="d5568e174 ">
+                <dl class="dl"><dt class="dt dlterm">GEO</dt>
+<dd class="dd">: GEO indicates that the coordinate type uses GPS coordinates.</dd>
+</dl>
 
               </td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d11983e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d11983e68 ">Insert one of the following enumeration codes for a specific event type:<dl class="dl"><dt class="dt dlterm">PARKING_SPOT</dt>
-<dd class="dd">If you filter by PARKING_SPOT, you receive a list of demarcated parking spaces within the boundaries.</dd>
-<dt class="dt dlterm">PARKING_ZONE</dt>
-<dd class="dd">If you filter by PARKING_ZONE, you receive a list of non-demarcated parking spaces within the boundaries.</dd>
-<dt class="dt dlterm">CROSSWALK</dt>
-<dd class="dd">If you filter by CROSSWALK, you receive a list of pedestrian crosswalks within the boundaries.</dd>
-</dl>
-<dl class="dl"><dt class="dt dlterm">TRAFFIC_LANE</dt>
-<dd class="dd">If you filter by TRAFFIC_LANE, you receive a list of traffic lanes within the boundaries.</dd>
-<dt class="dt dlterm">RETAIL-STORE</dt>
-<dd class="dd">If you filter by RETAIL-STORE, you receive a list of retail stores within the boundaries.</dd>
-<dt class="dt dlterm">OTHERS</dt>
-<dd class="dd">If you filter by OTHERS, you receive a list of non-standard location types within the boundaries.</dd>
-</dl>
-</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d11983e62 ">location-uid</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d11983e64 ">A unique identifier established by a customer or external resource for a specific location within the monitored area.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d11983e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d11983e68 ">For example, 93d49017-19d0-416c-9a95-be0bee2a5ed9.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d11983e62 ">size</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d11983e64 ">Maximum number of records to return per page; if none specified, the default is used automatically.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d11983e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d11983e68 ">Numerical value.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d11983e62 ">page</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d11983e64 ">Indicates the page number; default value is 0. </td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d11983e66 ">No</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d11983e68 ">Numerical value.</td>
+<tr><td class="entry cellrowborder" headers="d5568e170 ">coordinates</td>
+<td class="entry cellrowborder" headers="d5568e172 ">String</td>
+<td class="entry cellrowborder" headers="d5568e174 ">The GPS coordinates (latitude, longitude) for the referenced asset (identified by assetUid), such as <strong class="ph b">32.711653,-117.157314</strong> that identify the location of the camera. </td>
 </tr>
 </tbody>
 </table>
 </div>
 
-    </div>
-<div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
+    </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response </h2>
       
-      
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.575757575757574%" id="d11983e188">Parameter</th>
-<th class="entry" valign="top" width="12.727272727272728%" id="d11983e190">Data Type</th>
-<th class="entry" valign="top" width="12.121212121212121%" id="d11983e192">Present?</th>
-<th class="entry" valign="top" width="57.57575757575758%" id="d11983e194">Description</th>
-</tr>
-</thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">locations</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Object</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">Identifies, within the brackets ([ ]) each location within the bound area. The response includes the unique (non-GE) location identifier, the GPS coordinates, the location type, and a link to the location using the GE identifier.<dl class="dl"><dt class="dt dlterm">location-uid</dt>
-<dd class="dd">A unique identifier established by a customer or external resource for a specific location within the monitored area. For example, a12835g2-0b4a-4019-b9dc-886439413e76.</dd>
-<dt class="dt dlterm">coordinates</dt>
-<dd class="dd">GPS coordinates identifying the location. Four coordinates should be provided for each location-uid.</dd>
-</dl>
-<dl class="dl"><dt class="dt dlterm">location-type</dt>
-<dd class="dd">Indicates the type of specific location, as follows:<ul class="ul" id="reference_b78e9a2b-b468-4b56-9c5f-d57127df22cd__ul_7987c13e-64c2-4bc8-83ee-d958e8e302d5"><li class="li">PARKING = parking location.</li>
-<li class="li">PARKING_SPOT = demarcated parking location.</li>
-<li class="li">PARKING_ZONE = non-demarcated parking location.</li>
-<li class="li">CROSSWALK = pedestrian crosswalk.</li>
-<li class="li">TRAFFIC_LANE  = lane for moving vehicles.</li>
-<li class="li">RETAIL-STORE = retail store</li>
-<li class="li">OTHERS = non-standard location types.</li>
-</ul>
-</dd>
-</dl>
-<dl class="dl"><dt class="dt dlterm">_links</dt>
-<dd class="dd">self = Link to the location details using the GE identifier. See Get Location Details for information on obtaining additional data.</dd>
-<dd class="dd">To see the device-id, see Get Location Details.</dd>
-</dl>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">_links</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Array</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">A collection of hyperlinks to navigate the result set using paging.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">page</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">Pageable information satisfying the search filter.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">….size</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">No</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">Maximum number of records to return per page, such as 2.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">….totalElements</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">No</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">Total number of elements, such as 8.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">….totalPages</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">No</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">Total number of pages, such as 1.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d11983e188 ">….number</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d11983e190 ">Number</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d11983e192 ">No</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d11983e194 ">Indicates the page number displayed when returned. Default value is 0. </td>
-</tr>
-</tbody>
-</table>
-</div>
-
-    </div>
-<div class="section"><h2 class="title sectiontitle">Sample Response - Intelligent Cities</h2>
-      
-      <pre class="pre codeblock">{
-  "_embedded": {
-    "locations": [
-      {
-        "location-uid": "93d49017-19d0-416c-9a95-be0bee2a5ed9",
-        "location-type": "PARKING_SPOT",
-        "coordinates": {
-          "p1": "32.714728,-117.15755915342955",
-          "p2": "32.714728,-117.15760863817061",
-          "p3": "32.71475,-117.15760863817061",
-          "p4": "32.71475,-117.15755915342955"
-        },
-        "_links": {
-          "self": {
-            "href": "/locations/100000076"
-          }
-        }
-      },
-      {
-        "location-uid": "a04935f1-0f3a-5038-b0fc-995239413e76",
-        "location-type": "PARKING_SPOT",
-        "coordinates": {
-          "p1": "32.714728,-117.15755915342952",
-          "p2": "32.714728,-117.15760863817061",
-          "p3": "32.71475,-117.15760863817060",
-          "p4": "32.71475,-117.15755915342955"
-        },
-        "_links": {
-          "self": {
-            "href": "/locations/1000000077"
-          }
-        }
-      }
-    ]
-  },
-  "_links": {
-     "first": {
-      "href": "/locations/search?q=location-type:PARKING_SPOT&amp;bbox=x1,y1,x2,y2&amp;page=0&amp;size=2"
+      <pre class="pre codeblock"><code>{
+  "content": [
+    {
+      "locationUid": "177-parkingzone",
+      "locationType": "PARKING_ZONE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328164456985096:-81.65958708005638,30.32812646376904:-81.65959816387478,30.328148376658532:-81.65970123011935,30.32818656444743:-81.6596900624812"
     },
-    "self": {
-      "href": "/locations/search?q=location-type:PARKING_SPOT&amp;bbox=x1,y1,x2,y2&amp;page0&amp;size=2"
+    {
+      "locationUid": "HYP1087-170-Lane1",
+      "locationType": "TRAFFIC_LANE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.32815726241225:-81.65960375060847"
     },
-    "next": {
-      "href": "/locations/search?q=location-type:PARKING_SPOT&amp;bbox=x1,y1,x2,y2&amp;page=1&amp;size=2"
+    {
+      "locationUid": "HYP1087-171-Lane2",
+      "locationType": "TRAFFIC_LANE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328135456985095:-81.65961066678872"
     },
-    "last": {
-      "href":/locations/search?q=location-type:PARKING_SPOT&amp;bbox=x1,y1,x2,y2&amp;page=2&amp;size=2”
-    }  },
-    "page": {
-    "size": 2,
-    "totalElements": 8,
-    "totalPages": 4,
-    "number": 0
-  } 
-}
-</pre>
-
-    </div>
-<div class="section"><h2 class="title sectiontitle">Sample Response - Intelligent Enterprises</h2>
-      
-      <pre class="pre codeblock">{
-  "_embedded": {
-    "locations": [
-      {
-        "coordinates": {
-          "P1": "32.711653,-117.157314"
-        },
-        "_links": {
-          "self": {
-            "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/locations/1000000106"
-          }
-        },
-        "location-uid": "store-003",
-        "location-type": "RETAIL-STORE"
-      },
-      {
-        "coordinates": {
-          "P1": "32.706721,-121.931677"
-        },
-        "_links": {
-          "self": {
-            "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/locations/1000000093"
-          }
-        },
-        "location-uid": "store-002",
-        "location-type": "RETAIL-STORE"
-      },
-      {
-        "coordinates": {
-          "P1": "32.762178,-121.964145"
-        },
-        "_links": {
-          "self": {
-            "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/locations/1000000092"
-          }
-        },
-        "location-uid": "store-001",
-        "location-type": "RETAIL-STORE"
-      }
-    ]
-  },
-  "_links": {
-    "self": {
-      "href": "http://ie-environmental-dev.run.aws-usw02-pr.ice.predix.io/v1/locations/search?q=location-type:RETAIL_STORE&amp;bbox=30:-100,33.714739:-130"
+    {
+      "locationUid": "HYP1089-175-Lane1",
+      "locationType": "TRAFFIC_LANE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328151973944955:-81.65968247574844"
+    },
+    {
+      "locationUid": "LOCATION-UNIQUE-ID",
+      "locationType": "PARKING_ZONE",
+      "parentLocationUid": null,
+      "coordinatesType": "GEO",
+      "coordinates": "30.328164456985096:-81.65958708005638,30.32812646376904:-81.65959816387478,30.328148376658532:-81.65970123011935,30.32818656444743:-81.6596900624812"
     }
-  },
-  "page": {
-    "size": 25,
-    "totalElements": 3,
-    "totalPages": 1,
-    "number": 0
-  }
-}</pre>
-
-    </div>
+  ],
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 5,
+  "numberOfElements": 5,
+  "first": true,
+  "sort": null,
+  "size": 50,
+  "number": 0
+}</code></pre>
+    </section>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
-</body>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
 </html>

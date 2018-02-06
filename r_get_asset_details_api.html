@@ -1,70 +1,104 @@
 
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="This API returns details on a particular asset. METHOD GET Request URI &lt;production url&gt;/v1/assets/{id} Sample Request URI &lt;production url/v1/assets/1000000018 Query Parameters Parameter Description ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get Asset Details"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_95a222a3-0e46-42b7-abd1-3c762aba128b"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get Asset Details</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This API provides details on a particular asset. METHOD GET Request URI {{metadataurl}}/v2/assets/{assetUid} Sample Request URI {{metadataurl}}/v2/assets/CAMERA-STG-HYP1042-CAM-L Query Parameters ..." /><meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Get Asset Details" /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="reference_95a222a3-0e46-42b7-abd1-3c762aba128b" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>Get Asset Details</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
-          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
 <body onload="highlightSearchTerm()" class="frmBody" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b">
-<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
-<h1 class="title topictitle1">Get Asset Details</h1>
-<div class="body refbody"><div class="section">
-      <p class="p">This API returns details on a particular asset.</p>
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Get Asset Details</h1>
+<div class="body refbody"><section class="section">
+      <p class="p">This API provides details on a particular asset.</p>
 
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Request URI</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url&gt;/v1/assets/{id}</td>
+<tr><td class="entry cellrowborder"><strong class="ph b">Request URI</strong></td>
+<td class="entry cellrowborder">{{metadataurl}}/v2/assets/{assetUid}</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request URI</strong></td>
-<td class="entry" valign="top" width="75.49019607843137%">&lt;production url/v1/assets/1000000018</td>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry cellrowborder">{{metadataurl}}/v2/assets/CAMERA-STG-HYP1042-CAM-L</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-    </div>
-<div class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.35218508997429%" id="d2408e54">Parameter</th>
-<th class="entry" valign="top" width="32.77634961439588%" id="d2408e56">Description</th>
-<th class="entry" valign="top" width="12.853470437017995%" id="d2408e58">Required?</th>
-<th class="entry" valign="top" width="37.01799485861182%" id="d2408e60">Filter Values</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.197452229299365%" /><col style="width:31.84713375796179%" /><col style="width:12.738853503184714%" /><col style="width:38.21656050955414%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d2042e59">Parameter</th>
+<th class="entry cellrowborder" id="d2042e61">Description</th>
+<th class="entry cellrowborder" id="d2042e63">Required?</th>
+<th class="entry cellrowborder" id="d2042e65">Filter Values</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.35218508997429%" headers="d2408e54 ">id</td>
-<td class="entry" valign="top" width="32.77634961439588%" headers="d2408e56 ">GE identifier for an asset.</td>
-<td class="entry" valign="top" width="12.853470437017995%" headers="d2408e58 ">Yes</td>
-<td class="entry" valign="top" width="37.01799485861182%" headers="d2408e60 ">1000000018</td>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d2042e59 ">assetUid</td>
+<td class="entry cellrowborder" headers="d2042e61 ">GE identifier for an asset.</td>
+<td class="entry cellrowborder" headers="d2042e63 ">Yes</td>
+<td class="entry cellrowborder" headers="d2042e65 ">For example, CAMERA-STG-HYP1042-CAM-L</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-    </div>
-<div class="section"><h2 class="title sectiontitle">Response Parameters</h2>
+    </section>
+<section class="section"><h2 class="title sectiontitle">Response Parameters</h2>
       
       
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="17.575757575757574%" id="d2408e86">Parameter</th>
-<th class="entry" valign="top" width="12.727272727272728%" id="d2408e88">Data Type</th>
-<th class="entry" valign="top" width="12.121212121212121%" id="d2408e90">Required?</th>
-<th class="entry" valign="top" width="57.57575757575758%" id="d2408e92">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.857142857142858%" /><col style="width:14.285714285714285%" /><col style="width:67.85714285714286%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d2042e90">Parameter</th>
+<th class="entry cellrowborder" id="d2042e92">Data Type</th>
+<th class="entry cellrowborder" id="d2042e94">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname">coordinates</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">The GPS coordinates (latitude, longitude) for the referenced device (identified by device-id), such as <strong class="ph b">32.711653,-117.157314</strong> to identify where the camera is installed. </td>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d2042e90 ">description</td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">Description of the asset.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname">status</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">Current status of the sensor:<dl class="dl"><dt class="dt dlterm">ONLINE</dt>
+<tr><td class="entry cellrowborder" headers="d2042e90 "><span class="keyword parmname">properties</span></td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">Properties of the asset. <dl class="dl"><dt class="dt dlterm">CENTER_GEO_COORDINATE</dt>
+<dd class="dd">Not used</dd>
+<dt class="dt dlterm">HOMOGRAPHY</dt>
+<dd class="dd">Not used.</dd>
+<dt class="dt dlterm">IMAGE_SIZE</dt>
+<dd class="dd">The height and width of the image in pixels.</dd>
+<dt class="dt dlterm">VIEW</dt>
+<dd class="dd">Calculated in degrees. (0-360) '0' is knot or initial value. </dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 "><span class="keyword parmname">assetUid</span></td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">A unique identifier established by a customer or external resource. For example, CAMERA-STG-HYP1042-CAM-L to identify a camera.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 ">parentAssetUid</td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">A unique identifier assigned to the asset at the top of a hierarchical set of assets, in other words, the parent of a child asset. For example, a node is a parent asset, comprising several child assets such as cameras or microphones.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 "><span class="keyword parmname">eventTypes</span></td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">See the enumeration codes for eventTypes in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 "> mediaType<div class="note note"><span class="notetitle">Note:</span> Get Media only works when you have access to Situational Awareness.</div>
+</td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">See the enumeration codes for mediaType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 "> assetType</td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">See the enumeration codes for assetType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 "><span class="keyword parmname">coordinates</span></td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">The GPS coordinates (latitude, longitude) for the referenced asset (identified by assetUid), such as <strong class="ph b">32.711653:-117.157314</strong> to identify where the camera is installed. </td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d2042e90 ">status</td>
+<td class="entry cellrowborder" headers="d2042e92 ">String</td>
+<td class="entry cellrowborder" headers="d2042e94 ">Status of the asset that is recording the events.<dl class="dl"><dt class="dt dlterm">ONLINE</dt>
 <dd class="dd">Collecting data.</dd>
 <dt class="dt dlterm">OFFLINE</dt>
 <dd class="dd">Not collecting data.</dd>
@@ -73,201 +107,35 @@
 </dl>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname">description</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">No</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">General description of the location, such as  cross streets.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname">properties</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">No</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">Properties of the sensor. These can include the CAMERA FRAME RATE, TEMPERATURE, SIGNAL, AND SPACE)</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname"> _links</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">Object</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">A collection of hyperlinks to templates, for executing additional operations.<dl class="dl"><dt class="dt dlterm">self</dt>
-<dd class="dd">URL for this API.</dd>
-<dt class="dt dlterm">search-media</dt>
-<dd class="dd">Additional query parameters:<ul class="ul" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__ul_fv3_r1x_rv"><li class="li"><span class="keyword parmname">media-type</span> – IMAGE, AUDIO, VIDEO, OTHERS</li>
-<li class="li"><span class="keyword parmname">start-ts</span> – Start time recorded in EPOCH format. </li>
-<li class="li"><span class="keyword parmname">end-ts</span> – End time recorded in EPOCH format.</li>
-<li class="li"><span class="keyword parmname">page</span> – Pageable results, based on the search filter.</li>
-<li class="li"><span class="keyword parmname">size</span> – Maximum number of records per page.</li>
-</ul>
-</dd>
-<dt class="dt dlterm">search-events</dt>
-<dd class="dd">Additional query parameters:<ul class="ul" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__ul_qrp_1bx_rv"><li class="li"><span class="keyword parmname">event-type</span> – PKIN, PKOUT, SFIN, SFOUT, TFEVT, ENCHG,  LIGHT_LEVEL, OCCUPANCY, TEMP</li>
-<li class="li"><span class="keyword parmname">start-ts</span> – Start time recorded in EPOCH format. </li>
-<li class="li"><span class="keyword parmname">end-ts</span> – End time recorded in EPOCH format.</li>
-<li class="li"><span class="keyword parmname">size</span> – Maximum number of records per page.</li>
-</ul>
-</dd>
-<dt class="dt dlterm">live-events</dt>
-<dd class="dd">URL to a WebSocket. You must use a WebSocket client to retrieve this data.</dd>
-</dl>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname">device-id</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">A unique identifier established by a customer or external resource. For example, HYP1040-75 to identify a camera.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "><span class="keyword parmname">event-type</span></td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">Event type recorded. <dl class="dl"><dt class="dt dlterm">PKIN</dt>
-<dd class="dd">Vehicles entering location.</dd>
-<dt class="dt dlterm">PKOUT</dt>
-<dd class="dd">Vehicles exiting location.</dd>
-<dt class="dt dlterm">SFIN</dt>
-<dd class="dd">Pedestrians entering location.</dd>
-<dt class="dt dlterm">SFOUT</dt>
-<dd class="dd">Pedestrians exiting location.</dd>
-<dt class="dt dlterm">TFEVT</dt>
-<dd class="dd">Traffic event at location.</dd>
-<dt class="dt dlterm">ENCHG</dt>
-<dd class="dd">Environmental change at location.</dd>
-<dt class="dt dlterm">LIGHT_LEVEL</dt>
-<dd class="dd">Asset reports illuminance sensor events.</dd>
-<dt class="dt dlterm">OCCUPANCY</dt>
-<dd class="dd">Asset reports occupancy sensor events.</dd>
-<dt class="dt dlterm">TEMP</dt>
-<dd class="dd">Asset reports temperature sensor events.</dd>
-</dl>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "> media-type</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">Media output. <dl class="dl"><dt class="dt dlterm">IMAGE</dt>
-<dd class="dd">JPG, PNG, or GIF formats.</dd>
-<dt class="dt dlterm">VIDEO</dt>
-<dd class="dd">MP4 format.</dd>
-<dt class="dt dlterm">AUDIO</dt>
-<dd class="dd">MP3 or WAV format.</dd>
-<dt class="dt dlterm">OTHERS</dt>
-<dd class="dd">Non-standard formats.</dd>
-</dl>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 "> device-type</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">String</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">Type of device that is recording the events.<dl class="dl"><dt class="dt dlterm">NODE</dt>
-<dd class="dd">Parent asset.</dd>
-<dt class="dt dlterm">CAMERA</dt>
-<dd class="dd">Camera installed within the bounding box.</dd>
-<dt class="dt dlterm">MIC</dt>
-<dd class="dd">Audio device installed within the boundaries.</dd>
-<dt class="dt dlterm">ENV</dt>
-<dd class="dd">Environmental sensor installed within the boundaries.</dd>
-<dt class="dt dlterm">OTHERS</dt>
-<dd class="dd">Non-standard or unknown devices within the boundaries.</dd>
-</dl>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 ">embedded</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">Object</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">List of locations, with coordinates, links, location-uid, and location-type.</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="17.575757575757574%" headers="d2408e86 ">     locations</td>
-<td class="entry" valign="top" width="12.727272727272728%" headers="d2408e88 ">Array</td>
-<td class="entry" valign="top" width="12.121212121212121%" headers="d2408e90 ">Yes</td>
-<td class="entry" valign="top" width="57.57575757575758%" headers="d2408e92 ">Identifies within the brackets ([ ]) each location monitored by the device (device-id). <dl class="dl"><dt class="dt dlterm">location-uid</dt>
-<dd class="dd">A unique identifier established by a customer or external resource for a specific location within the monitored area. For example, a12835g2-0b4a-4019-b9dc-886439413e76.</dd>
-<dt class="dt dlterm">coordinates</dt>
-<dd class="dd">GPS coordinates identifying the location. Four coordinates should be provided for each location-uid.</dd>
-<dt class="dt dlterm">location-type</dt>
-<dd class="dd">Indicates the type of specific location,  as follows:<ul class="ul" id="reference_95a222a3-0e46-42b7-abd1-3c762aba128b__ul_fqb_ldx_rv"><li class="li">PARKING – Parking location.</li>
-<li class="li">PARKING_SPOT – Demarcated parking location.</li>
-<li class="li">PARKING_ZONE – Non-demarcated parking location.</li>
-<li class="li">CROSSWALK – Pedestrian crosswalk.</li>
-<li class="li">TRAFFIC_LANE – Monitored strip of road where vehicles are moving.</li>
-<li class="li">RETAIL-STORE – Retail store.</li>
-<li class="li">OTHERS – Non-standard location types.</li>
-</ul>
-</dd>
-</dl>
-</td>
-</tr>
 </tbody>
 </table>
 </div>
 
-    </div>
-<div class="section"><h2 class="title sectiontitle">Sample Response</h2>
+    </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response</h2>
       
-      <pre class="pre codeblock">{
-  "coordinates": {
-    "P1": "32.711653,-117.157314"
+      <pre class="pre codeblock"><code>{
+  "description": "This is a CAMERA",
+  "properties":
+{
+    "HOMOGRAPHY": "-0.00144262851012974,0.02453062516689878,64.20463131147713,4.028365976010364E-4,-0.006849374117427758,-17.9267206480953,1.23148222457587E-5,-2.093831593825796E-4,-0.5480243058217796",
+    "CENTER_GEO_COORDINATE": "32.7116098:-117.1565843",
+    "IMAGE_SIZE": "320:640",
+    "VIEW": "88.0"
   },
-  "description": "simulator camera for parking",
-  "properties": {},
-  "_links": {
-    "self": {
-      "href": "http://ie-traffic-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000018"
-    },
-    "search-media": {
-      "href": "http://ie-traffic-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000018/media{?media-types,start-ts,end-ts,page,size,locationId}",
-      "templated": true
-    },
-    "search-events": {
-      "href": "http://ie-traffic-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000018/events{?event-types,start-ts,end-ts,size}",
-      "templated": true
-    },
-    "live-events": {
-      "href": "http://ie-traffic-dev.run.aws-usw02-pr.ice.predix.io/v1/assets/1000000018/live-events{?event-types}",
-      "templated": true
-    }
-  },
-  "device-id": "HYP1040-75",
-  "event-type": "PKOUT;TFEVT;PKIN",
-  "media-type": "IMAGE",
-  "device-type": "DATASIM",
-  "status": "OTHER",
-  "_embedded": {
-    "container": null,
-    "locations": [
-      {
-        "coordinates": {
-          "P1": "32.711637,-117.15732968838816",
-          "P2": "32.711637100678395,-117.15736341303291",
-          "P3": "32.711734,-117.15736427535526",
-          "P4": "32.711733,-117.15733055071051"
-        },
-        "_links": {
-          "self": {
-            "href": "http://ie-traffic-dev.run.aws-usw02-pr.ice.predix.io/v1/locations/1000000048"
-          }
-        },
-        "location-uid": "158-parkingspot",
-        "location-type": "PARKING_SPOT"
-      },
-      {
-        "coordinates": {
-          "P1": "32.711734697964815,-117.1573294130409",
-          "P2": "32.711736,-117.15736248188104",
-          "P3": "32.711858,-117.15736455072118",
-          "P4": "32.711859,-117.1573304130409"
-        },
-        "_links": {
-          "self": {
-            "href": "http://ie-traffic-dev.run.aws-usw02-pr.ice.predix.io/v1/locations/1000000047"
-          }
-        },
-        "location-uid": "157-parkingspot",
-        "location-type": "PARKING_SPOT"
-      }
-    ],
-    "assets": []
-  }
-}
-</pre>
-
-    </div>
+  "assetUid": "CAMERA-STG-HYP1042-CAM-L",
+  "parentAssetUid": "NODE-STG-HYP1042",
+  "eventTypes": [
+    "PEDEVT"
+  ],
+  "mediaType": "IMAGE,VIDEO",
+  "assetType": "CAMERA",
+  "coordinates": "32.711628:-117.156618",
+  "status": "ONLINE"
+}</code></pre>
+    </section>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
-</body>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
 </html>

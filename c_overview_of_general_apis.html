@@ -1,93 +1,27 @@
 
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="The APIs in this section provide location and resource information for assets used to monitor parking occupation, pedestrian movements, indoor positioning that identifies how people typically move ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="General API Overview"></meta><meta name="DC.Creator" content="Linda Jones"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>General API Overview</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+      <meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="General APIs Overview - Cities" /><meta name="abstract" content="" /><meta name="description" content="The Intelligent Environments REST Service APIs in this section provide location and resource information for assets used to monitor parking occupancy, pedestrian movements, situational awareness, and ..." /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>General APIs Overview - Cities</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
-          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
 <body onload="highlightSearchTerm()" class="frmBody" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44">
-<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
-<h1 class="title topictitle1">General API Overview</h1>
-<div class="body conbody"><p class="p">The APIs in this section provide location and resource information for assets used to monitor parking occupation, pedestrian movements, indoor positioning that identifies how people typically move through a monitored space (such as an office floorplan), public safety, traffic flow, and environmental factors such as illuminance, occupancy, and temperature.</p>
-<p class="p"> Each general API provides HREFs to additional data in the response details. You need to run one or more of the APIs in this section before using the Intelligent Cities and Intelligent Enterprises APIs, which match the use cases. Each use case is described in its individual subsection.</p>
-<div class="p">
-            <div class="note note"><span class="notetitle">Note:</span> 
-                                                <ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_3918b930-6cfc-4890-9b70-7e7c02f08c9c"><li class="li">Timestamp values use UTC, not local time.</li>
-<li class="li">For simulated data, the device-type is SIMDATA; for real data, the device-type is NODE.</li>
-<li class="li">As the amount of simulated data is increased, developers (or users) will be notified by GE by updates to the online help.</li>
-<li class="li">To get the GE identifier for the device, use the <a class="xref" href="r_get_list_of_assets_api.html#reference_6ccef033-1155-40ae-a3b0-ca7ee7fab91c">Get List of Assets API</a>.</li>
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">General APIs Overview - Cities</h1>
+<div class="body conbody"><p class="shortdesc"></p>
+<p class="p">The Intelligent Environments REST Service APIs in this section provide location and resource information for assets used to monitor parking occupancy, pedestrian movements, situational awareness, and traffic flow for Cities. </p>
+<div class="p">The specific Cities API topics covered in this section are: <ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_2244a85a-4410-4f3f-b631-208fb42ee373"><li class="li">Get Asset Details</li>
+<li class="li">Get List of Assets</li>
+<li class="li">Get List of Locations</li>
+<li class="li">Get Location Details</li>
 </ul>
-
-                                    </div>
-
-        </div>
-
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__table_b5f74ad8-c0c4-42ea-8e57-9d08d407aaa2" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Simulated Data Stream Information for Each API</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25%" id="d657e45">Simulated Data Stream</th>
-<th class="entry" valign="top" width="25%" id="d657e47">Bounding Box</th>
-<th class="entry" valign="top" width="25%" id="d657e49">Sample Request URI</th>
-<th class="entry" valign="top" width="25%" id="d657e51">Range and Frequency</th>
-</tr>
-</thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">PEDESTRIAN</td>
-<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url&gt;/v1/assets/1000000027/live-events?event-types=SFIN, SFOUT</td>
-<td class="entry" valign="top" width="25%" headers="d657e51 ">Streaming message intervals are between 15 to 25 seconds.<p class="p">Data includes the last 24 hours.</p>
-<p class="p">Estimate 500 messages per node per day. (3 nodes)</p>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">TRAFFIC</td>
-<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url&gt;/v1/assets/1000000018/events?event-types=TFEVT&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</td>
-<td class="entry" valign="top" width="25%" headers="d657e51 ">Streaming message intervals are between 5 to 40 seconds.<p class="p">Data includes the last 24 hours.</p>
-<p class="p">Estimate 3400 messages per node per day. (9 nodes)</p>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">PARKING</td>
-<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url&gt;/v1/assets/1000000018/live-events?event-types=PKIN, PKOUT</td>
-<td class="entry" valign="top" width="25%" headers="d657e51 ">Car In and Car Out range between 15 to 45 minutes.<p class="p">Data includes the last 24 hours.</p>
-<p class="p">Estimate about 70 messages per node per day. (9 nodes)</p>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">PUBLIC-SAFETY</td>
-<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="25%" headers="d657e49 ">&lt;production url/v1/assets/1000000018/media?media-types=IMAGE&amp;start-ts=1453832741281&amp;end-ts=1453832741281&amp;size=1&amp;page=1</td>
-<td class="entry" valign="top" width="25%" headers="d657e51 ">This is an event base request for IMAGE, VIDEO, or AUDIO. Total count per day may vary.<p class="p">Data includes the last 24 hours. Data interval is hourly.</p>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">POSITIONING<ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_9cb3b0a5-5826-45f4-9fe8-5194923695d7"><li class="li">Dwell Time</li>
-<li class="li">Path</li>
-<li class="li">Position</li>
-</ul>
-</td>
-<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="25%" headers="d657e49 ">Three URIs:<p class="p">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=DWLZONE&amp;analytic-categories=DWELL_TIME&amp;start-ts=1461171600000&amp;end-ts=1461256935323</p>
-<p class="p">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=PTHDVCE&amp;analytic-categories=PATH&amp;start-ts=1461171600000&amp;end-ts=1461256935323</p>
-<p class="p">&lt;production url&gt;/v1/locations/1000000106/analytics?analytic-names=HTMPXY&amp;analytic-categories=POSITION&amp;start-ts=1461171600000&amp;end-ts=1461256935323</p>
-</td>
-<td class="entry" valign="top" width="25%" headers="d657e51 ">VLC coordinates are generated between 8 AM – 6 PM UTC every day. Therefore, all the analytics work during this time range.<p class="p">Simulated data is kept up to 1 week.</p>
-</td>
-</tr>
-<tr class="row"><td class="entry" valign="top" width="25%" headers="d657e45 ">ENVIRONMENTAL<ul class="ul" id="concept_d6d36993-e671-4fcf-9698-995bd1bcbb44__ul_e53f13ab-b897-4bc2-8b12-b36fb1ca9087"><li class="li">Light Level</li>
-<li class="li">Occupancy</li>
-<li class="li">Temperature</li>
-</ul>
-</td>
-<td class="entry" valign="top" width="25%" headers="d657e47 ">32.715675:-117.161230,32.708498:-117.151681</td>
-<td class="entry" valign="top" width="25%" headers="d657e49 ">Three URIs:<p class="p">&lt;production url&gt;/v1/assets/1000000503/events?event-types=LIGHT_LEVEL&amp;start-ts=1461517200000&amp;end-ts=1461689922665&amp;size=2</p>
-<p class="p">&lt;production url&gt;/v1/assets/1000000018/events?event-types=OCCUPANCY&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</p>
-<p class="p">&lt;production url&gt;/v1/assets/1000000503/events?event-types=TEMP&amp;start-ts=1453766605577&amp;end-ts=1453772603879&amp;size=10&amp;page=1</p>
-</td>
-<td class="entry" valign="top" width="25%" headers="d657e51 ">Sensors generate an Occupancy event every 1 minute, if there is occupancy.<p class="p">Sensors generate Temperature and Light Level events every 15 minutes.</p>
-<p class="p">Simulated data is kept up to 1 week.</p>
-</td>
-</tr>
-</tbody>
-</table>
 </div>
+<p class="p">Each topic contains the most commonly used API Method, Request and Sample Request URIs, and API Query and Response Parameters. </p>
+<p class="p">A sample API response is also included at the end of each topic. </p>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
-</body>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
 </html>

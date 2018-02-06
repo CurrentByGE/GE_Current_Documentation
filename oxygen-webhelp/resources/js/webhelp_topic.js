@@ -1,9 +1,7 @@
 /*
 
-Oxygen Webhelp plugin
-Copyright (c) 1998-2015 Syncro Soft SRL, Romania.  All rights reserved.
-Licensed under the terms stated in the license file EULA_Webhelp.txt 
-available in the base directory of this Oxygen Webhelp plugin.
+Oxygen WebHelp Plugin
+Copyright (c) 1998-2017 Syncro Soft SRL, Romania.  All rights reserved.
 
 */
 
@@ -39,13 +37,13 @@ function highlightSearchTerm(words) {
         // For index with frames
         try {
             if (parent.termsToHighlight != null) {
-             // highlight each term in the content view
-             for (i = 0; i < parent.termsToHighlight.length; i++) {
-                 $('*', window.parent.contentwin.document).highlight(parent.termsToHighlight[i]);
-             }
+                // highlight each term in the content view
+                for (i = 0; i < parent.termsToHighlight.length; i++) {
+                    $(window.parent.contentwin.document).find('body').highlight(parent.termsToHighlight[i]);
+                }
             }
         } catch (e) {
-            debug(e);
+            error(e);
         }
     }
 }
@@ -72,7 +70,7 @@ $(document).ready(function () {
                     $('#permalink').hide();
                 }
             } catch (e) {
-                
+                error(e);
             }
         } else {
             window.location.href=getPath(location.pathname);
@@ -81,13 +79,13 @@ $(document).ready(function () {
     
     // Expand toc in case there are frames.
     // Rewrite page title
-    if (top !== self && window.parent.tocwin) {
-       try {
-            window.parent.tocwin.markSelectItem(window.location.href);
-            setTimeout(rewriteTitle, 10);
-        } catch (e) {
-            
+    try {
+        if (top !== self && window.parent.tocwin) {
+        	window.parent.tocwin.markSelectItem(window.location.href);
+	        setTimeout(rewriteTitle, 10);
         }
+    } catch (e) {
+        error(e);
     }
 
     // Click on navigation links without text 	     
