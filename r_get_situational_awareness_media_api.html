@@ -1,0 +1,338 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The Situational Awareness API provides a link from which you can view a video or image captured by an asset (camera). This API is also referred to as the 'Get Media' API call. There are two ways to ..." /><meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Situational Awareness (Get Media)" /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>Situational Awareness (Get Media)</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Situational Awareness (Get Media)</h1>
+<div class="body refbody"><section class="section">The Situational Awareness API provides a link from which you can view a video or image captured by an asset (camera). This API is also referred to as the 'Get Media' API call.</section>
+<section class="section">
+      <div class="p">There are two ways to retrieve media directly from the node:<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_iyk_lqv_qx"><li class="li">By AssetUid for Image, or Video</li>
+<li class="li">By LocationUid for Image, or Video</li>
+</ul>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Media from Node by AssetUid for an Image or Video (Get Media)</h2>
+      
+    </section>
+<section class="section">
+      <div class="p">When retrieving media directly from the node:<ol class="ol" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ol_fv2_fs3_vx"><li class="li">Submit the HTTPS request. You will receive an imagePollURL or videoPollURL.</li>
+<li class="li">Submit the imagePollURL or videoPollURL.<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_gct_ps3_vx"><li class="li">The message “Success” displays if the media file you requested is in the database.</li>
+<li class="li">If the requested file is not in the database, it will retrieve the file directly from the node.<div class="note note"><span class="notetitle">Note:</span> The timestamp needs to match the request exactly, up to the millisecond.</div>
+</li>
+</ul>
+<ul class="ul" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__ul_rnw_t53_vx"><li class="li">The message "InProgress" displays if the media file is not in the database; there is no timeout or error message. The recommendation is setting the application with a timeout of five minutes, but you have the flexibility to choose whatever timeout period you want.<div class="note note"><span class="notetitle">Note:</span> Media is retained by the node and available for seven days. If the requested media is older than seven days and is found in the cloud database, the PollURL provides the requested media. </div>
+</li>
+</ul>
+</li>
+</ol>
+
+      </div>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_whl_fnv_qx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:23.52941176470588%" /><col style="width:76.47058823529412%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">METHOD</td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder">URI</td>
+<td class="entry cellrowborder">{{mediaurl}}/ondemand/assets/{assetUid}/media?mediaType={mediaType1}&amp;timestamp={timestamp}&amp;page={int}&amp;size={int}&amp;sortBy={string}&amp;sortDir={string}&amp;duration={int} </td>
+</tr>
+<tr><td class="entry cellrowborder">Sample Request URI</td>
+<td class="entry cellrowborder">{{mediaurl}}/ondemand/assets/CAMERA-STG-HYP1071-CAM-F/media?mediaType=VIDEO&amp;timestamp=1459816592758&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC&amp;duration=15 </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_n15_xnv_qx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:14.598540145985403%" /><col style="width:19.708029197080297%" /><col style="width:10.948905109489052%" /><col style="width:54.74452554744526%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d11861e89">Parameter</th>
+<th class="entry cellrowborder" id="d11861e91">Description</th>
+<th class="entry cellrowborder" id="d11861e93">Required?</th>
+<th class="entry cellrowborder" id="d11861e95">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d11861e89 ">assetUid</td>
+<td class="entry cellrowborder" headers="d11861e91 ">GE identifier for the media device</td>
+<td class="entry cellrowborder" headers="d11861e93 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e95 ">Unique identifiers such as <strong class="ph b">CAMERA-STG-HYP1071-CAM-F</strong> for Image or Video. </td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">mediaType</td>
+<td class="entry cellrowborder" headers="d11861e91 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> 'Get Media' only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry cellrowborder" headers="d11861e93 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e95 ">See the enumeration codes for mediaType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">timeStamp</td>
+<td class="entry cellrowborder" headers="d11861e91 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d11861e93 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e95 ">Numerical value, such as <strong class="ph b">1453772603879</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">sortBy</td>
+<td class="entry cellrowborder" headers="d11861e91 ">The value to sort the content of the response by.</td>
+<td class="entry cellrowborder" headers="d11861e93 ">No</td>
+<td class="entry cellrowborder" headers="d11861e95 ">See the enumeration codes for sortBy in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">size</td>
+<td class="entry cellrowborder" headers="d11861e91 ">Maximum number of records to return per page; if none specified, the default value of <strong class="ph b">2</strong> is used automatically.</td>
+<td class="entry cellrowborder" headers="d11861e93 ">No</td>
+<td class="entry cellrowborder" headers="d11861e95 ">Numerical value, such as <strong class="ph b">20</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">page</td>
+<td class="entry cellrowborder" headers="d11861e91 ">Indicates the page number; default is <strong class="ph b">0</strong>. </td>
+<td class="entry cellrowborder" headers="d11861e93 ">No</td>
+<td class="entry cellrowborder" headers="d11861e95 ">Numerical value, such as <strong class="ph b">1</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">sortDir</td>
+<td class="entry cellrowborder" headers="d11861e91 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry cellrowborder" headers="d11861e93 ">No</td>
+<td class="entry cellrowborder" headers="d11861e95 ">Numerical value.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e89 ">duration</td>
+<td class="entry cellrowborder" headers="d11861e91 ">Indicates duration of the event. </td>
+<td class="entry cellrowborder" headers="d11861e93 ">No</td>
+<td class="entry cellrowborder" headers="d11861e95 ">Numerical Value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Media from Node by LocationUid for an Image or Video</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_qsn_2pv_qx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:23.52941176470588%" /><col style="width:76.47058823529412%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">METHOD</td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder">URI</td>
+<td class="entry cellrowborder">{{mediaurl}}/ondemand/location/{locationUid}/media?mediaType={mediaType1}&amp;timestamp={timestamp}&amp;page={int}&amp;size={int}&amp;sortBy={string}&amp;sortDir={string}&amp;duration={int}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample Request URI</td>
+<td class="entry cellrowborder">{{mediaurl}}/ondemand/locations/LOCATION-STG-282/media?mediaType=IMAGE&amp;timestamp=1459816592756&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC&amp;duration=15</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_asm_lpv_qx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:16.666666666666664%" /><col style="width:20.833333333333336%" /><col style="width:12.5%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d11861e247">Parameter</th>
+<th class="entry cellrowborder" id="d11861e249">Description</th>
+<th class="entry cellrowborder" id="d11861e251">Required?</th>
+<th class="entry cellrowborder" id="d11861e253">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d11861e247 ">locationUid</td>
+<td class="entry cellrowborder" headers="d11861e249 ">A unique identifier established by a customer or external resource for a specific location within the monitored area</td>
+<td class="entry cellrowborder" headers="d11861e251 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e253 ">Unique identifier such as <strong class="ph b">LOCATION-STG-282</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e247 ">mediaType</td>
+<td class="entry cellrowborder" headers="d11861e249 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> 'Get Media' only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry cellrowborder" headers="d11861e251 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e253 ">See the enumeration codes for mediaType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e247 ">timeStamp</td>
+<td class="entry cellrowborder" headers="d11861e249 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d11861e251 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e253 ">Numerical value, such as <strong class="ph b">1453772603879</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e247 ">sortBy</td>
+<td class="entry cellrowborder" headers="d11861e249 ">The value to sort the content of the response by.</td>
+<td class="entry cellrowborder" headers="d11861e251 ">No</td>
+<td class="entry cellrowborder" headers="d11861e253 ">See the enumeration codes for sortBy in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e247 ">size</td>
+<td class="entry cellrowborder" headers="d11861e249 ">Maximum number of records to return per page; if none specified, the default value of 2 is used automatically.</td>
+<td class="entry cellrowborder" headers="d11861e251 ">No</td>
+<td class="entry cellrowborder" headers="d11861e253 ">Numerical value, such as <strong class="ph b">20</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e247 ">page</td>
+<td class="entry cellrowborder" headers="d11861e249 ">Indicates the page number; default is 0. </td>
+<td class="entry cellrowborder" headers="d11861e251 ">No</td>
+<td class="entry cellrowborder" headers="d11861e253 ">Numerical value, such as <strong class="ph b">1</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e247 ">sortDir</td>
+<td class="entry cellrowborder" headers="d11861e249 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry cellrowborder" headers="d11861e251 ">No</td>
+<td class="entry cellrowborder" headers="d11861e253 ">Sort value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Media from Node by AssetUid for an Image or Video </h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_nsk_s51_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:22.22222222222222%" /><col style="width:77.77777777777779%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/mediastore/ondemand/assets/{assetUid}?mediaType={type}(timestamp,sort order,sort direction)</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/mediastore/ondemand/assets/CAMERA-HYP1083-CAM-L?mediaType=IMAGE&amp;timestamp=1459816592756&amp;page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response </h2>
+      
+      <pre class="pre codeblock"><code>
+{
+  "imagepollUrl": "https://ic-media-service.run.asv-pr.ice.predix.io/v2/mediastore/ondemand/getMedia/34bad361-d59a-47f1-aa59-be17e8bc643a?page=0&amp;size=100&amp;sortBy=mediaLogId&amp;sortDir=DESC"
+}
+</code></pre>
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ee84d217-3c5c-44c0-95c1-8b6475b829ee__table_kjs_ygb_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:16.564417177914113%" /><col style="width:31.288343558282207%" /><col style="width:12.269938650306749%" /><col style="width:39.87730061349693%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d11861e401">Parameter</th>
+<th class="entry cellrowborder" id="d11861e403">Description</th>
+<th class="entry cellrowborder" id="d11861e405">Required?</th>
+<th class="entry cellrowborder" id="d11861e407">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d11861e401 ">assetUid</td>
+<td class="entry cellrowborder" headers="d11861e403 ">GE identifier for the media device.</td>
+<td class="entry cellrowborder" headers="d11861e405 ">Yes</td>
+<td class="entry cellrowborder" headers="d11861e407 ">Unique identifier such as <strong class="ph b">CAMERA-HYP1083-CAM-L</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e401 ">mediaType</td>
+<td class="entry cellrowborder" headers="d11861e403 ">Filter by type of media. <div class="p">
+                  <div class="note note"><span class="notetitle">Note:</span> 'Get Media' only works when you have access to Situational Awareness.</div>
+
+                </div>
+</td>
+<td class="entry cellrowborder" headers="d11861e405 ">No</td>
+<td class="entry cellrowborder" headers="d11861e407 ">See the enumeration codes for mediaType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e401 ">timestamp</td>
+<td class="entry cellrowborder" headers="d11861e403 ">Time of the event, recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d11861e405 ">No</td>
+<td class="entry cellrowborder" headers="d11861e407 ">Numerical value, such as <strong class="ph b">1453772603879</strong>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e401 ">sortBy</td>
+<td class="entry cellrowborder" headers="d11861e403 ">The value to sort the content of the response by.</td>
+<td class="entry cellrowborder" headers="d11861e405 ">No</td>
+<td class="entry cellrowborder" headers="d11861e407 ">See the enumeration codes for sortBy in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e401 ">sortDir</td>
+<td class="entry cellrowborder" headers="d11861e403 ">Indicates whether to sort in ascending or descending order</td>
+<td class="entry cellrowborder" headers="d11861e405 ">No</td>
+<td class="entry cellrowborder" headers="d11861e407 ">Numerical value.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Response Parameters</span></caption><colgroup><col style="width:17.948717948717952%" /><col style="width:17.948717948717952%" /><col style="width:64.1025641025641%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d11861e490">Parameter</th>
+<th class="entry cellrowborder" id="d11861e492">Data Type</th>
+<th class="entry cellrowborder" id="d11861e494">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d11861e490 ">status</td>
+<td class="entry cellrowborder" headers="d11861e492 ">String</td>
+<td class="entry cellrowborder" headers="d11861e494 ">The status of the response, either INPROGRESS or SUCCESS. </td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e490 ">listOfEntries</td>
+<td class="entry cellrowborder" headers="d11861e492 ">String</td>
+<td class="entry cellrowborder" headers="d11861e494 ">
+                <dl class="dl"><dt class="dt dlterm">mediaLogId</dt>
+<dd class="dd">The ID of each entry in the list. </dd>
+<dt class="dt dlterm">mediaUUId</dt>
+<dd class="dd">The unique ID of the specific type of node.</dd>
+<dt class="dt dlterm">mediaType</dt>
+<dd class="dd">Either Image, or Video. </dd>
+<dt class="dt dlterm">mediaFileName</dt>
+<dd class="dd">The filename of the captured media.</dd>
+<dt class="dt dlterm">mediaTimestamp</dt>
+<dd class="dd">The time the media was captured from the node. </dd>
+<dt class="dt dlterm">assetUid</dt>
+<dd class="dd">The ID of the asset that captured the media.</dd>
+<dt class="dt dlterm">externalRefId</dt>
+<dd class="dd">The ID of the external reference. </dd>
+<dt class="dt dlterm">entryTimestamp</dt>
+<dd class="dd">The time the captured media was entered in the database.</dd>
+</dl>
+
+              </td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d11861e490 ">url</td>
+<td class="entry cellrowborder" headers="d11861e492 ">String</td>
+<td class="entry cellrowborder" headers="d11861e494 ">URL Link to the stored media file in its captured format. For example, file types include: JPEG, PNG, MP4. </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response </h2>
+      
+      <pre class="pre codeblock"><code>
+
+{
+  "status": "INPROGRESS",
+  "listOfEntires": null
+}
+
+{
+  "status": "SUCCESS",
+  "listOfEntires": {
+    "content": [
+      {
+        "mediaLogId": 13,
+        "mediaUUId": "GRC-NODE",
+        "mediaType": "IMAGE",
+        "mediaFileName": "CAMERA-HYP1083-CAM-L_CAMERA-HYP1083-CAM-L_1459816592756_IMAGE",
+        "mediaTimestamp": 1459816592756,
+        "assetUid": "CAMERA-HYP1083-CAM-L",
+        "externalRefId": "CAMERA-HYP1083-CAM-L",
+        "entryTimestamp": 1473294438424,
+        "url": "https://ic-media-service.run.asv-pr.ice.predix.io/v2/mediastore/file/CAMERA-HYP1083-CAM-L_CAMERA-HYP1083-CAM-L_1459816592756_IMAGE.jpg"
+      }
+    ],
+    "last": true,
+    "totalPages": 1,
+    "totalElements": 1,
+    "first": true,
+    "numberOfElements": 1,
+    "sort": [
+      {
+        "direction": "DESC",
+        "property": "mediaLogId",
+        "ignoreCase": false,
+        "nullHandling": "NATIVE",
+        "ascending": false
+      }
+    ],
+    "size": 100,
+    "number": 0
+  }
+}
+</code></pre>
+    </section>
+</div>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
+</html>

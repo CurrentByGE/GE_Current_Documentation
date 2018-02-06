@@ -1,0 +1,483 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="You can use two methods to retrieve Parking Planning data. Via WebSocket to retrieve near-real-time data based on: AssetUid Locations LocationUid Via REST APIs to retrieve historical data based on: ..." /><meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Parking Planning" /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="reference_09c46b94-4b17-4795-aac8-573072506e9e" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>Parking Planning</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_09c46b94-4b17-4795-aac8-573072506e9e">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Parking Planning</h1>
+<div class="body refbody"><section class="section">
+      <div class="p">You can use two methods to retrieve Parking Planning data.<ol class="ol" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__ol_cnd_jdr_kx"><li class="li">Via WebSocket to retrieve near-real-time data based on: <ul class="ul" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__ul_av2_mdr_kx"><li class="li">AssetUid</li>
+<li class="li">Locations</li>
+<li class="li">LocationUid</li>
+</ul>
+</li>
+<li class="li"> Via REST APIs to retrieve historical data based on:<ul class="ul" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__ul_agr_tdr_kx"><li class="li">AssetUid</li>
+<li class="li">Locations</li>
+<li class="li">LocationUid</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> You can only retrieve one event type - either PKIN or PKOUT - when retrieving historical data.</div>
+</li>
+</ol>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Near-Real-Time Data</h2>
+      
+      <p class="p">The WebSocket URL provides a link to near-real-time data for vehicle parking at the specified monitored location. You must use a WebSocket client to retrieve this data.</p>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Near-Real-Time Data by AssetUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_j12_kq5_gx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">WebSocket URL</td>
+<td class="entry cellrowborder">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr><td class="entry cellrowborder">JSON Request Parameters</td>
+<td class="entry cellrowborder">{“assetUid":"&lt;assetUID&gt;","eventTypes":["&lt;eventType1&gt;","&lt;eventType2&gt;”]}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample JSON Request</td>
+<td class="entry cellrowborder">{“assetUid":"CAMERA-HYP1083-CAM-L","eventTypes":["PKIN","PKOUT”]} </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">JSON Request Parameters</h2>
+      
+    </section>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_ygs_3tx_kx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:19.047619047619047%" /><col style="width:28.57142857142857%" /><col style="width:14.285714285714285%" /><col style="width:38.095238095238095%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">Parameter</td>
+<td class="entry cellrowborder">Description</td>
+<td class="entry cellrowborder">Required?</td>
+<td class="entry cellrowborder">Filter Values</td>
+</tr>
+<tr><td class="entry cellrowborder">assetUid</td>
+<td class="entry cellrowborder">GE identifier for the device.</td>
+<td class="entry cellrowborder">Yes</td>
+<td class="entry cellrowborder">Value such as "CAMERA-HYP1083-CAM-L".</td>
+</tr>
+<tr><td class="entry cellrowborder">eventType</td>
+<td class="entry cellrowborder">Filter for parking events.</td>
+<td class="entry cellrowborder">Yes</td>
+<td class="entry cellrowborder">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="section"><h2 class="title sectiontitle">Retrieve Near-Real-Time Data by Locations</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_dv3_rq5_gx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">WebSocket URL</td>
+<td class="entry cellrowborder">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr><td class="entry cellrowborder">JSON Request Parameters</td>
+<td class="entry cellrowborder">{"bbox":"&lt;lat1:long1&gt;,&lt;lat2:long2&gt;","eventTypes":[“ &lt;eventType1&gt;","&lt;eventType2&gt;”]}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample JSON Request</td>
+<td class="entry cellrowborder">{"bbox":"32.715675:-117.161230,32.708498:-117.151681","eventTypes":[“PKIN","PKOUT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">JSON Request Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_f13_jry_kx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:19.047619047619047%" /><col style="width:28.57142857142857%" /><col style="width:14.285714285714285%" /><col style="width:38.095238095238095%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">Parameter</td>
+<td class="entry cellrowborder">Description</td>
+<td class="entry cellrowborder">Required?</td>
+<td class="entry cellrowborder">Filter Values</td>
+</tr>
+<tr><td class="entry cellrowborder">bbox</td>
+<td class="entry cellrowborder">The GPS-defined area containing the asset</td>
+<td class="entry cellrowborder">No</td>
+<td class="entry cellrowborder">GPS values that define the bounding box area </td>
+</tr>
+<tr><td class="entry cellrowborder">eventTypes</td>
+<td class="entry cellrowborder">Filter for parking events.</td>
+<td class="entry cellrowborder">Yes</td>
+<td class="entry cellrowborder">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Near-Real-Time Data by LocationUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_p23_ssy_kx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">WebSocket URL</td>
+<td class="entry cellrowborder">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr><td class="entry cellrowborder">JSON Request Parameters</td>
+<td class="entry cellrowborder">{“locationUid":"&lt;location-UID&gt;","eventTypes":[" &lt;eventType1&gt;","&lt; eventType2&gt;"]}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample JSON Request</td>
+<td class="entry cellrowborder">{“locationUid":"LOCATION-282","eventTypes":["PKIN,PKOUT"]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">JSON Request Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_udn_lty_kx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:19.047619047619047%" /><col style="width:28.57142857142857%" /><col style="width:14.285714285714285%" /><col style="width:38.095238095238095%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d6814e241">Parameter</th>
+<th class="entry cellrowborder" id="d6814e243">Description</th>
+<th class="entry cellrowborder" id="d6814e245">Required?</th>
+<th class="entry cellrowborder" id="d6814e247">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d6814e241 ">locationUid</td>
+<td class="entry cellrowborder" headers="d6814e243 ">The identifier assigned to this location </td>
+<td class="entry cellrowborder" headers="d6814e245 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e247 ">Value such as "LOCATION-282"</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e241 ">eventType</td>
+<td class="entry cellrowborder" headers="d6814e243 ">Filter for pedestrian events.</td>
+<td class="entry cellrowborder" headers="d6814e245 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e247 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response</h2>
+      
+      <div class="note note"><span class="notetitle">Note:</span> You must use a WebSocket client to retrieve this data.</div>
+
+      <pre class="pre codeblock"><code>{
+"locationUid": "LOCATION-282",
+"assetUid": "CAMERA-HYP1070-CAM-R",
+"eventType": "PKIN",
+"timestamp": 1474479726251,
+"properties": {
+"pixelCoordinates": "33:-117,33:-117,33:-117,33:-117",
+"eventUid": "Q0FNRVJBLUhZUDEwNzAtQ0FNLVIsMTQ3NDQ3OTcyNjI1MQ==",
+"objectUid": "1474479726",
+      "geoCoordinates": "32.7134021:-117.1575105,32.7133999:-117.1574874,32.7133482:-117.1574878,32.7133504:-117.1575100",
+      "imageAssetUid": "CAMERA-HYP1070-CAM-R"
+},
+"measures": {}
+}
+</code></pre>
+      <div class="p">
+        <div class="note note"><span class="notetitle">Note:</span> The above example shows the "timestamp" interval in seconds, but the PARKING simulation interval is shown in minutes.</div>
+
+      </div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Historical Data by AssetUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_u3z_44p_hx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI for PKIN</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/assets/{assetUid}/events?eventType=PKIN{startTime,endTime}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI for PKOUT</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/assets/{assetUid}/events?eventType=PKOUT{startTime,endTime}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI for PKIN</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/assets/CAMERA-HYP1070-CAM-F/events?eventType=PKIN&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI for PKOUT</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/assets/CAMERA-HYP1070-CAM-F/events?eventType=PKOUT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_q5t_jh1_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.197452229299365%" /><col style="width:31.84713375796179%" /><col style="width:12.738853503184714%" /><col style="width:38.21656050955414%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d6814e352">Parameter</th>
+<th class="entry cellrowborder" id="d6814e354">Description</th>
+<th class="entry cellrowborder" id="d6814e356">Required?</th>
+<th class="entry cellrowborder" id="d6814e358">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d6814e352 ">assetUid</td>
+<td class="entry cellrowborder" headers="d6814e354 ">GE identifier for the device.</td>
+<td class="entry cellrowborder" headers="d6814e356 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e358 ">Value such as CAMERA-HYP1070-CAM-F.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e352 ">events?</td>
+<td class="entry cellrowborder" headers="d6814e354 ">Query for historical data</td>
+<td class="entry cellrowborder" headers="d6814e356 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e358 ">eventTypes</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e352 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d6814e354 ">Filter for parking events.</td>
+<td class="entry cellrowborder" headers="d6814e356 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e358 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e352 ">startTime</td>
+<td class="entry cellrowborder" headers="d6814e354 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d6814e356 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e358 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e352 ">endTime</td>
+<td class="entry cellrowborder" headers="d6814e354 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d6814e356 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e358 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Historical Data by Locations</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_kfs_jr5_gx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI for PKIN</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/locations/events?bbox={lat,long}&amp;locationType=PARKING_ZONE&amp;eventTypes=PKIN{startTime,endTime}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI for PKOUT</strong></td>
+<td class="entry cellrowborder">&lt;production url?/v2/locations/events?eventTypes=PKOUT&amp;bbox={lat,long}&amp;locationType=PARKING_ZONE&amp;{startTime,endTime}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI for PKIN</strong></td>
+<td class="entry cellrowborder">&lt;production url/v2/locations/events?bbox=32.715675:-117.161230,32.708498:-117.151681&amp;locationType=PARKING_ZONE&amp;eventTypes=PKIN&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI for PKOUT</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/assets/CAMERA-HYP1070-CAM-F/events?eventTypes=PKOUT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_msy_kh1_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.197452229299365%" /><col style="width:31.84713375796179%" /><col style="width:12.738853503184714%" /><col style="width:38.21656050955414%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d6814e474">Parameter</th>
+<th class="entry cellrowborder" id="d6814e476">Description</th>
+<th class="entry cellrowborder" id="d6814e478">Required?</th>
+<th class="entry cellrowborder" id="d6814e480">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d6814e474 ">bbox</td>
+<td class="entry cellrowborder" headers="d6814e476 ">GPS location for the event.</td>
+<td class="entry cellrowborder" headers="d6814e478 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e480 ">Value such as 32.715675:-117.161230,32.708498:-117.151681.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e474 ">events?</td>
+<td class="entry cellrowborder" headers="d6814e476 ">Query for historical data</td>
+<td class="entry cellrowborder" headers="d6814e478 "> </td>
+<td class="entry cellrowborder" headers="d6814e480 ">eventTypes</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e474 ">locationType</td>
+<td class="entry cellrowborder" headers="d6814e476 ">Filter by type of location.</td>
+<td class="entry cellrowborder" headers="d6814e478 ">No</td>
+<td class="entry cellrowborder" headers="d6814e480 ">See the enumeration codes for locationType in the <a class="xref" href="r_api_glossary.html#reference_760c9c20-af1c-40c1-8ad1-e98b82856be1" title="This glossary is for the Intelligent Cities product within Current by GE's Intelligent Environments.">Glossary for Intelligent Cities</a>.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e474 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d6814e476 ">Filter for parking events.</td>
+<td class="entry cellrowborder" headers="d6814e478 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e480 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e474 ">startTime</td>
+<td class="entry cellrowborder" headers="d6814e476 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d6814e478 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e480 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e474 ">endTime</td>
+<td class="entry cellrowborder" headers="d6814e476 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d6814e478 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e480 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Historical Data by LocationUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_ul3_lr5_gx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI for PKIN</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/locations/{LocationUid}/events?eventTypes=PKIN{startTime,endTime,size,page}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI for PKOUT</strong></td>
+<td class="entry cellrowborder">&lt;productionurl&gt;/v2/locations/{LocationUid}/events?eventTypes=PKOUT&amp;{startTime,endTime,size,page}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI for PKIN</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/locations/LOCATION-282/events?eventTypes=PKIN&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI for PKOUT</strong></td>
+<td class="entry cellrowborder">&lt;production url/v2//locations/LOCATION-282/events?eventTypes=PKOUT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__table_typ_lh1_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.35218508997429%" /><col style="width:32.77634961439588%" /><col style="width:12.853470437017995%" /><col style="width:37.01799485861182%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d6814e611">Parameter</th>
+<th class="entry cellrowborder" id="d6814e613">Description</th>
+<th class="entry cellrowborder" id="d6814e615">Required?</th>
+<th class="entry cellrowborder" id="d6814e617">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d6814e611 ">locationUid</td>
+<td class="entry cellrowborder" headers="d6814e613 ">Location of a specific asset.</td>
+<td class="entry cellrowborder" headers="d6814e615 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e617 ">Value such as LOCATION-282.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e611 ">events?</td>
+<td class="entry cellrowborder" headers="d6814e613 ">Query for historical data</td>
+<td class="entry cellrowborder" headers="d6814e615 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e617 ">eventTypes</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e611 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d6814e613 ">Filter for parking events.</td>
+<td class="entry cellrowborder" headers="d6814e615 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e617 ">Insert the following enumeration codes to identify vehicles entering and exiting parking spaces:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) entering parking areas within the boundaries.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Receive a list of vehicles (identified by objectUid) exiting parking areas within the boundaries.</dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e611 ">startTime</td>
+<td class="entry cellrowborder" headers="d6814e613 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d6814e615 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e617 ">Numerical value, such as 1453766605577.<div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e611 ">endTime</td>
+<td class="entry cellrowborder" headers="d6814e613 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d6814e615 ">Yes</td>
+<td class="entry cellrowborder" headers="d6814e617 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Response Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_09c46b94-4b17-4795-aac8-573072506e9e__IOTdkNjI0ZGEtYmVjZC00MjdhLWFjNmItZjMxZGU1ZjZiNzU4" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:14.189837008628956%" /><col style="width:10.258868648130393%" /><col style="width:75.55129434324066%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d6814e691">Parameter</th>
+<th class="entry cellrowborder" id="d6814e693">Data Type</th>
+<th class="entry cellrowborder" id="d6814e695">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d6814e691 "> locationUid</td>
+<td class="entry cellrowborder" headers="d6814e693 ">String</td>
+<td class="entry cellrowborder" headers="d6814e695 ">Unique, customer-defined identifier, for a specific location within the monitored area.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e691 ">assetUid</td>
+<td class="entry cellrowborder" headers="d6814e693 ">String</td>
+<td class="entry cellrowborder" headers="d6814e695 ">The customer-defined identifier for a specific asset at this location.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e691 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d6814e693 ">String</td>
+<td class="entry cellrowborder" headers="d6814e695 ">Identifies this type of event:<dl class="dl"><dt class="dt dlterm">PKIN</dt>
+<dd class="dd">Vehicle entering parking space.</dd>
+<dt class="dt dlterm">PKOUT</dt>
+<dd class="dd">Vehicle exiting parking space.</dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e691 ">timestamp</td>
+<td class="entry cellrowborder" headers="d6814e693 ">Number</td>
+<td class="entry cellrowborder" headers="d6814e695 ">Actual timestamp records when an event occurred. Timestamps are in EPOCH format.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e691 ">properties</td>
+<td class="entry cellrowborder" headers="d6814e693 ">String</td>
+<td class="entry cellrowborder" headers="d6814e695 ">
+                <dl class="dl"><dt class="dt dlterm">pixelCoordinates</dt>
+<dd class="dd">Local coordinates of the identified vehicle in the image. The coordinates of the four corners of the vehicle are provided.</dd>
+<dt class="dt dlterm">eventUid</dt>
+<dd class="dd">The unique identifier assigned to a specific parking event.</dd>
+<dt class="dt dlterm">objectUid</dt>
+<dd class="dd">The unique identifier of a specific vehicle.</dd>
+<dt class="dt dlterm">geoCoordinates</dt>
+<dd class="dd">The GPS coordinates of a vehicle.</dd>
+<dt class="dt dlterm">imageAssetUid</dt>
+<dd class="dd">The unique identifier of the camera that provided the image.</dd>
+</dl>
+
+                <div class="note note"><span class="notetitle">Note:</span> To retrieve the image, use the Media-on-Demand API by providing the imageAssetUid and timestamp from this response.</div>
+
+              </td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d6814e691 ">measures</td>
+<td class="entry cellrowborder" headers="d6814e693 ">String</td>
+<td class="entry cellrowborder" headers="d6814e695 ">There is no content for this field.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response</h2>
+      
+    </section>
+<section class="section">
+      <pre class="pre codeblock"><code>{
+  "content": [
+    {
+      "locationUid": "LOCATION-282",
+      "assetUid": "CAMERA-HYP1070-CAM-R",
+      "eventTypes": "PKOUT",
+      "timestamp": 1473897364055,
+      "properties": {
+        "pixelCoordinates": "33:-117,33:-117,33:-117,33:-117",
+          "objectUid": "1473897356",
+        "geoCoordinates": "32.7134562:-117.1575102,32.7134535:-117.1574876,32.7133999:-117.1574874,32.7134021:-117.1575105",
+        "imageAssetUid": "CAMERA-HYP1070-CAM-R"
+      },
+      "measures": {}
+    }</code></pre>
+    </section>
+</div>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
+</html>

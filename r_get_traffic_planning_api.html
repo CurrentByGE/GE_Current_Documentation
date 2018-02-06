@@ -1,0 +1,420 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This API provides details on how traffic is flowing, by lane, on a monitored road. There are three ways to retrieve near real-time data: By AssetUid By Locations By LocationUid There are three ways to ..." /><meta name="copyright" content="(C) Copyright 2018" /><meta name="DC.rights.owner" content="(C) Copyright 2018" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Traffic Planning" /><meta name="DC.Creator" content="Lee Case" /><meta name="DC.Creator" content="" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="reference_6d13c3fa-663b-422e-853f-31e459c4efd2" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><title>Traffic Planning</title><!--  Generated with Oxygen version @@WEBHELP_VERSION@@, build number @@WEBHELP_BUILD_NUMBER@@.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></link><link rel="stylesheet" type="text/css" href="C:\Program Files\Oxygen XML Author 19\frameworks/dita/DITA-OT2.x/plugins/com.oxygenxml.webhelp/predefined-skins/dita/oxygen/skin.css?buildId=@@WEBHELP_BUILD_NUMBER@@" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=@@WEBHELP_BUILD_NUMBER@@"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Traffic Planning</h1>
+<div class="body refbody"><section class="section">
+            <p class="p">This API provides details on how traffic is flowing, by lane, on a monitored road.</p>
+
+      <div class="p">There are three ways to retrieve near real-time data:<ul class="ul" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__ul_zqg_clz_bx"><li class="li">By AssetUid</li>
+<li class="li">By Locations</li>
+<li class="li">By LocationUid</li>
+</ul>
+</div>
+
+      <div class="p">There are three ways to retrieve historical data:<ul class="ul" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__ul_ndk_3lz_bx"><li class="li">By AssetUid</li>
+<li class="li">By Locations</li>
+<li class="li">By LocationUid</li>
+</ul>
+</div>
+
+        </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Near Real-Time Data by AssetUid</h2>
+      <p class="p"> LocationUid is configured to identify two bi-directional traffic lanes when used for traffic planning. Direction, speed, and vehicle count are calculated for both the direction and counter direction of traffic.</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> The node provides a maximum of 1 response / per second for traffic. </div>
+
+      <div class="note note"><span class="notetitle">Note:</span> The timestamp returned is the end of the averaging interval; for traffic data, this interval begins 15 seconds earlier. For example, if you are trying to capture traffic data on August 20th as of 11:05:00, you will need to include data from the beginning of the interval at 11:04:45. </div>
+
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_pbx_1db_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:66.66666666666666%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">WebSocket URL</td>
+<td class="entry cellrowborder">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr><td class="entry cellrowborder">JSON Request Parameters</td>
+<td class="entry cellrowborder">{“assetUid":"&lt;assetUID&gt;","eventTypes":["&lt;eventType1&gt;”]}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample JSON Request</td>
+<td class="entry cellrowborder">{“assetUid":"CAMERA-HYP1083-CAM-L","eventTypes":["TFEVT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">JSON Request Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:22.22222222222222%" /><col style="width:11.11111111111111%" /><col style="width:46.666666666666664%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e89">Parameter</th>
+<th class="entry cellrowborder" id="d13713e91">Description</th>
+<th class="entry cellrowborder" id="d13713e93">Required?</th>
+<th class="entry cellrowborder" id="d13713e95">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e89 ">assetUid</td>
+<td class="entry cellrowborder" headers="d13713e91 ">GE identifier for the device.</td>
+<td class="entry cellrowborder" headers="d13713e93 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e95 ">Value such as "CAMERA-HYP1083-CAM-L".</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e89 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e91 ">Type of event.</td>
+<td class="entry cellrowborder" headers="d13713e93 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e95 ">Receive a list of vehicles in traffic lanes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Near Real-Time Data by Locations</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_vm2_c1c_hx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:22.22222222222222%" /><col style="width:77.77777777777779%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">WebSocket URL</td>
+<td class="entry cellrowborder">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr><td class="entry cellrowborder">JSON Request Parameters</td>
+<td class="entry cellrowborder">{"bbox":"&lt; lat1:long1&gt;,&lt;lat2:long2 &gt;","eventTypes":[“ &lt;eventType1&gt;”]}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample JSON Request</td>
+<td class="entry cellrowborder">{"bbox":"32.715675:-117.161230,32.708498:-117.151681","eventTypes":[“TFEVT”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">JSON Request Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_nl5_m1c_hx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:13.698630136986301%" /><col style="width:20.547945205479454%" /><col style="width:10.273972602739727%" /><col style="width:55.47945205479452%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e156">Parameter</th>
+<th class="entry cellrowborder" id="d13713e158">Description</th>
+<th class="entry cellrowborder" id="d13713e160">Required?</th>
+<th class="entry cellrowborder" id="d13713e162">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e156 ">bbox</td>
+<td class="entry cellrowborder" headers="d13713e158 ">GPS location of the asset.</td>
+<td class="entry cellrowborder" headers="d13713e160 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e162 ">Value such as "32.715675:-117.161230,32.708498:-117.151681".</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e156 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e158 ">Filter for traffic events.</td>
+<td class="entry cellrowborder" headers="d13713e160 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e162 ">Receive a list of vehicles in traffic lanes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Near Real-Time Data by LocationUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_v5r_pkz_bx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:75%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder">WebSocket URL</td>
+<td class="entry cellrowborder">wss://&lt;production url&gt;/events</td>
+</tr>
+<tr><td class="entry cellrowborder">JSON Request Parameters</td>
+<td class="entry cellrowborder">{“locationUid":"&lt;location-UID&gt;","eventTypes":[“ &lt;eventType1&gt;”]}</td>
+</tr>
+<tr><td class="entry cellrowborder">Sample JSON Request</td>
+<td class="entry cellrowborder">{“locationUid":"LOCATION-282","eventTypes":["TFEVT"]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">JSON Request Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_fvg_2db_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.088607594936708%" /><col style="width:32.27848101265822%" /><col style="width:12.658227848101264%" /><col style="width:37.974683544303794%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e223">Parameter</th>
+<th class="entry cellrowborder" id="d13713e225">Description</th>
+<th class="entry cellrowborder" id="d13713e227">Required?</th>
+<th class="entry cellrowborder" id="d13713e229">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e223 ">locationUid</td>
+<td class="entry cellrowborder" headers="d13713e225 ">The unique identifier assigned to a given location. </td>
+<td class="entry cellrowborder" headers="d13713e227 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e229 ">Value such as "LOCATION-282".</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e223 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e225 ">Filter for traffic events.</td>
+<td class="entry cellrowborder" headers="d13713e227 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e229 ">Receive a list of vehicles in traffic lanes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Historical Data by AssetUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_jbj_jsz_bx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:19.41747572815534%" /><col style="width:80.58252427184466%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI</strong></td>
+<td class="entry cellrowborder">&lt;production url/v2/assets/{assetUid}events?eventTypes=TFEVT&amp;(startTime,endTime)</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URI</strong></td>
+<td class="entry cellrowborder">&lt;production url/v2/assets/CAMERA-HYP1037-CAM-F/events?eventTypes=TFEVT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_qvp_hdb_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.088607594936708%" /><col style="width:32.27848101265822%" /><col style="width:12.658227848101264%" /><col style="width:37.974683544303794%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e293">Parameter</th>
+<th class="entry cellrowborder" id="d13713e295">Description</th>
+<th class="entry cellrowborder" id="d13713e297">Required?</th>
+<th class="entry cellrowborder" id="d13713e299">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e293 ">assetUid</td>
+<td class="entry cellrowborder" headers="d13713e295 ">GE identifier for the device.</td>
+<td class="entry cellrowborder" headers="d13713e297 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e299 ">For example, CAMERA-HYP1037-CAM-F</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e293 ">events?</td>
+<td class="entry cellrowborder" headers="d13713e295 ">Query for historical data</td>
+<td class="entry cellrowborder" headers="d13713e297 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e299 ">eventTypes</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e293 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e295 ">Type of event.</td>
+<td class="entry cellrowborder" headers="d13713e297 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e299 ">Receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e293 ">startTime</td>
+<td class="entry cellrowborder" headers="d13713e295 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d13713e297 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e299 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e293 ">endTime</td>
+<td class="entry cellrowborder" headers="d13713e295 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d13713e297 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e299 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Historical Data by Locations</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_vcw_fd1_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:19.41747572815534%" /><col style="width:80.58252427184466%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI</strong></td>
+<td class="entry cellrowborder">&lt;production url/v2/locations/events?eventTypes=TFEVT&amp;bbox={ lat1:long1,lat2:long2 }&amp;locationType=TRAFFIC_LANE&amp;(startTime,endTime)</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URL</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/locations/events?eventTypes=TFEVT&amp;bbox=32.715675:-117.161230,32.708498:-117.151681&amp;locationType=TRAFFIC_LANE&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_bs1_kdb_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.088607594936708%" /><col style="width:32.27848101265822%" /><col style="width:12.658227848101264%" /><col style="width:37.974683544303794%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e392">Parameter</th>
+<th class="entry cellrowborder" id="d13713e394">Description</th>
+<th class="entry cellrowborder" id="d13713e396">Required?</th>
+<th class="entry cellrowborder" id="d13713e398">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e392 ">bbox</td>
+<td class="entry cellrowborder" headers="d13713e394 ">The GPS-defined area containing the asset</td>
+<td class="entry cellrowborder" headers="d13713e396 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e398 ">For example, 32.715675:-117.161230,32.708498:-117.151681</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e392 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e394 ">Type of event.</td>
+<td class="entry cellrowborder" headers="d13713e396 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e398 ">Receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e392 ">startTime</td>
+<td class="entry cellrowborder" headers="d13713e394 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d13713e396 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e398 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e392 ">endTime</td>
+<td class="entry cellrowborder" headers="d13713e394 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d13713e396 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e398 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Retrieve Historical Data by LocationUid</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_l2k_xg1_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:19.41747572815534%" /><col style="width:80.58252427184466%" /></colgroup><tbody class="tbody"><tr><td class="entry cellrowborder"><strong class="ph b">METHOD</strong></td>
+<td class="entry cellrowborder">GET</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">URI</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/locations/{locationUid}/events?eventTypes=TFEVT&amp;{startTime,endTime}</td>
+</tr>
+<tr><td class="entry cellrowborder"><strong class="ph b">Sample Request URL</strong></td>
+<td class="entry cellrowborder">&lt;production url&gt;/v2/locations/LOCATION-20-1037-1/events?eventTypes=TFEVT&amp;startTime=1473897230802&amp;endTime=1473898239338</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Query Parameters</h2>
+      
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_ipk_mdb_cx" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.088607594936708%" /><col style="width:32.27848101265822%" /><col style="width:12.658227848101264%" /><col style="width:37.974683544303794%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e483">Parameter</th>
+<th class="entry cellrowborder" id="d13713e485">Description</th>
+<th class="entry cellrowborder" id="d13713e487">Required?</th>
+<th class="entry cellrowborder" id="d13713e489">Filter Values</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e483 ">locationUid</td>
+<td class="entry cellrowborder" headers="d13713e485 ">GE identifier for the location.</td>
+<td class="entry cellrowborder" headers="d13713e487 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e489 ">For example, LOCATION-20-1037-1</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e483 ">events?</td>
+<td class="entry cellrowborder" headers="d13713e485 ">Query for historical data</td>
+<td class="entry cellrowborder" headers="d13713e487 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e489 ">eventTypes</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e483 ">eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e485 ">Type of event.</td>
+<td class="entry cellrowborder" headers="d13713e487 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e489 ">Receive a list of vehicles in traffic lanes.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e483 ">startTime</td>
+<td class="entry cellrowborder" headers="d13713e485 ">Start time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d13713e487 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e489 ">Numerical value, such as 1453766605577. <div class="note note"><span class="notetitle">Note:</span> If you use the same timestamp for startTime and endTime, a single result will be returned.</div>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e483 ">endTime</td>
+<td class="entry cellrowborder" headers="d13713e485 ">End time (timestamp) recorded in EPOCH format.</td>
+<td class="entry cellrowborder" headers="d13713e487 ">Yes</td>
+<td class="entry cellrowborder" headers="d13713e489 ">Numerical value, such as 1453772603879.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </section>
+<section class="section"><h2 class="title sectiontitle">Response Parameters </h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__table_b17ad35e-4823-4112-8893-3e49050caaa4" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:14.482758620689657%" /><col style="width:65.51724137931035%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry cellrowborder" id="d13713e552">Parameter</th>
+<th class="entry cellrowborder" id="d13713e554">Data Type</th>
+<th class="entry cellrowborder" id="d13713e556">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry cellrowborder" headers="d13713e552 "> locationUid</td>
+<td class="entry cellrowborder" headers="d13713e554 ">String</td>
+<td class="entry cellrowborder" headers="d13713e556 ">A unique identifier established by a customer or external resource to identify the lane number.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e552 "> assetUid</td>
+<td class="entry cellrowborder" headers="d13713e554 ">String</td>
+<td class="entry cellrowborder" headers="d13713e556 ">A unique identifier established by a customer or external resource for the asset recording the traffic flow.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e552 "> eventTypes</td>
+<td class="entry cellrowborder" headers="d13713e554 ">String</td>
+<td class="entry cellrowborder" headers="d13713e556 ">Identifies the TFEVT event type.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e552 "> timestamp</td>
+<td class="entry cellrowborder" headers="d13713e554 ">Number</td>
+<td class="entry cellrowborder" headers="d13713e556 ">Timestamp recorded in EPOCH format.</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e552 "> properties</td>
+<td class="entry cellrowborder" headers="d13713e554 ">String</td>
+<td class="entry cellrowborder" headers="d13713e556 ">Vehicle properties being tracked by the asset.<dl class="dl"><dt class="dt dlterm">directionUnit</dt>
+<dd class="dd">Direction defined by degree(s).</dd>
+<dt class="dt dlterm">speedUnit</dt>
+<dd class="dd">Roadway speed limit. </dd>
+<dt class="dt dlterm">vehicleType</dt>
+<dd class="dd">Current definition for vehicleType is <pre class="pre codeblock"><code>vehicle</code></pre>.</dd>
+<dd class="dd ddexpand">Future definition will include multi-vehicle types, including <pre class="pre codeblock"><code>car, truck, motorcycle</code></pre> , and so on. </dd>
+<dt class="dt dlterm">counter_direction_vehicleType</dt>
+<dd class="dd">Uses same properties definition as vehicleType; defines vehicles for counter direction of travel.</dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" headers="d13713e552 "> measures</td>
+<td class="entry cellrowborder" headers="d13713e554 ">String</td>
+<td class="entry cellrowborder" headers="d13713e556 ">Vehicle properties being tracked by the device.<dl class="dl"><dt class="dt dlterm">direction</dt>
+<dd class="dd">Positive integer value = from 0 to 360</dd>
+<dd class="dd ddexpand">Direction calculates the average direction of traffic. </dd>
+<dd class="dd ddexpand">The node will display traffic movement in opposite directions as two different values. For example, if a given street is oriented East/West, (East =90; West=270), and you run the API call for the Eastern direction of travel, direction output will display: <pre class="pre codeblock"><code>“direction”: 90.</code></pre>When you run the API call for the Western direction of travel, direction output will display: <pre class="pre codeblock"><code>“direction”: 270.</code></pre></dd>
+<dd class="dd ddexpand">See the Degree Range and Direction Value diagram below.</dd>
+<dt class="dt dlterm">counter_direction</dt>
+<dd class="dd">Counter-direction defined by degree(s). </dd>
+<dd class="dd ddexpand">See <strong class="ph b">direction</strong> (above) for general description.</dd>
+<dt class="dt dlterm">speed</dt>
+<dd class="dd">value = X, unit = meters per second (METERS_PER_SEC)</dd>
+<dt class="dt dlterm">counter_direction_speed</dt>
+<dd class="dd">value = X, unit = meters per second (METERS_PER_SEC)</dd>
+<dt class="dt dlterm">vehicleCount</dt>
+<dd class="dd">value = count, unit = number</dd>
+<dt class="dt dlterm">counter_direction_vehicleCount</dt>
+<dd class="dd">value = count, unit = number</dd>
+</dl>
+</td>
+</tr>
+<tr><td class="entry cellrowborder" colspan="3" headers="d13713e552 d13713e554 d13713e556 "><img class="image" id="reference_6d13c3fa-663b-422e-853f-31e459c4efd2__image_e59f01e0-21b4-46ea-81f2-3bdf12536959" src="i_traffic_degrees.png" />Degree Range and Direction Value</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </section>
+<section class="section"><h2 class="title sectiontitle">Sample Response</h2>
+            
+            <pre class="pre codeblock"><code>
+{
+            "locationUid": "LOC-ATL-0001-T1",
+            "assetUid": "CAM-ATL-0001-1",
+            "eventType": "TFEVT",
+            "timestamp": 1508389324461,
+            "properties": {
+                "speedUnit": "METERS_PER_SEC",
+                "directionUnit": "DEGREE",
+                "counter_direction_vehicleType": "vehicle",
+                "vehicleType": "vehicle"
+            },
+            "measures": {
+                "counter_direction": 190,
+                "counter_direction_speed": 0,
+                "counter_direction_vehicleCount": 0,
+                "direction": 10,
+                "speed": 41,
+                "vehicleCount": 3
+            }
+}
+
+
+    </code></pre>
+        </section>
+</div>
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information">Generated by<a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+                            &lt;oXygen/&gt; XML WebHelp
+                        </a></div></footer></body>
+</html>
